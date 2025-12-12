@@ -18,7 +18,7 @@ const HeroBackground = () => {
         <motion.div
           className='absolute inset-0 w-full h-screen -z-50'
           style={{
-            backgroundImage: "url('src/assets/nsky2.jpg')",
+            backgroundImage: "url('/nsky2.jpg')",
             backgroundSize: 'cover',          // best for full backgrounds
             backgroundPosition: 'cover', // looks more natural
           }}

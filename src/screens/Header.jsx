@@ -11,7 +11,7 @@ const Header = () => {
         <div className='flex justify-between items-center text-white'>
           
           <a>
-            <img src="src/assets/onilogo.png" alt="Logo" className="h-8" />
+            <img src="/onilogo.png" alt="Logo" className="h-8" />
           </a>
 
           <div className='hidden md:flex gap-10 items-center'>
