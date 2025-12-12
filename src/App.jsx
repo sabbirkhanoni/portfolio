@@ -8,6 +8,12 @@ const App = () => {
      className= "container mx-auto max-w-8xl">
       <Header />
       <HeroSection />
+      <section className='min-h-screen'/>
+      <section className='min-h-screen'/>
+      <section className='min-h-screen'/>
+      <section className='min-h-screen'/>
+      <section className='min-h-screen'/>
+      <section className='min-h-screen'/>
     </div>
   )
 }

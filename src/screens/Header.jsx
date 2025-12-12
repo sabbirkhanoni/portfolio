@@ -6,7 +6,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className='fixed w-full top-0 left-0 z-10 backdrop-blur-2xl bg-gray-800 py-2 border-b border-gray-800'>
+    <div className='fixed w-full top-0 left-0 z-100 backdrop-blur-2xl bg-gray-800 py-2 border-b border-gray-800'>
       <div className='mx-auto max-w-8xl px-5 md:px-10 lg:px-20 font-bold text-lg'>
         <div className='flex justify-between items-center text-white'>
           
