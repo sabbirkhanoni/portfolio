@@ -43,7 +43,7 @@ const HeroElements = () => {
           className="text-md flex gap-2 md:text-xl lg:text-2xl font-bold text-white"
           variants={item}
         >
-          Hi! I'm <h2 className='text-[rgb(0,255,255)]'>Md Sabbir Khan Oni</h2>
+          Hi! I'm <p className='text-[rgb(0,255,255)]'>Md Sabbir Khan Oni</p>
         </motion.h1>
 
         <motion.h2
