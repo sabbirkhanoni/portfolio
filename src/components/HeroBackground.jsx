@@ -33,7 +33,7 @@ const HeroBackground = () => {
         <motion.div
           className='absolute inset-0 w-full h-full -z-30'
           style={{
-            backgroundImage: "url('src/assets/oneman2.png')",
+            backgroundImage: "url('/oneman2.png')",
             backgroundSize: 'auto 70%',        // keeps man proportion & visible
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'right bottom', // places man at bottom
@@ -45,7 +45,7 @@ const HeroBackground = () => {
         <motion.div
           className='absolute inset-0 w-full h-full -z-30'
           style={{
-            backgroundImage: "url('public/assets/planets.png')",
+            backgroundImage: "url('/planets.png')",
             backgroundSize: 'contain',         // keeps planets visible without cropping
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center top',  // planets stay at top
