@@ -15,11 +15,11 @@ const Header = () => {
           </a>
 
           <div className='hidden md:flex gap-10 items-center'>
-            <a className='text-sm font-semibold transition-colors text-neutral-500 hover:text-white'>Home</a>
-            <a className='text-sm font-semibold transition-colors text-neutral-500 hover:text-white'>Projects</a>
-            <a className='text-sm font-semibold transition-colors text-neutral-500 hover:text-white'>Resume</a>
-            <a className='text-sm font-semibold transition-colors text-neutral-500 hover:text-white'>About</a>
-            <a className='text-sm bg-[rgb(8,165,202)] px-5 rounded-full py-1 font-semibold text-white hover:text-neutral-500'>
+            <a className='text-sm font-semibold transition-colors text-white hover:text-aqua shadow-lg'>Home</a>
+            <a className='text-sm font-semibold transition-colors text-white hover:text-aqua shadow-lg'>Projects</a>
+            <a className='text-sm font-semibold transition-colors text-white hover:text-aqua shadow-lg'>Resume</a>
+            <a className='text-sm font-semibold transition-colors text-white hover:text-aqua shadow-lg'>About</a>
+            <a className='text-sm bg-[rgb(8,165,202)] px-5 rounded-full py-1 font-semibold text-white shadow-lg shadow-aqua/50 hover:text-black'>
               Hire Me
             </a>
           </div>
