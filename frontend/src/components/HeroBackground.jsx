@@ -20,7 +20,7 @@ const HeroBackground = () => {
 
         {/* Background Sky */}
         <motion.div
-          className='absolute inset-0 w-full h-screen -z-50 bg-[rgba(13,13,13)]'
+          className='absolute inset-0 w-full h-screen -z-50 bg-gradient-to-r from-[#0d0d0d] via-[#131212] to-[#1a1a1a]'
           style={{
           }}
         />

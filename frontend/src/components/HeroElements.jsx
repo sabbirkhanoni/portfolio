@@ -44,14 +44,14 @@ const HeroElements = () => {
         </motion.h1>
 
         <motion.h2
-          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-white"
+          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(30,251,1)] bg-clip-text text-transparent"
           variants={item}
         >
           SOFTWARE
         </motion.h2>
 
         <motion.h2
-          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-white"
+          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(30,251,1)] bg-clip-text text-transparent"
           variants={item}
         >
           ENGINEER
@@ -67,7 +67,7 @@ const HeroElements = () => {
         </motion.div>
 
         <motion.h2
-          className="text-xs md:text-md lg:text-sm text-white"
+          className="text-xs italic  md:text-md lg:text-sm text-white"
           variants={item}
         >
           System Design & Architecture Solutions, AI Integrated Web Development & Deployment.

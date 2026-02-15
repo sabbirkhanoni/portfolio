@@ -83,14 +83,14 @@ const About = () => {
           <div
             className="flex flex-col text-center rounded-2xl bg-gradient-to-r from-gray-800 to-[rgb(13,13,13)] grid-2 p-4"
           >
-            <div className="w-full text-center mb-2">
+            <div className="w-full text-center mb-1">
               <p className="text-md opacity-70 font-semibold text-white">
                 GitHub Stats & Contributions
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center">
               <div className="flex flex-col lg:flex-row md:flex-col gap-10 my-2">
-                <div className="flex flex-col md:flex-row lg:flex-col gap-4 justify-center items-center">
+                <div className="flex flex-col md:flex-row lg:flex-col gap-3 justify-center items-center">
                   <div className="w-72">
                     {!streakLoaded && (
                       <div className="w-full h-30 rounded-lg bg-gray-700 animate-pulse" />
@@ -128,9 +128,9 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="w-60 my-2">
+                <div className="w-60">
                   {!langsLoaded && (
-                    <div className="w-full h-40 rounded-lg bg-gray-700 animate-pulse" />
+                    <div className="w-full h-35 rounded-lg bg-gray-700 animate-pulse" />
                   )}
 
                   <img
@@ -140,7 +140,7 @@ const About = () => {
                     src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=sabbirkhanoni&amp;theme=dark&amp;hide_border=false&amp;no-bg=true&amp;no-frame=true&amp;langs_count=10"
                     alt="Top Languages"
                     onLoad={() => setLangsLoaded(true)}
-                    className={`transition-opacity duration-500 ${
+                    className={`transition-opacity h-65 duration-500 ${
                       langsLoaded ? "opacity-100" : "opacity-0 absolute"
                     }`}
                   />
