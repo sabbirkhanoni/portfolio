@@ -32,27 +32,34 @@ const HeroElements = () => {
 
   return (
     <motion.div
-      className="z-11 mt-50 lg:mt-70 text-center md:text-left rounded-3xl md:mt-40 bg-clip-text"
+      className="z-11 mt-40 lg:mt-30 text-center md:text-left rounded-3xl md:mt-40 bg-clip-text"
       variants={container}
       initial="hidden"
       animate="visible"
     >
-      <div className="flex-col justify-items-center-safe md:justify-items-center-safe md:flex gap-5">
+      <div className="flex-col justify-items-center-safe md:justify-items-center-safe md:flex">
 
         <motion.h1 className="text-sm flex gap-2 md:text-md lg:text-lg font-bold text-white" variants={item}>
-          Hi! I'm <span className='text-[45px] bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(255,14,14)] bg-clip-text text-transparent' style={{ fontFamily: 'Acorn, sans-serif'}}>MD SABBIR KHAN ONI</span>
+          <p className='mt-5'>Hi! I'm</p> <span className='text-[70px] bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(255,14,14)] bg-clip-text text-transparent' style={{ fontFamily: 'Acorn, sans-serif'}}>MD SABBIR KHAN ONI</span>
         </motion.h1>
 
         <motion.h2
-          className="text-sm md:text-lg lg:text-lg text-white mb-3"
+          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-white"
           variants={item}
         >
-          A Software Engineer
+          SOFTWARE
+        </motion.h2>
+
+        <motion.h2
+          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-white"
+          variants={item}
+        >
+          ENGINEER
         </motion.h2>
 
         <motion.div
           
-          className="font-space text-[rgb(0,255,255)] font-bold text-xl md:text-2xl lg:text-6xl mb-3 h-12 md:h-16 lg:h-20 flex items-center justify-center md:justify-start overflow-hidden "
+          className="font-space text-[rgb(0,255,255)] font-bold text-xl md:text-2xl lg:text-3xl mb-3 h-12 md:h-16 lg:h-20 flex items-center justify-center md:justify-start overflow-hidden "
           style={{fontFamily: 'Acorn, sans-serif'}}
           variants={flipAnimate}
         >

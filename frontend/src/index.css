@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
 @import "tailwindcss";
 @theme {
   --color-primary: #030412;
@@ -53,6 +56,26 @@ body {
   overflow-x: hidden;
 }
 
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+.uncial-antiqua-regular {
+  font-family: "Uncial Antiqua", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 @font-face {
   font-family: 'Acorn';
@@ -73,14 +96,9 @@ body {
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'agbalumo-regular';
-  src: url('/fonts/Agbalumo-Regular.woff2') format('woff2'),
-       url('/fonts/Agbalumo-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
+
+
 
 .c-space {
   @apply sm:px-10 px-5 lg:px-15;
