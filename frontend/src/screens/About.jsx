@@ -4,6 +4,9 @@ import { FaEnvelope } from "react-icons/fa";
 import Text from "../components/Text";
 import { motion } from "framer-motion";
 import GradFlow from "gradflow";
+import { Marquee } from "../components/Marquee";
+import { Card, CardLabel, Reveal } from "../components/Reveal";
+import { SocialIcon } from "../components/SocialIcone";
 
 const ParticleBackground = lazy(() =>
   import("../components/ParticleBackground")
@@ -36,11 +39,13 @@ const About = () => {
       <div className="relative ">
         {/* Content */}
         <div className="text-center mt-5 space-y-4">
-          <h1 style={{ fontFamily: 'Acorn, sans-serif'}} className="text-5xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] to-[rgb(13,13,13)] bg-clip-text text-transparent">
+          <h1 style={{ fontFamily: 'Acorn, sans-serif'}} className="text-5xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] to-[rgb(81,140,144)] bg-clip-text shimmer-text-heading">
             About Me
           </h1>
           <p className="text-gray-400 text-sm">My professional journey and accomplishments</p>
         </div>
+
+        
 
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,32 +75,37 @@ const About = () => {
                 <div><Text/></div>
               </div>
             </div>
-          </motion.div>
+        </motion.div>
+
+        <Marquee items={["Full-Stack Development", "UI/UX Design", "Machine Learning", "Research", "Open Source", "Web3", "Cloud Architecture"]} />
 
         <motion.div
           variants={gridContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.1 }}
-          className="grid grid-cols-1 px-6 md:grid-cols-6 gap-3 md:auto-rows-[21rem] rounded-md overflow-hidden mt-2"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 px-6 my-4"
         >
-          {/* Grid Items 2 */}
-          <div
-            className="flex flex-col text-center rounded-2xl bg-gradient-to-r from-gray-800 to-[rgb(13,13,13)] grid-2 p-4"
-          >
-            <div className="w-full text-center mb-1">
-              <p className="text-md opacity-70 font-semibold text-white">
-                GitHub Stats & Contributions
-              </p>
-            </div>
-            <div className="flex-1 flex items-center justify-center">
-              <div className="flex flex-col lg:flex-row md:flex-col gap-10 my-2">
-                <div className="flex flex-col md:flex-row lg:flex-col gap-3 justify-center items-center">
-                  <div className="w-72">
-                    {!streakLoaded && (
-                      <div className="w-full h-30 rounded-lg bg-gray-700 animate-pulse" />
-                    )}
 
+          {/* GitHub Stats Card */}
+          <Reveal className="md:col-span-2 xl:col-span-2" delay={0.1}>
+            <Card
+              className=" rounded-2xl border border-white/10 shadow-2xl"
+              style={{
+                background: "linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%)",
+              }}
+            >
+              <div className="p-5 flex flex-col gap-6">
+                <CardLabel className="text-2xl font-semibold text-gray-200">
+                  GitHub Stats & Contributions
+                </CardLabel>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                  <div className="flex flex-col gap-6 items-center">
+                    {!streakLoaded && (
+                      <div className="w-full max-w-sm h-24 rounded-xl bg-gray-800 animate-pulse" />
+                    )}
                     <img
                       loading="lazy"
                       decoding="async"
@@ -103,17 +113,13 @@ const About = () => {
                       src="https://github-readme-streak-stats.herokuapp.com?user=sabbirkhanoni&theme=dark&date_format=M%20j%5B%2C%20Y%5D"
                       alt="GitHub Streak"
                       onLoad={() => setStreakLoaded(true)}
-                      className={`transition-opacity duration-500 ${
-                        streakLoaded ? "opacity-100" : "opacity-0 absolute"
-                      }`}
+                      style={{ display: streakLoaded ? "block" : "none" }}
+                      className="rounded-xl shadow-xl w-full max-w-sm hover:scale-105 transition-transform duration-300"
                     />
-                  </div>
 
-                  <div className="w-72">
                     {!statsLoaded && (
-                      <div className="w-full h-30 rounded-lg bg-gray-700 animate-pulse" />
+                      <div className="w-full max-w-sm h-48 rounded-xl bg-gray-800 animate-pulse" />
                     )}
-
                     <img
                       loading="lazy"
                       decoding="async"
@@ -121,156 +127,130 @@ const About = () => {
                       src="https://github-readme-stats.vercel.app/api?username=sabbirkhanoni&theme=dark&show_icons=true&hide_border=false&count_private=true&include_all_commits=true"
                       alt="GitHub Stats"
                       onLoad={() => setStatsLoaded(true)}
-                      className={`transition-opacity duration-500 ${
-                        statsLoaded ? "opacity-100" : "opacity-0 absolute"
-                      }`}
+                      style={{ display: statsLoaded ? "block" : "none" }}
+                      className="rounded-xl shadow-xl w-full max-w-sm hover:scale-105 transition-transform duration-300"
                     />
+                  </div>
+
+                  <div className="flex justify-center">
+                    {!langsLoaded && (
+                      <div className="w-full max-w-sm h-48 rounded-xl bg-gray-800 animate-pulse" />
+                    )}
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=sabbirkhanoni&theme=dark&hide_border=false&no-bg=true&no-frame=true&langs_count=10"
+                      alt="Top Languages"
+                      onLoad={() => setLangsLoaded(true)}
+                      style={{ display: langsLoaded ? "block" : "none" }}
+                      className="rounded-xl shadow-xl w-full max-w-xs hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                </div>
+              </div>
+            </Card>
+          </Reveal>
+
+          {/* Connect With Me Card */}
+          <Reveal className="xl:col-span-1 h-full" delay={0.2}>
+            <Card className="h-full" style={{ background: "linear-gradient(160deg, #111827 0%, #0d0d0d 100%)" }}>
+              <div className="flex flex-col gap-6 p-6 h-full">
+                <div>
+                  <CardLabel>Connect With Me</CardLabel>
+                  <div className="flex gap-2 items-center mt-2">
+                    <SocialIcon href="https://github.com" icon={<FaGithub />} label="GitHub" />
+                    <SocialIcon href="https://linkedin.com" icon={<FaLinkedin />} label="LinkedIn" />
+                    <SocialIcon href="mailto:mdsabbirkhanoni@gmail.com" icon={<FaEnvelope />} label="Email" />
                   </div>
                 </div>
 
-                <div className="w-60">
-                  {!langsLoaded && (
-                    <div className="w-full h-35 rounded-lg bg-gray-700 animate-pulse" />
-                  )}
-
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    referrerPolicy="no-referrer"
-                    src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=sabbirkhanoni&amp;theme=dark&amp;hide_border=false&amp;no-bg=true&amp;no-frame=true&amp;langs_count=10"
-                    alt="Top Languages"
-                    onLoad={() => setLangsLoaded(true)}
-                    className={`transition-opacity h-65 duration-500 ${
-                      langsLoaded ? "opacity-100" : "opacity-0 absolute"
-                    }`}
-                  />
+                <div className="">
+                  <Suspense fallback={<div className="w-50 h-50 rounded-full bg-gray-800 animate-pulse" />}>
+                    <Globe />
+                  </Suspense>
                 </div>
               </div>
-            </div>
-          </div>
+            </Card>
+          </Reveal>
 
-          {/* Grid Items 3 */}
-          <div className="flex flex-col bg-[rgb(13,13,13)] grid-2 rounded-xl p-4">
-            <div className="w-full text-center mb-2">
-              <p className="text-md opacity-70 font-semibold text-white">
-                Competitive Programming Journey
-              </p>
-            </div>
+          {/* Competitive Programming Card */}
+          <Reveal className="xl:col-span-2 h-full" delay={0.3}>
+            <Card className="h-full" style={{ background: "#0d0d0d" }}>
+              <div className="p-6 h-full flex flex-col gap-6">
+                <CardLabel>Competitive Programming Journey</CardLabel>
 
-            {/* Stats cards below */}
-            <div className="flex-1 flex items-center justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
-
-                {/* Column 1: Codeforces */}
-                <div className="flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start justify-items-center">
+                  {/* Codeforces */}
                   <a
                     href="https://codeforces.com/profile/sabbirkhanoni"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transform hover:scale-105 transition-transform duration-300"
+                    className="group block w-full"
                   >
                     <img
-                      className="w-75 h-auto rounded-lg shadow-xl"
+                      className="w-full max-w-xs rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-[1.03]"
                       src="https://codeforces-readme-stats.vercel.app/api/card?username=sabbir9990&theme=dark"
                       alt="Codeforces Stats"
                     />
                   </a>
+
+                  {/* GFG + LeetCode */}
+                  <div className="flex flex-col gap-4 w-full max-w-xs">
+                    <a href="https://www.geeksforgeeks.org/user/sabbirkhanoni/" target="_blank" rel="noopener noreferrer" className="group block">
+                      <img
+                        className="w-full rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-[1.03]"
+                        src="https://gfgstatscard.vercel.app/sabbirkhanoni?theme=dark"
+                        alt="GeeksforGeeks Stats"
+                      />
+                    </a>
+                    <a href="https://leetcode.com/sabbirkhanoni/" target="_blank" rel="noopener noreferrer" className="group block">
+                      <img
+                        className="w-full rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-[1.03]"
+                        src="https://leetcard.jacoblin.cool/sabbirkhanoni?theme=dark"
+                        alt="LeetCode Stats"
+                      />
+                    </a>
+                  </div>
                 </div>
+              </div>
+            </Card>
+          </Reveal>
 
-                {/* Column 2: GFG + LeetCode stacked */}
-                <div className="flex flex-col gap-2 justify-center">
+          {/* Technologies Card */}
+          <Reveal className="xl:col-span-1 h-full" delay={0.4}>
+            <Card
+              className="h-full"
+              style={{
+                background: "linear-gradient(135deg, #0d0d0d 0%, #0a1a1f 100%)",
+                border: "1px solid rgba(8,165,202,0.15)",
+              }}
+            >
+              <div className="p-6 h-full flex flex-col gap-4 relative overflow-hidden">
+                {/* Decorative gradient accent */}
+                <div
+                  className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
+                  style={{
+                    background: "radial-gradient(circle, rgba(8,165,202,0.18) 0%, transparent 70%)",
+                    filter: "blur(20px)",
+                  }}
+                />
 
-                  {/* GFG */}
-                  <a
-                    href="https://www.geeksforgeeks.org/user/sabbirkhanoni/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transform hover:scale-105 transition-transform duration-300"
-                  >
-                    <img
-                      className="w-55 h-auto rounded-lg shadow-xl"
-                      src="https://gfgstatscard.vercel.app/sabbirkhanoni?theme=dark"
-                      alt="GeeksforGeeks Stats"
-                    />
-                  </a>
+                <CardLabel>Technologies I Work With</CardLabel>
 
-                  {/* LeetCode */}
-                  <a
-                    href="https://leetcode.com/sabbirkhanoni/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transform hover:scale-105 transition-transform duration-300"
-                  >
-                    <img
-                      className="w-55 h-auto rounded-lg shadow-xl"
-                      src="https://leetcard.jacoblin.cool/sabbirkhanoni?theme=dark"
-                      alt="LeetCode Stats"
-                    />
-                  </a>
-
+                <div className="relative flex-1 flex flex-col items-center justify-center min-h-[200px]">
+                  <Suspense fallback={<div className="w-full h-40 rounded-xl bg-gray-800 animate-pulse" />}>
+                    <Frameworks />
+                  </Suspense>
                 </div>
-
               </div>
-            </div>
-          </div>
-
-          {/* Grid Items 4 */}
-          <div
-            initial="hidden"
-            whileinview="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            className="flex items-center grid-special-color grid-4"
-          >
-            <div className="flex flex-col gap-4">
-              <h1 className="font-bold text-md mt-2 opacity-70">Connect With Me:</h1>
-              <div className="flex gap-2">
-                <a href="#" target="_blank">
-                  <FaGithub className="h-6 w-6" />
-                </a>
-                <a href="#" target="_blank">
-                  <FaLinkedin className="h-6 w-6" />
-                </a>
-                {/* Gmail */}
-                <a href="mailto:your-email@gmail.com" target="_blank">
-                  <FaEnvelope className="h-6 w-6" />
-                </a>
-              </div>
-            </div>
-            <div>
-                <Suspense
-                fallback={<div className="w-64 h-64 rounded-full bg-gray-800" />}
-              >
-                <Globe className="w-64 h-64" />
-              </Suspense>
-            </div>
-          </div>
-
-          {/* Grid Items 5 */}
-          <div
-            className=" absolute rounded-2xl flex flex-col items-center bg-gradient-to-r from-[rgb(8,165,202)] to-[rgb(13,13,13)] grid-5 gap-4"
-          >
-            <h3 className="font-bold opacity-70 text-md mt-2">Technologies I Work With</h3>
-            <div className="relative flex flex-col items-center">
-              <div className="absolute opacity-30 z-0">
-                <Suspense fallback={null}>
-                <div className="absolute opacity-30">
-                  <Frameworks />
-                </div>
-              </Suspense>
-              </div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="relative z-10">
-                <Suspense fallback={null}>
-                  <TechStack />
-                </Suspense>
-              </motion.div>
-            </div>
-          </div>
+            </Card>
+          </Reveal>
 
         </motion.div>
+
+        <Marquee items={["HTML", "CSS", "JavaScript", "TypeScript","C++","Java","Spring Boot","ASP.NET MVC","ASP.NET Core Web API", "React","Node.js","Nestjs","NextJs","Express","TypeORM","Drizzle","MongoDB","PostgreSQL","MySQL"]} />
       </div>
     </section>
   );

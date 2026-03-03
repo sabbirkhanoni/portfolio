@@ -40,18 +40,18 @@ const HeroElements = () => {
       <div className="flex-col justify-items-center-safe md:justify-items-center-safe md:flex">
 
         <motion.h1 className="text-sm flex gap-2 md:text-md lg:text-lg font-bold text-white" variants={item}>
-          <p className='mt-5'>Hi! I'm</p> <span className='text-[70px] bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(255,14,14)] bg-clip-text text-transparent' style={{ fontFamily: 'Acorn, sans-serif'}}>MD SABBIR KHAN ONI</span>
+          <p className='mt-5'>Hi! I'm</p> <span className='text-[70px] bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(255,14,14)] bg-clip-text text-transparent shimmer-text-name' style={{ fontFamily: 'Acorn, sans-serif'}}>MD SABBIR KHAN ONI</span>
         </motion.h1>
 
         <motion.h2
-          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(30,251,1)] bg-clip-text text-transparent"
+          className="shimmer-text dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-transparent"
           variants={item}
         >
           SOFTWARE
         </motion.h2>
 
         <motion.h2
-          className="dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(30,251,1)] bg-clip-text text-transparent"
+          className="shimmer-text dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-transparent"
           variants={item}
         >
           ENGINEER
@@ -72,6 +72,13 @@ const HeroElements = () => {
         >
           System Design & Architecture Solutions, AI Integrated Web Development & Deployment.
         </motion.h2>
+
+        <div
+          className="font-mono-custom animate-bounce w-fit text-[11px] tracking-[3px] uppercase border border-[#c9a84c] text-[#c9a84c] px-4 py-1 mt-5 rounded-full flex items-center gap-2 mx-auto md:mx-0"
+        >
+          <span className="w-1.5 h-1.5 animate-ping rounded-full bg-[#c9a84c] inline-block" />
+          <p className=''>Available for Work</p>
+         </div>
 
       </div>
     </motion.div>

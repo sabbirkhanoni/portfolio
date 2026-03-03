@@ -21,6 +21,7 @@ const Header = () => {
           <div className='hidden md:flex gap-10 items-center'>
             <a className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Home</a>
             <a className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Projects</a>
+            <a className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Purchases</a>
             <a className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Blogs</a>
             <a className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>About</a>
             <a className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Contact</a>
