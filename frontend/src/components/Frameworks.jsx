@@ -3,26 +3,44 @@ import { OrbitingCircles } from "./OrbitCircle";
 
 function Frameworks() {
   const skills = [
-    "cplusplus",
-    "csharp",
-    "css3",
-    "dotnet",
-    "dotnetcore",
-    "git",
     "html5",
+    "css3",
+    "tailwindcss",
+    "type",
     "javascript",
     "react",
-    "tailwindcss"
+    "nestjs",
+    "nodejs",
+    "java",
+    "cplusplus",
+    "csharp",
+    "dotnet",
+    "dotnetcore",
+    "spring-boot",
+    "redis",
   ];
+
+  const skills2 = [
+    "git",
+    "linux",
+    "rabbitmq",
+    "docker",
+    "azure",
+    "mysql",
+    "postgresql",
+    "oracle",
+    "redux",
+  ];
+
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
-      <OrbitingCircles iconSize={40}>
+      <OrbitingCircles iconSize={40} radius={150} speed={1}>
         {skills.map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
-      <OrbitingCircles iconSize={25} radius={100} reverse speed={2}>
-        {skills.reverse().map((skill, index) => (
+      <OrbitingCircles iconSize={30} radius={90} reverse speed={3}>
+        {skills2.reverse().map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
@@ -31,7 +49,7 @@ function Frameworks() {
 }
 
 const Icon = ({ src }) => (
-  <img src={src} className="duration-200 rounded-sm hover:scale-110" />
+  <img src={src} className="duration-200 rounded-sm hover:scale-150" />
 );
 
 export default Frameworks;

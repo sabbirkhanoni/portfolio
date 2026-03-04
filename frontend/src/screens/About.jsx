@@ -104,7 +104,7 @@ const About = () => {
 
                   <div className="flex flex-col gap-6 items-center">
                     {!streakLoaded && (
-                      <div className="w-full max-w-sm h-24 rounded-xl bg-gray-800 animate-pulse" />
+                      <div className="w-full max-w-sm h-[180px] rounded-xl bg-gray-800 animate-pulse" />
                     )}
                     <img
                       loading="lazy"
@@ -114,27 +114,27 @@ const About = () => {
                       alt="GitHub Streak"
                       onLoad={() => setStreakLoaded(true)}
                       style={{ display: streakLoaded ? "block" : "none" }}
-                      className="rounded-xl shadow-xl w-full max-w-sm hover:scale-105 transition-transform duration-300"
+                      className="rounded-xl shadow-xl w-full max-w-xs hover:scale-105 transition-transform duration-300"
                     />
 
                     {!statsLoaded && (
-                      <div className="w-full max-w-sm h-48 rounded-xl bg-gray-800 animate-pulse" />
+                      <div className="w-full max-w-sm h-[180px] rounded-xl bg-gray-800 animate-pulse" />
                     )}
                     <img
                       loading="lazy"
                       decoding="async"
                       referrerPolicy="no-referrer"
-                      src="https://github-readme-stats.vercel.app/api?username=sabbirkhanoni&theme=dark&show_icons=true&hide_border=false&count_private=true&include_all_commits=true"
+                      src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=radical"
                       alt="GitHub Stats"
                       onLoad={() => setStatsLoaded(true)}
                       style={{ display: statsLoaded ? "block" : "none" }}
-                      className="rounded-xl shadow-xl w-full max-w-sm hover:scale-105 transition-transform duration-300"
+                      className="rounded-xl shadow-xl w-full max-w-xs hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
                   <div className="flex justify-center">
                     {!langsLoaded && (
-                      <div className="w-full max-w-sm h-48 rounded-xl bg-gray-800 animate-pulse" />
+                      <div className="w-full max-w-sm h-[400px] rounded-xl bg-gray-800 animate-pulse" />
                     )}
                     <img
                       loading="lazy"
@@ -156,7 +156,7 @@ const About = () => {
           {/* Connect With Me Card */}
           <Reveal className="xl:col-span-1 h-full" delay={0.2}>
             <Card className="h-full" style={{ background: "linear-gradient(160deg, #111827 0%, #0d0d0d 100%)" }}>
-              <div className="flex flex-col gap-6 p-6 h-full">
+              <div className="flex flex-col gap-6 p-2 pl-5 pt-5 h-full">
                 <div>
                   <CardLabel>Connect With Me</CardLabel>
                   <div className="flex gap-2 items-center mt-2">
@@ -175,48 +175,83 @@ const About = () => {
             </Card>
           </Reveal>
 
-          {/* Competitive Programming Card */}
-          <Reveal className="xl:col-span-2 h-full" delay={0.3}>
-            <Card className="h-full" style={{ background: "#0d0d0d" }}>
-              <div className="p-6 h-full flex flex-col gap-6">
-                <CardLabel>Competitive Programming Journey</CardLabel>
+        <Reveal className="xl:col-span-2 h-full" delay={0.3}>
+          <Card className="h-full relative overflow-hidden border border-white/10 bg-gradient-to-br from-[#0f0f0f] to-[#141414] backdrop-blur-xl">
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start justify-items-center">
-                  {/* Codeforces */}
+            {/* subtle background glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.05),_transparent_40%)] pointer-events-none" />
+
+            <div className="relative p-8 h-full flex flex-col gap-8">
+              
+              <CardLabel className="text-xl font-semibold tracking-wide text-white/90">
+                🚀 Competitive Programming Journey
+              </CardLabel>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+                {/* ================= CODEFORCES (Balanced Height) ================= */}
+                <a
+                  href="https://codeforces.com/profile/sabbirkhanoni"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-full flex justify-center"
+                >
+                  <div className="relative w-full max-w-md rounded-2xl overflow-hidden 
+                                  bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-pink-500/30 
+                                  p-[2px] transition-all duration-500 group-hover:scale-[1.03]">
+
+                    <div className="rounded-2xl overflow-hidden bg-[#0d0d0d]">
+                      <img
+                        className="w-full object-cover object-top"
+                        src="https://codeforces-readme-stats.vercel.app/api/card?username=sabbir9990&theme=dark"
+                        alt="Codeforces Stats"
+                      />
+                    </div>
+
+                  </div>
+                </a>
+
+                {/* ================= GFG + LEETCODE ================= */}
+                <div className="flex flex-col gap-6 items-center">
+
+                  {/* GFG */}
                   <a
-                    href="https://codeforces.com/profile/sabbirkhanoni"
+                    href="https://www.geeksforgeeks.org/user/sabbirkhanoni/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block w-full"
+                    className="group w-full max-w-sm"
                   >
-                    <img
-                      className="w-full max-w-xs rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-[1.03]"
-                      src="https://codeforces-readme-stats.vercel.app/api/card?username=sabbir9990&theme=dark"
-                      alt="Codeforces Stats"
-                    />
-                  </a>
-
-                  {/* GFG + LeetCode */}
-                  <div className="flex flex-col gap-4 w-full max-w-xs">
-                    <a href="https://www.geeksforgeeks.org/user/sabbirkhanoni/" target="_blank" rel="noopener noreferrer" className="group block">
+                    <div className="rounded-2xl p-[2px] bg-white/10 transition-all duration-300 group-hover:bg-green-500/40 group-hover:scale-[1.03]">
                       <img
-                        className="w-full rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-[1.03]"
+                        className="rounded-2xl shadow-xl w-full bg-[#0d0d0d]"
                         src="https://gfgstatscard.vercel.app/sabbirkhanoni?theme=dark"
                         alt="GeeksforGeeks Stats"
                       />
-                    </a>
-                    <a href="https://leetcode.com/sabbirkhanoni/" target="_blank" rel="noopener noreferrer" className="group block">
+                    </div>
+                  </a>
+
+                  {/* LeetCode */}
+                  <a
+                    href="https://leetcode.com/sabbirkhanoni/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group w-full max-w-sm"
+                  >
+                    <div className="rounded-2xl p-[2px] bg-white/10 transition-all duration-300 group-hover:bg-yellow-500/40 group-hover:scale-[1.03]">
                       <img
-                        className="w-full rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-[1.03]"
+                        className="rounded-2xl shadow-xl w-full bg-[#0d0d0d]"
                         src="https://leetcard.jacoblin.cool/sabbirkhanoni?theme=dark"
                         alt="LeetCode Stats"
                       />
-                    </a>
-                  </div>
+                    </div>
+                  </a>
+
                 </div>
+
               </div>
-            </Card>
-          </Reveal>
+            </div>
+          </Card>
+        </Reveal>
 
           {/* Technologies Card */}
           <Reveal className="xl:col-span-1 h-full" delay={0.4}>
