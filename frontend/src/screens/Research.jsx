@@ -7,36 +7,35 @@ const Research = () => {
     {
       id: 1,
       type: 'paper',
-      title: "Machine Learning Approaches for Climate Change Prediction",
-      description: "Comprehensive study on utilizing deep learning models to predict climate patterns and environmental changes with 92% accuracy.",
-      abstract: "This research explores the application of advanced neural networks and ensemble methods in predicting long-term climate trends. We analyzed 50 years of climate data across multiple geographic regions.",
-      authors: ["Your Name", "Dr. Jane Smith", "Dr. John Doe"],
+      title: "Zone-Based Risk Prediction and Risk-Aware Intelligent Routing for Smart Navigation Using Machine Learning.",
+      description: "This paper presents a novel approach to enhance smart navigation systems by integrating zone-based risk prediction and risk-aware intelligent routing using advanced machine learning techniques. We developed a comprehensive framework that analyzes real-time traffic data, historical accident records, and environmental factors to predict high-risk zones and provide safer route recommendations for drivers.",
+      abstract: "In this paper, we propose a novel framework for smart navigation systems that incorporates zone-based risk prediction and risk-aware intelligent routing. Our approach leverages advanced machine learning techniques to analyze real-time traffic data, historical accident records, and environmental factors, enabling the identification of high-risk zones and the provision of safer route recommendations for drivers.",
       conference: "International Conference on AI & Climate Science 2024",
       status: "Published",
-      date: "December 2024",
+      // authors: ["Your Name", "Dr. Jane Smith", "Dr. John Doe"],
+      date: "January 2026",
       image: "public/reasearch.jpg",
       tags: ["Machine Learning", "Climate Science", "Deep Learning", "Data Analysis"],
       pdfLink: "#",
       doi: "10.1234/example.2024.001",
-      citations: 45,
+      citations: 0,
       // Attached Web Project
       webProject: {
-        title: "Climate Prediction Dashboard",
-        description: "Interactive web platform implementing the research findings to provide real-time climate predictions and visualizations for researchers and policymakers.",
+        title: "SafeRouteMapAI: Real-Time Risk-Aware Navigation Platform",
+        description: "A cutting-edge platform that leverages real-time data and machine learning to provide risk-aware navigation solutions.",
         features: [
-          "Real-time climate data visualization",
-          "ML model prediction interface",
-          "Historical trend analysis tools",
-          "Exportable research reports",
-          "Collaborative workspace for researchers"
+          "Real-time risk prediction based on traffic, weather, and historical data",
+          "Intelligent routing that prioritizes safety while optimizing travel time",
+          "Interactive map visualization with D3.js for dynamic risk zones",
+          "User-friendly interface for drivers to receive personalized route recommendations"
         ],
-        technologies: ["React", "Python", "TensorFlow", "D3.js", "FastAPI", "PostgreSQL"],
+        technologies: ["React", "Python", "FastAPI", "LRU Cache", "ML Models", "OpenStreetMap API", "Leaflet.js"],
         status: "Live",
         image: "public/safeRouteAI.png",
         demoLink: "#",
         githubLink: "#",
         videoLink: "#",
-        users: "500+ researchers",
+        // users: "0+ researchers",
         impact: "Reduced prediction analysis time by 70%"
       }
     }
@@ -118,7 +117,7 @@ const Research = () => {
                       </p>
                     </div>
 
-                    <div>
+                    {/* {<div>
                       <p className="text-sm font-semibold text-gray-700 mb-2">Authors:</p>
                       <div className="flex flex-wrap gap-2">
                         {work.authors.map((author, idx) => (
@@ -130,7 +129,7 @@ const Research = () => {
                           </span>
                         ))}
                       </div>
-                    </div>
+                    </div>} */}
 
                     <div className="flex flex-wrap gap-2">
                       {work.tags.map((tag, idx) => (
@@ -190,11 +189,11 @@ const Research = () => {
                             {work.webProject.status}
                           </span>
                         </div>
-                        {work.webProject.users && (
+                        {/* {work.webProject.users && (
                           <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                             <p className="text-sm font-semibold text-gray-900">👥 {work.webProject.users}</p>
                           </div>
-                        )}
+                        )} */}
                       </div>
 
                       {/* Content Section */}

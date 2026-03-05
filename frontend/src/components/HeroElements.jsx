@@ -73,12 +73,12 @@ const HeroElements = () => {
           System Design & Architecture Solutions, AI Integrated Web Development & Deployment.
         </motion.h2>
 
-        <div
-          className="font-mono-custom animate-bounce w-fit text-[11px] tracking-[3px] uppercase border border-[#c9a84c] text-[#c9a84c] px-4 py-1 mt-5 rounded-full flex items-center gap-2 mx-auto md:mx-0"
-        >
+        <motion.div
+          variants={item}
+          className="font-mono-custom animate-bounce w-fit text-[11px] tracking-[3px] uppercase border border-[#c9a84c] text-[#c9a84c] px-4 py-1 mt-5 rounded-full flex items-center gap-2 mx-auto md:mx-0">
           <span className="w-1.5 h-1.5 animate-ping rounded-full bg-[#c9a84c] inline-block" />
           <p className=''>Available for Work</p>
-         </div>
+        </motion.div>
 
       </div>
     </motion.div>
