@@ -110,7 +110,8 @@ const About = () => {
                       loading="lazy"
                       decoding="async"
                       referrerPolicy="no-referrer"
-                      src="https://github-readme-streak-stats.herokuapp.com?user=sabbirkhanoni&theme=dark&date_format=M%20j%5B%2C%20Y%5D"
+                      
+                      src="https://github-readme-stats.vercel.app/api?username=sabbirkhanoni&show_icons=true&count_private=true"
                       alt="GitHub Streak"
                       onLoad={() => setStreakLoaded(true)}
                       style={{ display: streakLoaded ? "block" : "none" }}
@@ -160,8 +161,8 @@ const About = () => {
                 <div>
                   <CardLabel>Connect With Me</CardLabel>
                   <div className="flex gap-2 items-center mt-2">
-                    <SocialIcon href="https://github.com" icon={<FaGithub />} label="GitHub" />
-                    <SocialIcon href="https://linkedin.com" icon={<FaLinkedin />} label="LinkedIn" />
+                    <SocialIcon href="https://github.com/sabbirkhanoni" icon={<FaGithub />} label="GitHub" />
+                    <SocialIcon href="https://linkedin.com/in/mdsabbirkhanoni" icon={<FaLinkedin />} label="LinkedIn" />
                     <SocialIcon href="mailto:mdsabbirkhanoni@gmail.com" icon={<FaEnvelope />} label="Email" />
                   </div>
                 </div>
@@ -188,8 +189,6 @@ const About = () => {
               </CardLabel>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-
-                {/* ================= CODEFORCES (Balanced Height) ================= */}
                 <a
                   href="https://codeforces.com/profile/sabbirkhanoni"
                   target="_blank"
@@ -211,7 +210,6 @@ const About = () => {
                   </div>
                 </a>
 
-                {/* ================= GFG + LEETCODE ================= */}
                 <div className="flex flex-col gap-6 items-center">
 
                   {/* GFG */}

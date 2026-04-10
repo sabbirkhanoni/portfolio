@@ -4,26 +4,16 @@ const Project = () => {
   const projects = [
     {
       id: 1,
-      title: "PAI-Bot, An Embedded SaaS 24/7 Human Assistant AI Chatbot.",
-      description: "PAI-Bot is an embedded SaaS 24/7 human assistant AI chatbot that provides personalized support, automates tasks, and enhances user experience across various platforms.",
+      title: "AI-Bot, An Embedded SaaS 24/7 Human Assistant AI Chatbot.",
+      description: "AI-Bot is an embedded SaaS 24/7 human assistant AI chatbot that provides personalized support, automates tasks, and enhances user experience across various platforms.",
       image: "/Project2.png",
-      technologies: ["Next.js", "Scalekit", "Neon", "TypeScript", "OpenAI API", "Gemini API", "Zenrows API"],
+      technologies: ["Next.js", "Scalekit", "TypeScript", "OpenAI API"],
       liveLink: "#",
       videoLink: "#",
       githubLink: "#"
     },
     {
       id: 2,
-      title: "PI-Food, A Food Delivery System With Real-Time Map Tracking & Payment Gateway",
-      description: "Food delivery system with real-time map tracking, order management, and payment gateway integration.",
-      image: "/Project2.png",
-      technologies: ["Next.js", "Nest.js", "TailwindCSS", "TypeScript", "Nodemailer", "Stripe"],
-      liveLink: "#",
-      videoLink: "#",
-      githubLink: "#"
-    },
-    {
-      id: 3,
       title: "PI-Rides, A Ride-Sharing Platform with Map Tracking, Microservices & Payment Gateway",
       description: "Ride-sharing platform with real-time map tracking, driver-passenger matching, and payment gateway integration.",
       image: "/Project2.png",
@@ -33,7 +23,7 @@ const Project = () => {
       githubLink: "#"
     },
     {
-      id: 4,
+      id: 3,
       title: "PAI-Mart, An AI Integrated Ecommerce System with Payment Gateway",
       description: "Ecommerce platform integrating AI for personalized shopping experiences, product recommendations, and payment processing.",
       image: "/Project2.png",
@@ -43,7 +33,7 @@ const Project = () => {
       githubLink: "#"
     },
     {
-      id: 5,
+      id: 4,
       title: "PAI-Chat, A Real Time Chat Application with Socket.io & Microservices",
       description: "Real-time chat application with user authentication, message encryption, and media sharing capabilities.",
       image: "/Project2.png",

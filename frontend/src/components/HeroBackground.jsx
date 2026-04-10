@@ -44,9 +44,9 @@ const HeroBackground = () => {
           className='absolute inset-0 w-full h-full -z-30'
           style={{
             backgroundImage: "url('/oneman2.png')",
-            backgroundSize: 'auto 70%',        // keeps man proportion & visible
+            backgroundSize: 'auto 70%',        
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'right bottom', // places man at bottom
+            backgroundPosition: 'right bottom', 
             x: manY,
           }}
         />
@@ -56,9 +56,9 @@ const HeroBackground = () => {
           className='absolute inset-0 top-10 left-70 w-full h-full -z-30'
           style={{
             backgroundImage: "url('/planets.png')",
-            backgroundSize: 'contain',         // keeps planets visible without cropping
+            backgroundSize: 'contain',         
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center top',  // planets stay at top
+            backgroundPosition: 'center top',  
             x: planetsY,
           }}
         />
