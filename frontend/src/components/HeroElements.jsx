@@ -40,18 +40,18 @@ const HeroElements = () => {
       <div className="flex-col justify-items-center-safe md:justify-items-center-safe md:flex">
 
         <motion.h1 className="text-sm flex gap-2 md:text-md lg:text-lg font-bold text-white" variants={item}>
-          <p className='mt-5'>Hi! I'm</p> <span className='text-[70px] bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(255,14,14)] bg-clip-text text-transparent shimmer-text-name' style={{ fontFamily: 'Acorn, sans-serif'}}>MD SABBIR KHAN ONI</span>
+          <p className='mt-1 md:mt-2 lg:mt-5 text-xs md:text-sm lg:text-md'>Hi! I'm</p> <span className='text-[28px] md:text-[50px] lg:text-[70px] bg-gradient-to-r from-[rgb(218,219,223)] to-[rgb(255,14,14)] bg-clip-text text-transparent shimmer-text-name' style={{ fontFamily: 'Acorn, sans-serif'}}>MD SABBIR KHAN ONI</span>
         </motion.h1>
 
         <motion.h2
-          className="shimmer-text dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-transparent"
+          className="shimmer-text dm-serif-text-regular-italic text-2xl md:text-4xl lg:text-7xl font-bold text-transparent"
           variants={item}
         >
           SOFTWARE
         </motion.h2>
 
         <motion.h2
-          className="shimmer-text dm-serif-text-regular-italic text-sm md:text-lg lg:text-7xl font-bold text-transparent"
+          className="shimmer-text dm-serif-text-regular-italic text-xl md:text-4xl lg:text-7xl font-bold text-transparent"
           variants={item}
         >
           ENGINEER
@@ -67,7 +67,7 @@ const HeroElements = () => {
         </motion.div>
 
         <motion.h2
-          className="text-xs italic  md:text-md lg:text-sm text-white"
+          className="text-xs italic md:text-md lg:text-sm text-white"
           variants={item}
         >
           System Design & Architecture Solutions, AI Integrated Web Development & Deployment.

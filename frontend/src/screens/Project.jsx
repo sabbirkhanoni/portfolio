@@ -55,7 +55,7 @@ const Project = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-transparent text-black flex flex-col items-center justify-center px-4 lg:px-4 sm:px-2">
+    <section id='projects' className="min-h-screen bg-transparent text-black flex flex-col items-center justify-center px-4 lg:px-4 sm:px-2">
       <div className="max-w-screen w-full space-y-2">
         <div className="text-center mt-5 space-y-2">
           <h1
@@ -134,7 +134,7 @@ const Project = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

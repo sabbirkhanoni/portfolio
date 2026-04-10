@@ -31,7 +31,7 @@ const About = () => {
   const [langsLoaded, setLangsLoaded] = useState(false);
 
   return (
-    <section className="relative min-h-screen p-3 text-white overflow-hidden">
+    <section id="about" className="relative min-h-screen p-3 text-white overflow-hidden">
       <Suspense fallback={null}>
         <ParticleBackground />
       </Suspense>
