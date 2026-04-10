@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import {motion} from 'framer-motion';
 import NavigationMenu from './NavigationMenu';
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdLocalDining } from "react-icons/md";
 import { MdDownloadForOffline } from "react-icons/md";
+import { MdOutlineDownloading } from "react-icons/md";
+
 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className='fixed top-5 left-1/2 -translate-x-1/2 w-[80%] z-50 
@@ -27,9 +30,18 @@ const Header = () => {
             <a href="#about" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>About</a>
             <a href="#contact" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Contact</a>
             <a href="#" className='text-sm bg-gradient-to-r from-[rgb(131,127,127)] cursor-pointer to-[rgb(255,0,0)] px-5 rounded-full py-1 font-semibold text-white shadow-lg shadow-white/50 hover:text-white hover:shadow-xl transition-all duration-300'>
-              <div className='flex flex-row gap-2 py-1 items-center'>
-                <div><MdDownloadForOffline /></div>
-                <div>Resume</div>
+              <div
+                onClick={() => {
+                  setLoading(true);
+                  const link = document.createElement('a');
+                  link.href = 'public/assets/MD_SABBIR_KHAN_ONI_RESUME.pdf';
+                  link.download = 'MD_SABBIR_KHAN_ONI_RESUME.pdf';
+                  link.click();
+                  setLoading(false);
+                }}
+               className={`flex flex-row cursor-pointer ${loading ? 'gap-4' : 'gap-2'} py-1 items-center`}>
+                <div><MdDownloadForOffline className='text-[17px]' /></div>
+                <div>{loading ? <MdOutlineDownloading className='animate-spin text-[17px]'/> : 'Resume'}</div>
               </div>
             </a>
 
