@@ -11,6 +11,21 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const handleDownloadPdfResume = () => {
+    setLoading(true);
+    // Simulate PDF download
+    setTimeout(() => {
+      setLoading(false);
+      // Create a link to download the PDF
+      const link = document.createElement('a');
+      link.href = 'public/assets/MD_SABBIR_KHAN_ONI_Resume.pdf';
+      link.download = 'MD_SABBIR_KHAN_ONI_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, 2000); // Simulate a 2-second download time
+  };
+
   return (
     <div className='fixed top-5 left-1/2 -translate-x-1/2 w-[80%] z-50 
                 backdrop-blur-xl bg-gray-900/20 py-2 
@@ -32,12 +47,7 @@ const Header = () => {
             <a href="#" className='text-sm bg-gradient-to-r from-[rgb(131,127,127)] cursor-pointer to-[rgb(255,0,0)] px-5 rounded-full py-1 font-semibold text-white shadow-lg shadow-white/50 hover:text-white hover:shadow-xl transition-all duration-300'>
               <div
                 onClick={() => {
-                  setLoading(true);
-                  const link = document.createElement('a');
-                  link.href = 'public/assets/MD_SABBIR_KHAN_ONI_RESUME.pdf';
-                  link.download = 'MD_SABBIR_KHAN_ONI_RESUME.pdf';
-                  link.click();
-                  setLoading(false);
+                  handleDownloadPdfResume();
                 }}
                className={`flex flex-row cursor-pointer ${loading ? 'gap-4' : 'gap-2'} py-1 items-center`}>
                 <div><MdDownloadForOffline className='text-[17px]' /></div>
