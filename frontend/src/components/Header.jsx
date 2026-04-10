@@ -18,7 +18,7 @@ const Header = () => {
       setLoading(false);
       // Create a link to download the PDF
       const link = document.createElement('a');
-      link.href = 'public/assets/MD_SABBIR_KHAN_ONI_Resume.pdf';
+      link.href = '/MD_SABBIR_KHAN_ONI_Resume.pdf';
       link.download = 'MD_SABBIR_KHAN_ONI_Resume.pdf';
       document.body.appendChild(link);
       link.click();
