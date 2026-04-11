@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import SafeRouteImage from '../../public/safeRouteAI.png'
-import ResearchImage from '../../public/reasearch.jpg'
 
 const Research = () => {
   const [activeTab, setActiveTab] = useState('all')
@@ -16,7 +14,7 @@ const Research = () => {
       status: "Pending",
       // authors: ["Your Name", "Dr. Jane Smith", "Dr. John Doe"],
       date: "January 2026",
-      image: ResearchImage,
+      image: '/reasearch.jpg',
       tags: ["Machine Learning", "Smart Navigation", "Risk Prediction", "Intelligent Routing", "Urban Safety"],
       pdfLink: "#",
       doi: "Pending",
@@ -33,7 +31,7 @@ const Research = () => {
         ],
         technologies: ["React", "Python", "FastAPI", "ML Models", "OpenStreetMap API", "Leaflet.js"],
         status: "Live",
-        image: SafeRouteImage,
+        image: '/SafeRouteAI.png',
         demoLink: "#",
         githubLink: "#",
         videoLink: "#",
