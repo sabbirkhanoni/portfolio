@@ -143,7 +143,7 @@ const Research = () => {
                     </div>
 
                     <div className="flex flex-wrap gap-3 pt-4">
-                      <a 
+                      {/* <a 
                         href={work.pdfLink}
                         className="bg-gradient-to-r from-[rgb(8,165,202)] to-[rgb(13,13,13)] text-white font-semibold px-6 py-2.5 rounded-lg hover:shadow-lg transition-all flex items-center gap-2"
                       >
@@ -151,7 +151,7 @@ const Research = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                         Download PDF
-                      </a>
+                      </a> */}
                       {work.doi !== 'Pending' && (
                         <a 
                           href={`https://doi.org/${work.doi}`}
