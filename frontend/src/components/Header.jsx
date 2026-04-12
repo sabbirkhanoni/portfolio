@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {motion} from 'framer-motion';
 import NavigationMenu from './NavigationMenu';
-import { MdDarkMode, MdLocalDining } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 import { MdDownloadForOffline } from "react-icons/md";
 import { MdOutlineDownloading } from "react-icons/md";
 
@@ -13,17 +13,15 @@ const Header = () => {
 
   const handleDownloadPdfResume = () => {
     setLoading(true);
-    // Simulate PDF download
     setTimeout(() => {
       setLoading(false);
-      // Create a link to download the PDF
       const link = document.createElement('a');
       link.href = '/MD_SABBIR_KHAN_ONI_RESUME.pdf';
       link.download = 'MD_SABBIR_KHAN_ONI_RESUME.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }, 2000); // Simulate a 2-second download time
+    }, 2000);
   };
 
   return (

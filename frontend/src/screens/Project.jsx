@@ -6,7 +6,7 @@ const Project = () => {
       id: 1,
       title: "AI-Bot, An Embedded SaaS 24/7 Human Assistant AI Chatbot.",
       description: "AI-Bot is an embedded SaaS 24/7 human assistant AI chatbot that provides personalized support, automates tasks, and enhances user experience across various platforms.",
-      image: "/Project2.png",
+      image: "/pibot.png",
       technologies: ["Next.js", "Scalekit", "TypeScript", "OpenAI API"],
       liveLink: "#",
       videoLink: "#",
@@ -26,7 +26,7 @@ const Project = () => {
       id: 3,
       title: "PAI-Mart, An AI Integrated Ecommerce System with Payment Gateway",
       description: "Ecommerce platform integrating AI for personalized shopping experiences, product recommendations, and payment processing.",
-      image: "/Project2.png",
+      image: "/pimart.png",
       technologies: ["MongoDB", "Express", "React", "Node.js", "JavaScript", "Stripe", "Razorpay", "Nodemailer", "JWT"],
       liveLink: "#",
       videoLink: "#",
@@ -34,10 +34,10 @@ const Project = () => {
     },
     {
       id: 4,
-      title: "PAI-Chat, A Real Time Chat Application with Socket.io & Microservices",
-      description: "Real-time chat application with user authentication, message encryption, and media sharing capabilities.",
-      image: "/Project2.png",
-      technologies: ["React", "Socket.io", "Node.js", "Express", "MongoDB", "Redis", "JWT"],
+      title: "Job Board Application - Enterprise Recruitment Management Platform",
+      description: "A job board application that serves as an enterprise recruitment management platform, connecting employers with potential candidates and streamlining the hiring process.",
+      image: "/pijob.png",
+      technologies: ["Next.js","Nest.js","JWT","TypeScript","TypeORM","Tailwind CSS","Axios","PostgreSQL","Nodemailer","Pusher.js"],
       liveLink: "#",
       videoLink: "#",
       githubLink: "#"
@@ -60,7 +60,7 @@ const Project = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className={`w-full h-fit backdrop-blur-xl bg-white/5 border border-gray-200 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300`}
+              className={`w-full h-full backdrop-blur-xl bg-white/5 border border-gray-200 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300`}
             >
               <div className={`grid md:grid-cols-2 gap-0`}>
                 {/* Image Section */}
@@ -68,7 +68,7 @@ const Project = () => {
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-100 h-100 flex  object-scale-down hover:scale-110 transition-transform duration-500" 
+                    className="w-150 h-120 flex object-scale-down hover:scale-105 transition-transform duration-500" 
                   />
                   
                 </div>
