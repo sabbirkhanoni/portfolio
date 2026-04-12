@@ -10,7 +10,7 @@ const Research = () => {
       title: "Zone-Based Risk Prediction and Risk-Aware Intelligent Routing for Smart Navigation Using Machine Learning.",
       description: "This paper presents a novel approach to enhance smart navigation systems by integrating zone-based risk prediction and risk-aware intelligent routing using advanced machine learning techniques. We developed a comprehensive framework that analyzes real-time traffic data, historical accident records, and environmental factors to predict high-risk zones and provide safer route recommendations for drivers.",
       abstract: "In this paper, we propose a novel framework for smart navigation systems that incorporates zone-based risk prediction and risk-aware intelligent routing. Our approach leverages advanced machine learning techniques to analyze real-time traffic data, historical accident records, and environmental factors, enabling the identification of high-risk zones and the provision of safer route recommendations for drivers.",
-      conference: "International Conference on AI & Climate Science 2024",
+      conference: "",
       status: "Pending",
       // authors: ["Your Name", "Dr. Jane Smith", "Dr. John Doe"],
       date: "January 2026",
@@ -103,7 +103,7 @@ const Research = () => {
                         {work.title}
                       </h2>
                       <p className="text-sm text-gray-500 mb-4">
-                        📅 {work.date} • 📍 {work.conference}
+                        📅 {work.date} • {work.conference}
                       </p>
                     </div>
 

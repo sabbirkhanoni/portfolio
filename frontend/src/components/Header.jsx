@@ -58,10 +58,6 @@ const Header = () => {
             </div>
           </div>
 
-          <div className=''>
-            <MdDarkMode className='text-white h-6 w-6' />
-          </div>
-
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
             className='md:hidden'
