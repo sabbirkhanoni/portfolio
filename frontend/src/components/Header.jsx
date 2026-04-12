@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {motion} from 'framer-motion';
 import NavigationMenu from './NavigationMenu';
-import { MdDarkMode } from "react-icons/md";
 import { MdDownloadForOffline } from "react-icons/md";
 import { MdOutlineDownloading } from "react-icons/md";
 
