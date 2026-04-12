@@ -4,6 +4,16 @@ const Project = () => {
   const projects = [
     {
       id: 1,
+      title: "PAI-Mart, An Ecommerce System with Payment Gateway",
+      description: "Ecommerce platform for personalized shopping experiences and payment processing.",
+      image: "/pimart.png",
+      technologies: ["MongoDB", "Express", "React", "Node.js","Nodemailer", "JWT", "JavaScript", "Stripe"],
+      liveLink: "#",
+      videoLink: "#",
+      githubLink: "#"
+    },
+    {
+      id: 2,
       title: "AI-Bot, An Embedded SaaS 24/7 Human Assistant AI Chatbot.",
       description: "AI-Bot is an embedded SaaS 24/7 human assistant AI chatbot that provides personalized support, automates tasks, and enhances user experience across various platforms.",
       image: "/pibot.png",
@@ -13,21 +23,11 @@ const Project = () => {
       githubLink: "#"
     },
     {
-      id: 2,
-      title: "PI-Rides, A Ride-Sharing Platform with Map Tracking, Microservices & Payment Gateway",
-      description: "Ride-sharing platform with real-time map tracking, driver-passenger matching, and payment gateway integration.",
-      image: "/Project2.png",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Geoapify API", "Nodemailer", "Stripe", "JWT"],
-      liveLink: "#",
-      videoLink: "#",
-      githubLink: "#"
-    },
-    {
       id: 3,
-      title: "PAI-Mart, An AI Integrated Ecommerce System with Payment Gateway",
-      description: "Ecommerce platform integrating AI for personalized shopping experiences, product recommendations, and payment processing.",
-      image: "/pimart.png",
-      technologies: ["MongoDB", "Express", "React", "Node.js", "JavaScript", "Stripe", "Razorpay", "Nodemailer", "JWT"],
+      title: "PI-Rides, A Ride-Sharing Platform with Map Tracking",
+      description: "Ride-sharing platform with real-time map tracking, driver-passenger matching",
+      image: "/pirides.png",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Geoapify API", "Nodemailer", "Stripe", "JWT"],
       liveLink: "#",
       videoLink: "#",
       githubLink: "#"
@@ -36,7 +36,7 @@ const Project = () => {
       id: 4,
       title: "Job Board Application - Enterprise Recruitment Management Platform",
       description: "A job board application that serves as an enterprise recruitment management platform, connecting employers with potential candidates and streamlining the hiring process.",
-      image: "/pijob.png",
+      image: "/jobboard.png",
       technologies: ["Next.js","Nest.js","JWT","TypeScript","TypeORM","Tailwind CSS","Axios","PostgreSQL","Nodemailer","Pusher.js"],
       liveLink: "#",
       videoLink: "#",
