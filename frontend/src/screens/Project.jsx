@@ -9,9 +9,9 @@ const Project = () => {
       description: "Ecommerce platform for personalized shopping experiences and payment processing.",
       image: "/pimart.png",
       technologies: ["MongoDB", "Express", "React", "Node.js","Nodemailer", "JWT", "JavaScript", "Stripe"],
-      liveLink: "#",
+      liveLink: "https://pi-mart.vercel.app",
       videoLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/sabbirkhanoni/PiMart-An-AI-Integrated-Ecommerce-Application-With-Payment-Gateway"
     },
     {
       id: 2,
@@ -19,9 +19,9 @@ const Project = () => {
       description: "AI-Bot is an embedded SaaS 24/7 human assistant AI chatbot that provides personalized support, automates tasks, and enhances user experience across various platforms.",
       image: "/pibot.png",
       technologies: ["Next.js", "Scalekit", "TypeScript", "OpenAI API"],
-      liveLink: "#",
+      liveLink: "https://embedded-human-like-assistant.vercel.app",
       videoLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/sabbirkhanoni/Embedded-24-7-Human-Like-Assistant-Chatbot"
     },
     {
       id: 3,
@@ -29,9 +29,9 @@ const Project = () => {
       description: "Ride-sharing platform with real-time map tracking, driver-passenger matching",
       image: "/pirides.png",
       technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Geoapify API", "Nodemailer", "Stripe", "JWT"],
-      liveLink: "#",
+      liveLink: "https://pi-rides.vercel.app",
       videoLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/sabbirkhanoni/PIRides-Ride-Sharing-Platform-with-Realtime-Live-Map-Tracking"
     },
     {
       id: 4,
@@ -39,9 +39,9 @@ const Project = () => {
       description: "A job board application that serves as an enterprise recruitment management platform, connecting employers with potential candidates and streamlining the hiring process.",
       image: "/jobboard.png",
       technologies: ["Next.js","Nest.js","JWT","TypeScript","TypeORM","Tailwind CSS","Axios","PostgreSQL","Nodemailer","Pusher.js"],
-      liveLink: "#",
+      liveLink: "https://job-portal-environment.vercel.app",
       videoLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/sabbirkhanoni/Job-Portal-Application-using-NextJS-RestAPI-NestJS-TypeORM-PostgreeSQL"
     }
   ]
 
