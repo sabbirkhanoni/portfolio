@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdCode, MdLink } from 'react-icons/md'
 
 const Project = () => {
   const projects = [
@@ -103,19 +104,25 @@ const Project = () => {
                       href={project.liveLink} 
                       className="flex-1 min-w-[120px] text-center bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-lg px-4 py-2.5 transition-all hover:shadow-lg"
                     >
-                      🔗 Live Demo
+                      <div className='flex items-center justify-center gap-1'>
+                        <MdLink size={27} className='inline-block mr-2 text-xl' />
+                        Live Demo
+                      </div>
                     </a>
-                    <a 
+                    {/* <a 
                       href={project.videoLink} 
                       className="flex-1 min-w-[120px] text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg px-4 py-2.5 transition-all hover:shadow-lg"
                     >
                       ▶️ Video
-                    </a>
+                    </a> */}
                     <a 
                       href={project.githubLink} 
                       className="flex-1 min-w-[120px] text-center border-2 border-gray-900 hover:bg-gray-900 text-gray-900 hover:text-white font-semibold rounded-lg px-4 py-2.5 transition-all duration-500"
                     >
-                      💻 GitHub
+                      <div>
+                        <MdCode size={27} className='inline-block mr-2 text-xl' />
+                        GitHub
+                      </div>
                     </a>
                   </div>
                 </div>

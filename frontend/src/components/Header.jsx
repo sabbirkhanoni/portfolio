@@ -37,7 +37,7 @@ const Header = () => {
           <div className='hidden md:flex gap-10 items-center'>
             <a href="#home" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Home</a>
             <a href="#projects" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Projects</a>
-            <a href="#purchases" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Purchases</a>
+            {/* <a href="#purchases" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Purchases</a> */}
             <a href="#blogs" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Blogs</a>
             <a href="#about" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>About</a>
             <a href="#contact" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Contact</a>

@@ -250,7 +250,7 @@ const Research = () => {
                           </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-3 pt-4">
+                        {/* <div className="flex flex-wrap gap-3 pt-4">
                           <a 
                             href={work.webProject.demoLink}
                             className="flex-1 min-w-[120px] text-center bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-4 py-2.5 rounded-lg transition-all hover:shadow-lg"
@@ -269,7 +269,7 @@ const Research = () => {
                           >
                             💻 GitHub
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
