@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import AiChatCard from '../components/AiChatCard'
+import axios from 'axios'
+import {toast} from 'react-hot-toast'
+import AxiosToastError from '../utils/AxiosToastError'
+
+
 
 const Contact = () => {
   const [aiMessage, setAiMessage] = useState('')
@@ -14,13 +19,37 @@ const Contact = () => {
     setAiMessage('')
   }
 
-  const handleDirectSubmit = (e) => {
+  const handleDirectMailSubmit = async (e) => {
     e.preventDefault()
-    // Handle direct message submission
-    console.log('Direct Message:', { name, email, message: directMessage })
-    setName('')
-    setEmail('')
+    
+    // Validate fields
+    if (!name || !email || !directMessage) {
+      toast.error('Please fill in all fields')
+      return
+    }
+
+    try {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL
+
+      const response = await axios.post(`${backendUrl}/mail/send`, {
+        name,
+        email,
+        message: directMessage
+      })
+
+      if(response.data.success) {
+        toast.success('Email sent successfully!')
+      } else {
+        toast.error('Failed to send email: ' + response.data.message)
+      }
+
+    } catch (error) {
+      AxiosToastError(error);
+    }
+
     setDirectMessage('')
+    setEmail('')
+    setName('')
   }
 
   return (
@@ -53,13 +82,13 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-white">Chat With Me</h2>
-                  <p className="text-white/80 text-sm">Direct message to my inbox</p>
+                  <h2 className="text-3xl font-bold text-white">Contact With Me</h2>
+                  <p className="text-white/80 text-sm">Direct message to my Mail & I will respond ASAP</p>
                 </div>
               </div>
 
               {/* Contact Form */}
-              <form onSubmit={handleDirectSubmit} className="space-y-4">
+              <form onSubmit={handleDirectMailSubmit} className="space-y-4" method='POST'>
                 <div className="space-y-2">
                   <label className="text-white text-sm font-semibold">Your Name</label>
                   <input
@@ -68,19 +97,17 @@ const Contact = () => {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
                     className="w-full p-4 rounded-xl bg-white/90 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-                    required
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-white text-sm font-semibold">Your Email</label>
                   <input
-                    type="email"
+                    type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@example.com"
                     className="w-full p-4 rounded-xl bg-white/90 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-                    required
                   />
                 </div>
 
@@ -92,7 +119,6 @@ const Contact = () => {
                     placeholder="Tell me about your project..."
                     rows="4"
                     className="w-full p-4 rounded-xl bg-white/90 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white resize-none"
-                    required
                   />
                 </div>
 

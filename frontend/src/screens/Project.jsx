@@ -28,7 +28,7 @@ const Project = () => {
       title: "PI-Rides, A Ride-Sharing Platform with Map Tracking",
       description: "Ride-sharing platform with real-time map tracking, driver-passenger matching",
       image: "/pirides.png",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Geoapify API", "Nodemailer", "Stripe", "JWT"],
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Geoapify API", "Nodemailer", "JWT"],
       liveLink: "https://pi-rides.vercel.app",
       videoLink: "#",
       githubLink: "https://github.com/sabbirkhanoni/PIRides-Ride-Sharing-Platform-with-Realtime-Live-Map-Tracking"
