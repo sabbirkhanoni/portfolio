@@ -3,12 +3,17 @@ import {motion} from 'framer-motion';
 import NavigationMenu from './NavigationMenu';
 import { MdDownloadForOffline } from "react-icons/md";
 import { MdOutlineDownloading } from "react-icons/md";
+import {toast} from 'react-hot-toast';
 
 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const handleSignIn = () => {
+    toast.error('Sign In functionality coming soon using Scalekit');
+  }
 
   const handleDownloadPdfResume = () => {
     setLoading(true);
@@ -53,7 +58,9 @@ const Header = () => {
             </a>
 
             <div className='text-sm bg-gradient-to-r from-[rgb(42,41,41)] cursor-pointer to-[rgb(21,239,243)] px-5 rounded-full py-2 font-semibold text-white shadow-lg shadow-white/50 hover:text-white hover:shadow-xl transition-all duration-300'>
-              <a className='py-1'>Sign In</a>
+              <button onClick={handleSignIn} className=''>
+                  Sign In
+               </button>
             </div>
           </div>
 
