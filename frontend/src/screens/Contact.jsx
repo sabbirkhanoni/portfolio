@@ -124,7 +124,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-white text-[rgb(8,165,202)] font-bold py-3 px-6 rounded-xl hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                  className="w-full cursor-pointer bg-white text-[rgb(8,165,202)] font-bold py-3 px-6 rounded-xl hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
                 >
                   <span>Send Message</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
