@@ -102,51 +102,65 @@ const About = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                  <div className="flex flex-col gap-6 items-center">
+                  <div className="flex flex-col justify-between items-center">
                     {!streakLoaded && (
                       <div className="w-full max-w-sm h-[180px] rounded-xl bg-gray-800 animate-pulse" />
                     )}
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                      
-                      src="https://github-readme-stats.vercel.app/api?username=sabbirkhanoni&show_icons=true&count_private=true"
-                      alt="GitHub Streak"
-                      onLoad={() => setStreakLoaded(true)}
-                      style={{ display: streakLoaded ? "block" : "none" }}
-                      className="rounded-xl shadow-xl w-full max-w-xs hover:scale-105 transition-transform duration-300"
-                    />
+                    <a
+                      href="https://github.com/DenverCoder1/github-readme-streak-stats"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
+                        onLoad={() => setStreakLoaded(true)}
+                        src="https://github-readme-streak-stats.herokuapp.com/?user=sabbirkhanoni&theme=dark"
+                        alt="GitHub Streak Stats"
+                        className="rounded-xl shadow-xl w-full max-w-[400px] hover:scale-105 transition-transform duration-300"
+                      />
+                    </a>
 
                     {!statsLoaded && (
                       <div className="w-full max-w-sm h-[180px] rounded-xl bg-gray-800 animate-pulse" />
                     )}
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                      src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=radical"
-                      alt="GitHub Stats"
-                      onLoad={() => setStatsLoaded(true)}
-                      style={{ display: statsLoaded ? "block" : "none" }}
-                      className="rounded-xl shadow-xl w-full max-w-xs hover:scale-105 transition-transform duration-300"
-                    />
+                    <a
+                      href="https://github.com/sabbirkhanoni"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
+                        onLoad={() => setStatsLoaded(true)}
+                        src="https://github-readme-stats.vercel.app/api?username=sabbirkhanoni&show_icons=true&theme=dark"
+                        alt="GitHub Stats"
+                        className="rounded-xl shadow-xl w-full max-w-[400px] hover:scale-105 transition-transform duration-300"
+                      />
+                    </a>
                   </div>
 
                   <div className="flex justify-center">
                     {!langsLoaded && (
                       <div className="w-full max-w-sm h-[400px] rounded-xl bg-gray-800 animate-pulse" />
                     )}
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                      src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=sabbirkhanoni&theme=dark&hide_border=false&no-bg=true&no-frame=true&langs_count=10"
-                      alt="Top Languages"
-                      onLoad={() => setLangsLoaded(true)}
-                      style={{ display: langsLoaded ? "block" : "none" }}
-                      className="rounded-xl shadow-xl w-full max-w-xs hover:scale-105 transition-transform duration-300"
-                    />
+                    <a
+                      href="https://github.com/anuraghazra/github-readme-stats"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
+                        onLoad={() => setLangsLoaded(true)}
+                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=sabbirkhanoni&langs_count=10&theme=dark"
+                        alt="Top Languages"
+                        className="rounded-xl shadow-xl w-full max-w-md hover:scale-105 transition-transform duration-300"
+                      />
+                    </a>
                   </div>
 
                 </div>
