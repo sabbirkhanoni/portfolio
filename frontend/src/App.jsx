@@ -8,6 +8,7 @@ import Contact from './screens/Contact'
 import Footer from './components/Footer'
 import Research from './screens/Research'
 import Recommendations from './screens/Recommendations'
+import GithubContributions from './components/GitHubContrinutions'
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
       <Header />
       <HeroSection />
       <About />
-      {/* <Experience /> */}
+      <Experience />
+      <GithubContributions />
       <Project />
       <Research />
       {/* <Recommendations /> */}

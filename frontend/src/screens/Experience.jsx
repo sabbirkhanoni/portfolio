@@ -4,33 +4,18 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      duration: "Jan 2023 - Present",
-      location: "Remote",
-      type: "Full-time",
-      description: "Led development of scalable web applications serving 100K+ users. Implemented microservices architecture and improved system performance by 40%.",
+      role: "Software Engineer Intern",
+      company: "Techdojo Limited",
+      duration: "August 2026 - Present",
+      location: "Hybrid (Remote & On-site)",
+      type: "Internship",
+      description: "Worked on developing and maintaining web applications, collaborating with cross-functional teams to deliver high-quality software solutions.",
       achievements: [
-        "Architected and deployed cloud-based solutions using AWS",
-        "Mentored team of 5 junior developers",
-        "Reduced application load time by 60% through optimization"
+        "Developed a AI integrated application using React, Node.js, MongoDB, Leaflet.js and Gemini API",
+        "Implemented performance optimizations that improved application load time",
+        "Collaborated with the team to implement features based on requirements",
       ],
-      technologies: ["React", "Node.js", "AWS", "MongoDB", "Docker"]
-    },
-    {
-      id: 2,
-      role: "Frontend Developer",
-      company: "Digital Innovations Ltd.",
-      duration: "Mar 2021 - Dec 2022",
-      location: "New York, NY",
-      type: "Full-time",
-      description: "Developed responsive web applications and collaborated with UX team to create intuitive user interfaces for enterprise clients.",
-      achievements: [
-        "Built reusable component library used across 10+ projects",
-        "Improved mobile responsiveness across all products",
-        "Reduced bug reports by 35% through comprehensive testing"
-      ],
-      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS", "Jest"]
+      technologies: ["React", "Next.js", "Three.js", "Node.js", "Express.js", "MongoDB", "React Native", "Gemini API", "Git", "GitHub", "JavaScript", "TypeScript", "Tailwind CSS"],
     },
   ]
 
