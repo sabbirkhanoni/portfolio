@@ -19,7 +19,7 @@ const gridContainer = {
 
 const About = () => {
   return (
-    <section id="about" className="relative min-h-screen py-16 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
+    <section id="about" className="relative py-8 sm:py-12 md:py-14 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
       <div className="relative w-full max-w-[1360px] mx-auto space-y-12">
 
         {/* Section Header */}

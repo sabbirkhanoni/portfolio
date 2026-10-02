@@ -48,7 +48,7 @@ const Project = () => {
   ]
 
   return (
-    <section id='projects' className="relative min-h-screen py-20 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
+    <section id='projects' className="relative py-8 sm:py-12 md:py-14 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
       
       {/* Ambient background glows */}
       <div className="absolute top-1/3 left-[-150px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
