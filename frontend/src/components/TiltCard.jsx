@@ -54,8 +54,8 @@ export default function TiltCard({ children, className = "" }) {
         {children}
       </div>
 
-      {/* Subtle border accent */}
-      <div className="absolute inset-0 rounded-3xl border border-[#ff8c32]/30 pointer-events-none transition-opacity duration-300 hover:border-[#ff8c32]/70" />
+      {/* Subtle border accent matching portfolio cyan theme */}
+      <div className="absolute inset-0 rounded-3xl border border-[rgb(8,165,202)]/25 pointer-events-none transition-colors duration-300 hover:border-cyan-400/60" />
     </motion.div>
   );
 }

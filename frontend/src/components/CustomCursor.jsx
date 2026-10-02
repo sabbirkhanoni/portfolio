@@ -83,8 +83,8 @@ export default function CustomCursor() {
         animate={{
           width: isHovered ? 44 : 26,
           height: isHovered ? 44 : 26,
-          backgroundColor: isHovered ? 'rgba(255, 140, 50, 0.12)' : 'rgba(8, 165, 202, 0.08)',
-          borderColor: isHovered ? '#ff8c32' : 'rgba(8, 165, 202, 0.5)',
+          backgroundColor: isHovered ? 'rgba(8, 165, 202, 0.2)' : 'rgba(8, 165, 202, 0.08)',
+          borderColor: isHovered ? '#38bdf8' : 'rgba(8, 165, 202, 0.5)',
           borderWidth: isHovered ? '1.5px' : '1px',
           scale: isClicking ? 0.85 : 1,
         }}
@@ -103,9 +103,9 @@ export default function CustomCursor() {
         animate={{
           width: isHovered ? 6 : 4,
           height: isHovered ? 6 : 4,
-          backgroundColor: isHovered ? '#ff8c32' : '#38bdf8',
+          backgroundColor: isHovered ? '#00f0ff' : '#38bdf8',
           boxShadow: isHovered 
-            ? '0 0 10px #ff8c32, 0 0 18px rgba(255,140,50,0.5)' 
+            ? '0 0 10px #00f0ff, 0 0 18px rgba(0,240,255,0.6)' 
             : '0 0 8px #38bdf8, 0 0 14px rgba(56,189,248,0.4)',
           scale: isClicking ? 0.6 : 1,
         }}
