@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaBriefcase, FaGraduationCap, FaDownload, FaCalendarAlt, FaMapMarkerAlt, FaCheckCircle, FaCode } from 'react-icons/fa'
+import { FaBriefcase, FaGraduationCap, FaDownload, FaCalendarAlt, FaMapMarkerAlt, FaCheckCircle, FaCode, FaBuilding, FaCodeBranch } from 'react-icons/fa'
 
 const Experience = () => {
   const experiences = [
