@@ -48,13 +48,13 @@ const Project = () => {
   ]
 
   return (
-    <section id='projects' className="relative min-h-screen py-20 px-4 md:px-8 text-white overflow-hidden">
+    <section id='projects' className="relative min-h-screen py-20 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
       
       {/* Ambient background glows */}
       <div className="absolute top-1/3 left-[-150px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 right-[-150px] w-96 h-96 bg-[#ff8c32]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto space-y-12">
+      <div className="relative w-full max-w-[1360px] mx-auto space-y-12">
         
         {/* Header */}
         <div className="text-center space-y-3">

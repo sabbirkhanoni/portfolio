@@ -1,11 +1,19 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function TiltCard({ children, className = "" }) {
   const cardRef = useRef(null);
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+
+  // Use motion values directly so moving mouse does NOT re-render children components
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 20, stiffness: 200, mass: 0.5 };
+  const smoothMouseX = useSpring(mouseX, springConfig);
+  const smoothMouseY = useSpring(mouseY, springConfig);
+
+  const rotateX = useTransform(smoothMouseY, [-0.5, 0.5], [6, -6]);
+  const rotateY = useTransform(smoothMouseX, [-0.5, 0.5], [-6, 6]);
 
   const handleMouseMove = (e) => {
     const card = cardRef.current;
@@ -15,27 +23,17 @@ export default function TiltCard({ children, className = "" }) {
     const width = rect.width;
     const height = rect.height;
 
-    // Mouse coordinates relative to card center (for 3D tilt)
-    const mouseX = e.clientX - rect.left - width / 2;
-    const mouseY = e.clientY - rect.top - height / 2;
+    // Normalized coordinates (-0.5 to 0.5)
+    const normX = (e.clientX - rect.left) / width - 0.5;
+    const normY = (e.clientY - rect.top) / height - 0.5;
 
-    // Max rotation angles (degrees)
-    const maxRotateX = 8;
-    const maxRotateY = 8;
-
-    // Calculate rotation
-    const rY = (mouseX / (width / 2)) * maxRotateY;
-    const rX = -(mouseY / (height / 2)) * maxRotateX;
-
-    setRotateX(rX);
-    setRotateY(rY);
-    setIsHovered(true);
+    mouseX.set(normX);
+    mouseY.set(normY);
   };
 
   const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-    setIsHovered(false);
+    mouseX.set(0);
+    mouseY.set(0);
   };
 
   return (
@@ -46,47 +44,18 @@ export default function TiltCard({ children, className = "" }) {
       style={{
         transformStyle: "preserve-3d",
         perspective: 1000,
-      }}
-      animate={{
         rotateX,
         rotateY,
       }}
-      transition={{
-        type: "spring",
-        stiffness: 260,
-        damping: 25,
-      }}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden will-change-transform ${className}`}
     >
-      {/* Children content rendered directly */}
+      {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col justify-between">
         {children}
       </div>
 
-      {/* Animated Circling Orange Border */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none rounded-3xl z-20 overflow-visible">
-        <motion.rect
-          x="1"
-          y="1"
-          fill="none"
-          stroke="#ff8c32"
-          strokeWidth="1.5"
-          rx="24"
-          style={{
-            width: "calc(100% - 2px)",
-            height: "calc(100% - 2px)",
-          }}
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{
-            pathLength: isHovered ? 1 : 0,
-            opacity: isHovered ? 1 : 0,
-          }}
-          transition={{
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-        />
-      </svg>
+      {/* Subtle border accent */}
+      <div className="absolute inset-0 rounded-3xl border border-[#ff8c32]/30 pointer-events-none transition-opacity duration-300 hover:border-[#ff8c32]/70" />
     </motion.div>
   );
 }

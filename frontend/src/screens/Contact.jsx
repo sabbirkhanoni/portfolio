@@ -48,13 +48,13 @@ const Contact = () => {
   }
 
   return (
-    <section id='contact' className="relative min-h-screen py-20 px-4 md:px-8 text-white overflow-hidden flex flex-col items-center justify-center">
+    <section id='contact' className="relative min-h-screen py-20 px-2 sm:px-4 md:px-6 text-white overflow-hidden flex flex-col items-center justify-center">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-[-150px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-[-150px] w-96 h-96 bg-[#ff8c32]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl w-full space-y-12 z-10">
+      <div className="relative w-full max-w-[1360px] space-y-12 z-10">
         
         {/* Header */}
         <div className="text-center space-y-3">

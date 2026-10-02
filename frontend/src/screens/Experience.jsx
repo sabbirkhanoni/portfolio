@@ -23,9 +23,9 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="relative min-h-screen py-16 px-4 md:px-8 text-white overflow-hidden">
+    <section id="experience" className="relative min-h-screen py-16 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
       
-      <div className="relative max-w-6xl mx-auto space-y-12">
+      <div className="relative w-full max-w-[1360px] mx-auto space-y-12">
         
         {/* Header */}
         <div className="text-center space-y-3">
@@ -41,7 +41,7 @@ const Experience = () => {
         </div>
 
         {/* Centered Premium Experience Card */}
-        <div className="max-w-4xl mx-auto pt-2">
+        <div className="w-full mx-auto pt-2">
           {experiences.map((exp) => (
             <motion.div 
               key={exp.id}

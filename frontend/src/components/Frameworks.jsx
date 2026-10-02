@@ -1,46 +1,46 @@
+import React, { useMemo } from "react";
 import { OrbitingCircles } from "./OrbitCircle";
 
+const SKILLS_1 = [
+  "html5",
+  "css3",
+  "tailwindcss",
+  "type",
+  "javascript",
+  "react",
+  "nestjs",
+  "nodejs",
+  "java",
+  "cplusplus",
+  "csharp",
+  "dotnet",
+  "dotnetcore",
+  "spring-boot",
+  "redis",
+];
+
+const SKILLS_2 = [
+  "redux",
+  "oracle",
+  "postgresql",
+  "mysql",
+  "azure",
+  "docker",
+  "rabbitmq",
+  "linux",
+  "git",
+];
 
 function Frameworks() {
-  const skills = [
-    "html5",
-    "css3",
-    "tailwindcss",
-    "type",
-    "javascript",
-    "react",
-    "nestjs",
-    "nodejs",
-    "java",
-    "cplusplus",
-    "csharp",
-    "dotnet",
-    "dotnetcore",
-    "spring-boot",
-    "redis",
-  ];
-
-  const skills2 = [
-    "git",
-    "linux",
-    "rabbitmq",
-    "docker",
-    "azure",
-    "mysql",
-    "postgresql",
-    "oracle",
-    "redux",
-  ];
-
   return (
-    <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
-      <OrbitingCircles iconSize={40} radius={150} speed={5}>
-        {skills.map((skill, index) => (
+    <div className="relative flex h-[15rem] w-full flex-col items-center justify-center overflow-hidden">
+      <OrbitingCircles iconSize={36} radius={140} speed={3}>
+        {SKILLS_1.map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
-      <OrbitingCircles iconSize={30} radius={90} reverse speed={1}>
-        {skills2.reverse().map((skill, index) => (
+      <OrbitingCircles iconSize={28} radius={85} reverse speed={1}>
+        {SKILLS_2.map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
@@ -49,7 +49,7 @@ function Frameworks() {
 }
 
 const Icon = ({ src }) => (
-  <img src={src} className="duration-200 rounded-sm hover:scale-150" />
+  <img loading="lazy" src={src} className="duration-200 rounded-sm hover:scale-125 will-change-transform" alt="tech logo" />
 );
 
 export default Frameworks;

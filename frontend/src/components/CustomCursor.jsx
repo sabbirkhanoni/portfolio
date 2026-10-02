@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
 
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  const isHoveredRef = useRef(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  // Smooth spring physics for outer trailing aura
-  const springConfig = { damping: 28, stiffness: 350 };
+  // Smooth, snappy spring physics for halo
+  const springConfig = { damping: 30, stiffness: 450, mass: 0.5 };
   const smoothX = useSpring(cursorX, springConfig);
   const smoothY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Only enable on non-touch devices
+    // Disable on touch devices to ensure 100% native smooth performance
     if (window.matchMedia("(pointer: coarse)").matches) {
       return;
     }
@@ -29,31 +30,33 @@ export default function CustomCursor() {
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
 
+    // Optimized hover detection that only triggers state when value actually changes
     const handleMouseOver = (e) => {
       const target = e.target;
-      if (
+      const isInteractive = Boolean(
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.closest('a') ||
         target.closest('button') ||
         target.tagName === 'INPUT' ||
         target.tagName === 'TEXTAREA' ||
-        target.classList.contains('cursor-pointer') ||
-        target.getAttribute('role') === 'button'
-      ) {
-        setIsHovered(true);
-      } else {
-        setIsHovered(false);
+        target.classList?.contains('cursor-pointer') ||
+        target.getAttribute?.('role') === 'button'
+      );
+
+      if (isInteractive !== isHoveredRef.current) {
+        isHoveredRef.current = isInteractive;
+        setIsHovered(isInteractive);
       }
     };
 
     const handleMouseLeave = () => setIsVisible(false);
 
-    window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
-    window.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
+    window.addEventListener('mousedown', handleMouseDown, { passive: true });
+    window.addEventListener('mouseup', handleMouseUp, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver, { passive: true });
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
@@ -68,9 +71,9 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Outer Smooth Trailing Halo */}
+      {/* Outer Smooth Trailing Halo - Using pure GPU acceleration with zero blend-mode repaint */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full mix-blend-screen"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full will-change-transform"
         style={{
           x: smoothX,
           y: smoothY,
@@ -78,19 +81,19 @@ export default function CustomCursor() {
           translateY: '-50%',
         }}
         animate={{
-          width: isHovered ? 48 : 28,
-          height: isHovered ? 48 : 28,
-          backgroundColor: isHovered ? 'rgba(255, 140, 50, 0.15)' : 'rgba(8, 165, 202, 0.1)',
-          borderColor: isHovered ? '#ff8c32' : 'rgba(8, 165, 202, 0.6)',
+          width: isHovered ? 44 : 26,
+          height: isHovered ? 44 : 26,
+          backgroundColor: isHovered ? 'rgba(255, 140, 50, 0.12)' : 'rgba(8, 165, 202, 0.08)',
+          borderColor: isHovered ? '#ff8c32' : 'rgba(8, 165, 202, 0.5)',
           borderWidth: isHovered ? '1.5px' : '1px',
-          scale: isClicking ? 0.8 : 1,
+          scale: isClicking ? 0.85 : 1,
         }}
         transition={{ type: 'spring', damping: 25, stiffness: 400 }}
       />
 
       {/* Inner Precision Dot */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[10000] rounded-full"
+        className="fixed top-0 left-0 pointer-events-none z-[10000] rounded-full will-change-transform"
         style={{
           x: cursorX,
           y: cursorY,
@@ -98,13 +101,13 @@ export default function CustomCursor() {
           translateY: '-50%',
         }}
         animate={{
-          width: isHovered ? 8 : 5,
-          height: isHovered ? 8 : 5,
+          width: isHovered ? 6 : 4,
+          height: isHovered ? 6 : 4,
           backgroundColor: isHovered ? '#ff8c32' : '#38bdf8',
           boxShadow: isHovered 
-            ? '0 0 12px #ff8c32, 0 0 24px rgba(255,140,50,0.6)' 
-            : '0 0 10px #38bdf8, 0 0 20px rgba(56,189,248,0.5)',
-          scale: isClicking ? 0.5 : 1,
+            ? '0 0 10px #ff8c32, 0 0 18px rgba(255,140,50,0.5)' 
+            : '0 0 8px #38bdf8, 0 0 14px rgba(56,189,248,0.4)',
+          scale: isClicking ? 0.6 : 1,
         }}
         transition={{ type: 'spring', damping: 30, stiffness: 500 }}
       />
