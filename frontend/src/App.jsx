@@ -45,16 +45,28 @@ const App = () => {
         <div className="absolute top-[70%] left-[10%] w-[650px] h-[650px] rounded-full bg-teal-500/5 blur-[150px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-3 sm:px-6 md:px-8">
+      <div className="relative z-10 w-full">
         <Header />
-        <HeroSection />
-        <About />
-        <Experience />
-        <Project />
-        <Research />
-        {/* <Recommendations /> */}
-        <Contact />
-        <Footer />
+
+        {/* Full-width Edge-to-Edge Hero Section */}
+        <div className="w-full">
+          <HeroSection />
+        </div>
+
+        {/* Content sections with widescreen layout */}
+        <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 md:px-8 space-y-16 sm:space-y-24">
+          <About />
+          <Experience />
+          <Project />
+          <Research />
+          {/* <Recommendations /> */}
+          <Contact />
+        </div>
+
+        {/* Full-width Footer */}
+        <div className="w-full">
+          <Footer />
+        </div>
       </div>
     </div>
   )
