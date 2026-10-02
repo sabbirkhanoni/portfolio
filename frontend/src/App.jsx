@@ -3,16 +3,18 @@
 import React, { useEffect } from 'react'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import dynamic from 'next/dynamic'
 import Header from './components/Header'
 import HeroSection from './screens/HeroSection'
 import About from './screens/About'
-import Project from './screens/Project'
-import Experience from './screens/Experience'
-import Contact from './screens/Contact'
-import Footer from './components/Footer'
-import Research from './screens/Research'
-import Recommendations from './screens/Recommendations'
 
+// Dynamic code-splitting for bottom sections to minimize initial JavaScript bundle size
+const Experience = dynamic(() => import('./screens/Experience'))
+const Project = dynamic(() => import('./screens/Project'))
+const Research = dynamic(() => import('./screens/Research'))
+const Contact = dynamic(() => import('./screens/Contact'))
+
+import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
 
 const App = () => {

@@ -75,20 +75,44 @@ function generateCalendarStructure() {
   return days;
 }
 
+const CACHE_KEY = `gh_cache_${USERNAME}_v1`;
+const CACHE_TTL = 1000 * 60 * 60 * 2; // 2 Hours
+
 export default function GitHubContributions() {
   const [stats, setStats] = useState({
     contributions: "700+", // User's verified total contributions across public & private activity
     repos: 44, // Real public repos from api.github.com/users/sabbirkhanoni
     pullRequests: "28+", // Real PRs & issues
-    isLoading: true,
+    isLoading: false,
   });
 
   const [hoveredDay, setHoveredDay] = useState(null);
   const [calendarDays, setCalendarDays] = useState(() => generateCalendarStructure());
 
-  // Fetch real data on mount
+  // Fetch real data on mount with Stale-While-Revalidate local cache
   useEffect(() => {
     let isMounted = true;
+
+    // 1. Check for valid cached data in localStorage for instant 0ms render
+    let hasValidCache = false;
+    try {
+      const cachedRaw = localStorage.getItem(CACHE_KEY);
+      if (cachedRaw) {
+        const cached = JSON.parse(cachedRaw);
+        if (cached && cached.stats && cached.calendarDays) {
+          setStats(cached.stats);
+          setCalendarDays(cached.calendarDays);
+          // If cache is fresh (less than 2 hours old), skip network call entirely
+          if (Date.now() - cached.timestamp < CACHE_TTL) {
+            hasValidCache = true;
+          }
+        }
+      }
+    } catch {
+      // LocalStorage access safe fallback
+    }
+
+    if (hasValidCache) return;
 
     async function fetchRealGitHubData() {
       try {
@@ -153,6 +177,7 @@ export default function GitHubContributions() {
         if (isMounted) {
           const totalCalculated = Math.max(realCommits + realPRs, 700);
 
+          let updatedCalendarDays = null;
           if (contribData && contribData.contributions) {
             const countByDate = new Map();
             contribData.contributions.forEach(item => {
@@ -164,10 +189,9 @@ export default function GitHubContributions() {
               }
             });
 
-            setCalendarDays(prevDays =>
-              prevDays.map(day => {
+            setCalendarDays(prevDays => {
+              const mapped = prevDays.map(day => {
                 const real = countByDate.get(day.dateStr);
-                // Respect authentic 700+ distribution while overlaying any specific API data
                 const finalCount = real ? Math.max(real.count, day.count) : day.count;
                 const finalLevel = real ? Math.max(real.level, day.level) : day.level;
                 return {
@@ -175,16 +199,34 @@ export default function GitHubContributions() {
                   count: finalCount,
                   level: finalLevel,
                 };
-              })
-            );
+              });
+              updatedCalendarDays = mapped;
+              return mapped;
+            });
           }
 
-          setStats({
+          const newStats = {
             contributions: `${totalCalculated > 700 ? totalCalculated : 700}+`,
             repos: publicRepos,
             pullRequests: `${Math.max(realPRs, 28)}+`,
             isLoading: false,
-          });
+          };
+
+          setStats(newStats);
+
+          // Save to localStorage for instant subsequent loads
+          try {
+            localStorage.setItem(
+              CACHE_KEY,
+              JSON.stringify({
+                timestamp: Date.now(),
+                stats: newStats,
+                calendarDays: updatedCalendarDays || generateCalendarStructure(),
+              })
+            );
+          } catch {
+            // LocalStorage quota safe
+          }
         }
       } catch (err) {
         console.error("Error fetching live GitHub data:", err);
