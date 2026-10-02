@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import HeroSection from './screens/HeroSection'
+import ScrollFrameAnimation from './screens/ScrollFrameAnimation'
 import About from './screens/About'
 import Project from './screens/Project'
 import Experience from './screens/Experience'
@@ -16,6 +17,7 @@ const App = () => {
      className= "container mx-auto max-w-8xl scroll-smooth">
       <Header />
       <HeroSection />
+      <ScrollFrameAnimation />
       <About />
       <Experience />
       <GithubContributions />
