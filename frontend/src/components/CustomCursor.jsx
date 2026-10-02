@@ -8,6 +8,7 @@ export default function CustomCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const isHoveredRef = useRef(false);
+  const hasMadeVisible = useRef(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -26,7 +27,10 @@ export default function CustomCursor() {
     const moveCursor = (e) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      if (!hasMadeVisible.current) {
+        hasMadeVisible.current = true;
+        setIsVisible(true);
+      }
     };
 
     const handleMouseDown = () => setIsClicking(true);
@@ -67,7 +71,7 @@ export default function CustomCursor() {
       window.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [cursorX, cursorY, isVisible]);
+  }, [cursorX, cursorY]);
 
   if (!isVisible) return null;
 

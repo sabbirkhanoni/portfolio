@@ -19,10 +19,12 @@ const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
       autoRaf: true,
-      lerp: 0.08,
+      lerp: 0.13,
+      duration: 0.85,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 1.0,
     })
 
     return () => {
@@ -35,11 +37,20 @@ const App = () => {
       {/* Interactive Custom Cursor */}
       <CustomCursor />
 
-      {/* Ambient background glows with dedicated GPU compositing layer to prevent scroll paint lag */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden transform-gpu [transform:translateZ(0)]">
-        <div className="absolute top-[15%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[rgb(8,165,202)]/5 blur-[120px] will-change-transform" />
-        <div className="absolute top-[40%] right-[-10%] w-[700px] h-[700px] rounded-full bg-[#ff8c32]/5 blur-[130px] will-change-transform" />
-        <div className="absolute top-[70%] left-[10%] w-[650px] h-[650px] rounded-full bg-teal-500/5 blur-[120px] will-change-transform" />
+      {/* Ambient background glows using GPU-friendly radial gradients with zero paint lag */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div 
+          className="absolute top-[10%] left-[-10%] w-[650px] h-[650px] rounded-full pointer-events-none" 
+          style={{ background: 'radial-gradient(circle, rgba(8,165,202,0.07) 0%, transparent 70%)' }}
+        />
+        <div 
+          className="absolute top-[40%] right-[-10%] w-[750px] h-[750px] rounded-full pointer-events-none" 
+          style={{ background: 'radial-gradient(circle, rgba(255,140,50,0.06) 0%, transparent 70%)' }}
+        />
+        <div 
+          className="absolute top-[70%] left-[10%] w-[700px] h-[700px] rounded-full pointer-events-none" 
+          style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 70%)' }}
+        />
       </div>
 
       <div className="relative z-10 w-full">

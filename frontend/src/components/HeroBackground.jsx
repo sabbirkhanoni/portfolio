@@ -1,18 +1,24 @@
 'use client';
 
-import React, { Suspense } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import React, { Suspense, useRef } from 'react'
+import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import Milky from './Milky';
 
 const HeroBackground = () => {
-  const { scrollYProgress } = useScroll()
-  const manY = useTransform(scrollYProgress, [0, 0.5], ["0%", "10%"]);
-  const planetsY = useTransform(scrollYProgress, [0, 0.5], ["0%", "50%"]);
+  const containerRef = useRef(null)
+  const isInView = useInView(containerRef, { margin: "200px" })
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  })
+  const manY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const planetsY = useTransform(scrollYProgress, [0, 1], ["0%", "45%"]);
 
   return (
-    <div className='inset-0 absolute pointer-events-none'>
+    <div ref={containerRef} className='inset-0 absolute pointer-events-none'>
       <div className='relative h-screen overflow-hidden'>
 
         {/* Background Sky - Dark space canvas */}
@@ -23,6 +29,7 @@ const HeroBackground = () => {
         {/* 3D Milky Galaxy Canvas Layer */}
         <div className='absolute inset-0 w-full h-full z-[1] pointer-events-auto'>
           <Canvas 
+            frameloop={isInView ? 'always' : 'never'}
             dpr={[1, 1.5]}
             gl={{ antialias: false, powerPreference: 'low-power' }}
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
