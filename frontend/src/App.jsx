@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 import Header from './components/Header'
 import HeroSection from './screens/HeroSection'
 import About from './screens/About'
@@ -15,18 +16,12 @@ import CustomCursor from './components/CustomCursor'
 const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.8,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      autoRaf: true,
+      lerp: 0.08,
       smoothWheel: true,
-      smoothTouch: false,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     })
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
 
     return () => {
       lenis.destroy()
@@ -38,11 +33,11 @@ const App = () => {
       {/* Interactive Custom Cursor */}
       <CustomCursor />
 
-      {/* Ambient background glows for super premium depth */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[15%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[rgb(8,165,202)]/5 blur-[140px]" />
-        <div className="absolute top-[40%] right-[-10%] w-[700px] h-[700px] rounded-full bg-[#ff8c32]/5 blur-[160px]" />
-        <div className="absolute top-[70%] left-[10%] w-[650px] h-[650px] rounded-full bg-teal-500/5 blur-[150px]" />
+      {/* Ambient background glows with dedicated GPU compositing layer to prevent scroll paint lag */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden transform-gpu [transform:translateZ(0)]">
+        <div className="absolute top-[15%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[rgb(8,165,202)]/5 blur-[120px] will-change-transform" />
+        <div className="absolute top-[40%] right-[-10%] w-[700px] h-[700px] rounded-full bg-[#ff8c32]/5 blur-[130px] will-change-transform" />
+        <div className="absolute top-[70%] left-[10%] w-[650px] h-[650px] rounded-full bg-teal-500/5 blur-[120px] will-change-transform" />
       </div>
 
       <div className="relative z-10 w-full">
