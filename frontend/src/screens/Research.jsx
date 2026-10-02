@@ -74,13 +74,16 @@ const Research = () => {
               className="space-y-8"
             >
               {/* Paper Card */}
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 via-[#0a0f14]/90 to-[#121a22]/90 backdrop-blur-xl p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/40 transition-all duration-500">
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#0a0f14]/95 to-[#121a22]/95 backdrop-blur-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-all duration-500">
                 
+                {/* Top Accent Gradient Border */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
                   
                   {/* Paper Thumbnail & Metrics Column */}
                   <div className="lg:col-span-4 space-y-5">
-                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] aspect-[4/3]">
+                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] aspect-[4/3] shadow-lg">
                       <img 
                         loading="lazy"
                         src={work.image} 
@@ -95,11 +98,11 @@ const Research = () => {
                     </div>
 
                     {/* Research Metrics Badges */}
-                    <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="grid grid-cols-3 gap-2.5 text-center">
                       {work.metrics.map((m, idx) => (
-                        <div key={idx} className="p-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                          <p className="text-lg font-bold text-cyan-300">{m.value}</p>
-                          <p className="text-[10px] text-gray-400 uppercase font-mono">{m.label}</p>
+                        <div key={idx} className="p-3 rounded-2xl bg-[#090f16]/90 border border-cyan-400/25 backdrop-blur-sm shadow-[0_0_15px_rgba(8,165,202,0.1)] hover:border-cyan-400/60 transition-all duration-300">
+                          <p className="text-xl font-black bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-300 to-teal-200 bg-clip-text text-transparent">{m.value}</p>
+                          <p className="text-[9px] text-gray-400 uppercase font-mono font-bold tracking-wider mt-0.5">{m.label}</p>
                         </div>
                       ))}
                     </div>
@@ -109,13 +112,13 @@ const Research = () => {
                   <div className="lg:col-span-8 space-y-5">
                     <div>
                       <div className="flex items-center gap-3 text-xs text-gray-400 font-mono mb-2">
-                        <span className="flex items-center gap-1.5 text-cyan-400">
+                        <span className="flex items-center gap-1.5 text-cyan-400 font-semibold">
                           <FaCalendarAlt /> {work.date}
                         </span>
                         <span>•</span>
-                        <span className="text-gray-400">Machine Learning & Geospatial Navigation</span>
+                        <span className="text-gray-400 font-medium">Machine Learning & Geospatial Navigation</span>
                       </div>
-                      <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300 leading-snug">
+                      <h2 className="text-2xl md:text-3xl font-extrabold text-white group-hover:text-cyan-300 transition-colors duration-300 leading-snug" style={{ fontFamily: 'Acorn, sans-serif' }}>
                         {work.title}
                       </h2>
                     </div>
@@ -125,7 +128,7 @@ const Research = () => {
                     </p>
 
                     {/* Abstract Box */}
-                    <div className="p-4 rounded-2xl bg-white/5 border-l-4 border-[rgb(8,165,202)] backdrop-blur-sm">
+                    <div className="p-4 rounded-2xl bg-[#070c12]/80 border-l-4 border-[rgb(8,165,202)] border border-white/5 backdrop-blur-sm">
                       <p className="text-xs md:text-sm text-gray-300 italic leading-relaxed">
                         <strong className="text-cyan-300 font-semibold not-italic">Abstract: </strong> 
                         {work.abstract}
@@ -137,7 +140,7 @@ const Research = () => {
                       {work.tags.map((tag, idx) => (
                         <span 
                           key={idx}
-                          className="px-3 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 text-gray-300 hover:border-cyan-400/40 hover:text-cyan-300 transition"
+                          className="px-3 py-1 rounded-xl text-xs font-mono bg-white/5 border border-white/10 text-gray-300 hover:border-cyan-400/40 hover:text-cyan-300 hover:bg-cyan-500/10 transition-all duration-200"
                         >
                           #{tag}
                         </span>

@@ -81,15 +81,25 @@ const Project = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 via-[#0a0f14]/90 to-[#121a22]/90 backdrop-blur-xl shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-500 overflow-hidden relative"
+              className="group rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#0a0f14]/95 to-[#121a22]/95 backdrop-blur-2xl shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-500 overflow-hidden relative"
             >
+              {/* Top Accent Gradient Border */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/70 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+
               {/* Subtle hover accent light */}
               <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[rgb(8,165,202)]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center p-6 md:p-8 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 md:p-8 relative z-10">
                 
                 {/* Media Preview Section */}
-                <div className={`lg:col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-[#070b0f] group/img relative ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className={`lg:col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-[#070b0f] group/img relative shadow-lg ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                  {/* Category Pill Over Image */}
+                  <div className="absolute top-3 left-3 z-20 flex items-center gap-2">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/70 text-cyan-300 border border-cyan-400/30 backdrop-blur-md">
+                      0{index + 1} • Project
+                    </span>
+                  </div>
+
                   <div className="relative aspect-[16/10] overflow-hidden flex items-center justify-center p-4">
                     <img 
                       loading="lazy"
@@ -103,10 +113,13 @@ const Project = () => {
                 {/* Content Section */}
                 <div className={`lg:col-span-6 flex flex-col justify-between space-y-6 ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className="space-y-3">
-                    <span className="text-xs font-mono font-bold tracking-wider text-[rgb(8,165,202)] uppercase">
-                      {project.tagline}
-                    </span>
-                    <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                    <div className="inline-flex items-center gap-2">
+                      <span className="text-xs font-mono font-bold tracking-wider text-[rgb(8,165,202)] uppercase">
+                        {project.tagline}
+                      </span>
+                    </div>
+
+                    <h2 className="text-2xl md:text-3xl font-extrabold text-white group-hover:text-cyan-300 transition-colors duration-300" style={{ fontFamily: 'Acorn, sans-serif' }}>
                       {project.title}
                     </h2>
                     
@@ -116,12 +129,12 @@ const Project = () => {
                     
                     {/* Technologies Tags */}
                     <div className="pt-2">
-                      <p className="text-[11px] font-mono text-gray-400 uppercase tracking-wider mb-2">Tech Stack:</p>
+                      <p className="text-[11px] font-mono text-gray-400 uppercase tracking-wider mb-2">Architectural Stack:</p>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, techIndex) => (
                           <span 
                             key={techIndex}
-                            className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-gray-200 hover:border-[rgb(8,165,202)]/50 hover:text-cyan-300 transition duration-200"
+                            className="px-3 py-1 bg-white/5 border border-white/10 rounded-xl text-xs font-mono text-gray-200 hover:border-[rgb(8,165,202)]/50 hover:text-cyan-300 hover:bg-cyan-500/10 transition-all duration-200"
                           >
                             {tech}
                           </span>
@@ -139,7 +152,7 @@ const Project = () => {
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-400 to-teal-300 text-gray-950 font-bold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(8,165,202,0.4)] hover:shadow-[0_0_30px_rgba(8,165,202,0.7)] hover:scale-105 transition-all duration-300"
                     >
                       <MdLaunch className="text-base" />
-                      <span>Live Preview</span>
+                      <span>Live Production</span>
                     </a>
                     
                     <a 
@@ -149,7 +162,7 @@ const Project = () => {
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/15 hover:border-[rgb(8,165,202)]/60 text-white hover:text-cyan-300 font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-all duration-300"
                     >
                       <MdCode className="text-lg" />
-                      <span>Repository</span>
+                      <span>Source Code</span>
                     </a>
                   </div>
 

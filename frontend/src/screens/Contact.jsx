@@ -148,7 +148,7 @@ const Contact = () => {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Alex Morgan"
                       required
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[rgb(8,165,202)] focus:ring-1 focus:ring-[rgb(8,165,202)] transition duration-200"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:shadow-[0_0_20px_rgba(8,165,202,0.25)] transition duration-200"
                     />
                   </div>
 
@@ -163,7 +163,7 @@ const Contact = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="alex@company.com"
                       required
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[rgb(8,165,202)] focus:ring-1 focus:ring-[rgb(8,165,202)] transition duration-200"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:shadow-[0_0_20px_rgba(8,165,202,0.25)] transition duration-200"
                     />
                   </div>
 
@@ -180,7 +180,7 @@ const Contact = () => {
                     placeholder="Tell me about your project, timeline, or idea..."
                     rows={5}
                     required
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[rgb(8,165,202)] focus:ring-1 focus:ring-[rgb(8,165,202)] transition duration-200 resize-none"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:shadow-[0_0_20px_rgba(8,165,202,0.25)] transition duration-200 resize-none"
                   />
                 </div>
 

@@ -51,38 +51,48 @@ const Experience = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Main Card */}
-              <div className="group rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 via-[#0a0f14]/90 to-[#121a22]/90 backdrop-blur-xl p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-300 relative overflow-hidden">
+              <div className="group rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#0a0f14]/95 to-[#121a22]/95 backdrop-blur-2xl p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-500 relative overflow-hidden">
                 
                 {/* Subtle Background Glow */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/20 transition duration-500" />
+                <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/20 transition duration-700" />
                 <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
+                {/* Top Accent Gradient Border */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent" />
+
                 {/* Header Row */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-6 relative z-10">
-                  <div className="space-y-1.5">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="bg-[rgb(8,165,202)]/20 border border-[rgb(8,165,202)]/40 text-[rgb(8,165,202)] px-3 py-1 rounded-full text-xs font-semibold">
-                        {exp.type}
-                      </span>
-                      {exp.isCurrent && (
-                        <span className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> Present Role
-                        </span>
-                      )}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-6 mb-6 relative z-10">
+                  <div className="flex items-start gap-4">
+                    {/* Company Avatar Badge */}
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[rgb(8,165,202)]/20 to-teal-500/10 border border-[rgb(8,165,202)]/30 flex items-center justify-center text-[rgb(8,165,202)] text-2xl shadow-[0_0_20px_rgba(8,165,202,0.25)] shrink-0 mt-1">
+                      <FaBuilding />
                     </div>
-                    <h3 className="text-2xl md:text-4xl font-bold text-white group-hover:text-cyan-300 transition duration-300 pt-1">
-                      {exp.role}
-                    </h3>
-                    <p className="text-[rgb(8,165,202)] font-semibold text-lg md:text-xl flex items-center gap-2">
-                      <FaBuilding className="text-sm text-teal-400" /> {exp.company}
-                    </p>
+
+                    <div className="space-y-1.5">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="bg-[rgb(8,165,202)]/15 border border-[rgb(8,165,202)]/35 text-[rgb(8,165,202)] px-3 py-0.5 rounded-full text-xs font-semibold font-mono uppercase tracking-wider">
+                          {exp.type}
+                        </span>
+                        {exp.isCurrent && (
+                          <span className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-0.5 rounded-full text-xs font-semibold inline-flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" /> Active Role
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-extrabold text-white group-hover:text-cyan-300 transition duration-300 pt-0.5" style={{ fontFamily: 'Acorn, sans-serif' }}>
+                        {exp.role}
+                      </h3>
+                      <p className="text-[rgb(8,165,202)] font-semibold text-base md:text-lg flex items-center gap-2">
+                        <span>{exp.company}</span>
+                      </p>
+                    </div>
                   </div>
 
                   <div className="flex flex-col md:items-end gap-2 text-xs md:text-sm text-gray-400">
-                    <span className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-xl text-gray-200 font-mono">
+                    <span className="flex items-center gap-2 bg-[#060a0f]/80 border border-white/10 px-4 py-2 rounded-xl text-cyan-300 font-mono font-medium shadow-sm">
                       <FaCalendarAlt className="text-[rgb(8,165,202)]" /> {exp.duration}
                     </span>
-                    <span className="flex items-center gap-1.5 text-gray-400">
+                    <span className="flex items-center gap-1.5 text-gray-400 text-xs font-mono">
                       <FaMapMarkerAlt className="text-teal-400" /> {exp.location}
                     </span>
                   </div>
@@ -96,26 +106,26 @@ const Experience = () => {
                 {/* Key Achievements */}
                 <div className="mb-6 space-y-3 relative z-10">
                   <h4 className="font-semibold text-white/90 text-xs md:text-sm uppercase tracking-wider flex items-center gap-2">
-                    <FaCodeBranch className="text-[rgb(8,165,202)]" /> Key Contributions & Impact:
+                    <FaCodeBranch className="text-[rgb(8,165,202)]" /> Key Engineering Deliverables:
                   </h4>
-                  <ul className="space-y-2.5 text-xs md:text-sm text-gray-300">
+                  <div className="grid grid-cols-1 gap-2.5">
                     {exp.achievements.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 bg-white/5 border border-white/5 p-3.5 rounded-2xl hover:border-white/15 transition duration-200">
-                        <FaCheckCircle className="text-[rgb(8,165,202)] text-base mt-0.5 shrink-0" />
-                        <span>{item}</span>
-                      </li>
+                      <div key={idx} className="flex items-start gap-3 bg-[#070c12]/80 border border-white/5 p-3.5 rounded-2xl hover:border-[rgb(8,165,202)]/30 transition-all duration-300 group/item">
+                        <FaCheckCircle className="text-[rgb(8,165,202)] text-base mt-0.5 shrink-0 group-hover/item:text-cyan-300 transition-colors" />
+                        <span className="text-xs md:text-sm text-gray-300 group-hover/item:text-white transition-colors">{item}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
                 {/* Technologies Used */}
-                <div className="space-y-2.5 relative z-10 pt-2">
-                  <h4 className="font-semibold text-gray-400 text-xs uppercase tracking-wider">Technologies Used:</h4>
+                <div className="space-y-2.5 relative z-10 pt-2 border-t border-white/5">
+                  <h4 className="font-semibold text-gray-400 text-[11px] font-mono uppercase tracking-wider pt-2">Technologies & Tooling:</h4>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, idx) => (
                       <span 
                         key={idx}
-                        className="bg-white/5 border border-white/10 text-gray-200 px-3 py-1 rounded-xl text-xs font-mono hover:text-cyan-300 hover:border-cyan-500/40 transition duration-200"
+                        className="bg-white/5 border border-white/10 text-gray-200 px-3 py-1 rounded-xl text-xs font-mono hover:text-cyan-300 hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-all duration-200"
                       >
                         {tech}
                       </span>
