@@ -9,10 +9,9 @@ const FluidBackground = lazy(() => import("../components/FluidBackground"));
 const Milky = lazy(() => import("../components/Milky"));
 
 const HeroBackground = () => {
-  const {scrollYProgress} = useScroll()
-  const xSpring = useSpring(scrollYProgress, { damping: 70 });
-  const manY = useTransform(xSpring, [0,0.5], ["0%", "10%"]);
-  const planetsY = useTransform(xSpring, [0,0.5], ["0%", "50%"]);
+  const { scrollYProgress } = useScroll()
+  const manY = useTransform(scrollYProgress, [0, 0.5], ["0%", "10%"]);
+  const planetsY = useTransform(scrollYProgress, [0, 0.5], ["0%", "50%"]);
 
   return (
     <section className='inset-0 absolute'>
@@ -48,6 +47,7 @@ const HeroBackground = () => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'right bottom', 
             x: manY,
+            willChange: 'transform',
           }}
         />
 
@@ -60,6 +60,7 @@ const HeroBackground = () => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center top',  
             x: planetsY,
+            willChange: 'transform',
           }}
         />
 

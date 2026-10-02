@@ -1,19 +1,14 @@
 import React, { lazy, Suspense, useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaCode, FaGraduationCap, FaMapMarkerAlt, FaLaptopCode, FaServer, FaBrain, FaLayerGroup } from "react-icons/fa";
 import Text from "../components/Text";
 import { motion } from "framer-motion";
-import GradFlow from "gradflow";
 import { Marquee } from "../components/Marquee";
 import { Card, CardLabel, Reveal } from "../components/Reveal";
-import { SocialIcon } from "../components/SocialIcone";
 
 const ParticleBackground = lazy(() =>
   import("../components/ParticleBackground")
 );
-const Globe = lazy(() => import("../components/Globe"));
 const Frameworks = lazy(() => import("../components/Frameworks"));
-const TechStack = lazy(() => import("../components/TechStack"));
 
 const gridContainer = {
   hidden: {},
@@ -24,141 +19,234 @@ const gridContainer = {
   },
 };
 
-
 const About = () => {
   const [streakLoaded, setStreakLoaded] = useState(false);
   const [statsLoaded, setStatsLoaded] = useState(false);
   const [langsLoaded, setLangsLoaded] = useState(false);
 
   return (
-    <section id="about" className="relative min-h-screen p-3 text-white overflow-hidden">
+    <section id="about" className="relative min-h-screen py-12 px-4 md:px-8 text-white overflow-hidden">
       <Suspense fallback={null}>
         <ParticleBackground />
       </Suspense>
 
-      <div className="relative ">
-        {/* Content */}
-        <div className="text-center mt-5 space-y-4">
-          <h1 style={{ fontFamily: 'Acorn, sans-serif'}} className="text-5xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] to-[rgb(81,140,144)] bg-clip-text shimmer-text-heading">
+      <div className="relative max-w-7xl mx-auto space-y-10">
+
+        {/* Section Header */}
+        <div className="text-center space-y-3">
+          <h1 style={{ fontFamily: 'Acorn, sans-serif' }} className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-300 to-teal-200 bg-clip-text text-transparent">
             About Me
           </h1>
-          <p className="text-gray-400 text-sm">My professional journey and accomplishments</p>
+          <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
+            Building high-performance applications, algorithmic problem solving, and intelligent ML routing systems.
+          </p>
         </div>
 
-        
+        {/* Core Pillars Bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-[rgb(8,165,202)]/40 transition duration-300">
+            <FaLayerGroup className="text-2xl text-[rgb(8,165,202)] mb-2" />
+            <h3 className="text-sm font-bold text-white">Full-Stack Dev</h3>
+            <p className="text-xs text-gray-400 mt-1">React, Next.js, Node, Spring</p>
+          </div>
 
+          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-teal-400/40 transition duration-300">
+            <FaCode className="text-2xl text-teal-400 mb-2" />
+            <h3 className="text-sm font-bold text-white">CP & Algorithms</h3>
+            <p className="text-xs text-gray-400 mt-1">Codeforces, LeetCode, GFG</p>
+          </div>
+
+          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-cyan-400/40 transition duration-300">
+            <FaBrain className="text-2xl text-cyan-400 mb-2" />
+            <h3 className="text-sm font-bold text-white">ML & AI Systems</h3>
+            <p className="text-xs text-gray-400 mt-1">Risk Prediction & Intelligent Routing</p>
+          </div>
+
+          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-emerald-400/40 transition duration-300">
+            <FaServer className="text-2xl text-emerald-400 mb-2" />
+            <h3 className="text-sm font-bold text-white">Database & Cloud</h3>
+            <p className="text-xs text-gray-400 mt-1">PostgreSQL, MongoDB, Docker</p>
+          </div>
+        </div>
+
+        {/* Hero Bio Bento Card */}
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full text-black"
-            >
-              {/* Grid Items 1*/}
-            <div
-              className="flex flex-col h-full overflow-hidden"
-            >
-              <div className="w-full z-10">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                  src="/laptop2.png"
-                  alt="Laptop"
-                  className="object-scale-down w-full h-64"
-                />
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="w-full rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 via-[#0a0f14]/90 to-[#121a22]/90 backdrop-blur-xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
+        >
+          {/* Subtle Ambient Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+
+            {/* Left Graphic & Quick Metrics */}
+            <div className="lg:col-span-4 flex flex-col items-center gap-6">
+
+              {/* Image Frame */}
+              <div className="relative group w-full max-w-xs">
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-500 to-teal-400 opacity-30 group-hover:opacity-60 transition duration-500 blur-sm" />
+                <div className="relative rounded-2xl bg-[#090e13] border border-white/10 p-4 flex flex-col items-center">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src="/laptop2.png"
+                    alt="Developer Workspace"
+                    className="w-full h-48 object-scale-down transform group-hover:scale-105 transition duration-500"
+                  />
+                  {/* Status Pill */}
+                  <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    Open to Engineering Roles
+                  </div>
+                </div>
               </div>
 
-              <div className="relative flex flex-col gap-2 p-2 text-justify z-10">
-                <p style={{ fontFamily: 'Acorn, sans-serif' }} className="font-bold mb-3 text-gray-700 pl-5 text-sm md:text-3xl lg:text-3xl">
-                  Hello, I'm Md. Sabbir Khan Oni
-                </p>
-                <div><Text/></div>
+              {/* Quick Stat Badges */}
+              <div className="grid grid-cols-3 gap-3 w-full max-w-xs text-center">
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <p className="text-xl font-bold text-[rgb(8,165,202)]">15+</p>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider">Projects</p>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <p className="text-xl font-bold text-teal-400">4+</p>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider">CP Platforms</p>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <p className="text-xl font-bold text-cyan-300">99%</p>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider">ML Accuracy</p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right Bio Content */}
+            <div className="lg:col-span-8 space-y-4">
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h2 style={{ fontFamily: 'Acorn, sans-serif' }} className="text-2xl md:text-4xl font-bold text-white tracking-wide">
+                    Hello, I'm <span className="bg-gradient-to-r from-[rgb(8,165,202)] to-cyan-300 bg-clip-text text-transparent">Md. Sabbir Khan Oni</span>
+                  </h2>
+                </div>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300 flex items-center gap-1.5">
+                    <FaGraduationCap className="text-[rgb(8,165,202)]" /> CSE Student
+                  </span>
+                  <span className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300 flex items-center gap-1.5">
+                    <FaCode className="text-teal-400" /> Full-Stack & ML Specialist
+                  </span>
+                  <span className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300 flex items-center gap-1.5">
+                    <FaMapMarkerAlt className="text-cyan-300" /> Dhaka, Bangladesh
+                  </span>
+                </div>
+              </div>
+
+              {/* Text Paragraph Component */}
+              <div className="pt-2">
+                <Text />
               </div>
             </div>
+
+          </div>
         </motion.div>
 
-        <Marquee items={["Full-Stack Development", "UI/UX Design", "Machine Learning", "Research", "Open Source", "Web3", "Cloud Architecture"]} />
+        {/* Marquee Skill Ticker */}
+        <Marquee items={["Full-Stack Development", "UI/UX Design", "Machine Learning", "Research", "Open Source", "Web3", "Cloud Architecture", "System Design", "Spring Boot", "React & Next.js"]} />
 
+        {/* Bento Grid Items */}
         <motion.div
           variants={gridContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 px-6 my-4"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         >
 
-          {/* GitHub Stats Card */}
-          <Reveal className="md:col-span-2 xl:col-span-2" delay={0.1}>
+          {/* GitHub Stats Card (Span 2) */}
+          <Reveal className="lg:col-span-2" delay={0.1}>
             <Card
-              className=" rounded-2xl border border-white/10 shadow-2xl"
+              className="rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden h-full"
               style={{
-                background: "linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%)",
+                background: "linear-gradient(135deg, #0e151c 0%, #080c10 100%)",
               }}
             >
-              <div className="p-5 flex flex-col gap-6">
-                <CardLabel className="text-2xl font-semibold text-gray-200">
-                  GitHub Stats & Contributions
-                </CardLabel>
+              <div className="p-6 md:p-8 flex flex-col gap-6 h-full justify-between">
+                <div className="flex items-center justify-between">
+                  <CardLabel className="text-lg font-semibold text-white/90 flex items-center gap-2">
+                    <FaGithub className="text-xl text-[rgb(8,165,202)]" /> GitHub Contributions & Activity
+                  </CardLabel>
+                  <a
+                    href="https://github.com/sabbirkhanoni"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-[rgb(8,165,202)] hover:underline"
+                  >
+                    @sabbirkhanoni ↗
+                  </a>
+                </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
 
-                  <div className="flex flex-col justify-between items-center">
+                  <div className="flex flex-col gap-4 items-center">
                     {!streakLoaded && (
-                      <div className="w-full max-w-sm h-[180px] rounded-xl bg-gray-800 animate-pulse" />
+                      <div className="w-full max-w-sm h-[170px] rounded-2xl bg-gray-800/50 animate-pulse" />
                     )}
                     <a
                       href="https://github.com/DenverCoder1/github-readme-streak-stats"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="w-full flex justify-center"
                     >
                       <img
                         loading="lazy"
                         decoding="async"
-                        referrerPolicy="no-referrer"
                         onLoad={() => setStreakLoaded(true)}
                         src="https://github-readme-streak-stats.herokuapp.com/?user=sabbirkhanoni&theme=dark"
                         alt="GitHub Streak Stats"
-                        className="rounded-xl shadow-xl w-full max-w-[400px] hover:scale-105 transition-transform duration-300"
+                        className="rounded-2xl shadow-xl w-full max-w-[380px] hover:scale-[1.02] transition-transform duration-300 border border-white/10"
                       />
                     </a>
 
                     {!statsLoaded && (
-                      <div className="w-full max-w-sm h-[180px] rounded-xl bg-gray-800 animate-pulse" />
+                      <div className="w-full max-w-sm h-[170px] rounded-2xl bg-gray-800/50 animate-pulse" />
                     )}
                     <a
                       href="https://github.com/sabbirkhanoni"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="w-full flex justify-center"
                     >
                       <img
                         loading="lazy"
                         decoding="async"
-                        referrerPolicy="no-referrer"
                         onLoad={() => setStatsLoaded(true)}
                         src="https://github-readme-stats.vercel.app/api?username=sabbirkhanoni&show_icons=true&theme=dark"
                         alt="GitHub Stats"
-                        className="rounded-xl shadow-xl w-full max-w-[400px] hover:scale-105 transition-transform duration-300"
+                        className="rounded-2xl shadow-xl w-full max-w-[380px] hover:scale-[1.02] transition-transform duration-300 border border-white/10"
                       />
                     </a>
                   </div>
 
                   <div className="flex justify-center">
                     {!langsLoaded && (
-                      <div className="w-full max-w-sm h-[400px] rounded-xl bg-gray-800 animate-pulse" />
+                      <div className="w-full max-w-sm h-[350px] rounded-2xl bg-gray-800/50 animate-pulse" />
                     )}
                     <a
                       href="https://github.com/anuraghazra/github-readme-stats"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="w-full flex justify-center"
                     >
                       <img
                         loading="lazy"
                         decoding="async"
-                        referrerPolicy="no-referrer"
                         onLoad={() => setLangsLoaded(true)}
                         src="https://github-readme-stats.vercel.app/api/top-langs/?username=sabbirkhanoni&langs_count=10&theme=dark"
                         alt="Top Languages"
-                        className="rounded-xl shadow-xl w-full max-w-md hover:scale-105 transition-transform duration-300"
+                        className="rounded-2xl shadow-xl w-full max-w-[380px] hover:scale-[1.02] transition-transform duration-300 border border-white/10"
                       />
                     </a>
                   </div>
@@ -168,74 +256,85 @@ const About = () => {
             </Card>
           </Reveal>
 
-          {/* Connect With Me Card */}
-          <Reveal className="xl:col-span-1 h-full" delay={0.2}>
-            <Card className="h-full" style={{ background: "linear-gradient(160deg, #111827 0%, #0d0d0d 100%)" }}>
-              <div className="flex flex-col gap-6 p-2 pl-5 pt-5 h-full">
-                <div>
-                  <CardLabel>Connect With Me</CardLabel>
-                  <div className="flex gap-2 items-center mt-2">
-                    <SocialIcon href="https://github.com/sabbirkhanoni" icon={<FaGithub />} label="GitHub" />
-                    <SocialIcon href="https://linkedin.com/in/mdsabbirkhanoni" icon={<FaLinkedin />} label="LinkedIn" />
-                    <SocialIcon href="mailto:mdsabbirkhanoni@gmail.com" icon={<FaEnvelope />} label="Email" />
-                  </div>
-                </div>
+          {/* Technologies Orbit Card (Span 1) */}
+          <Reveal className="lg:col-span-1" delay={0.2}>
+            <Card
+              className="h-full rounded-3xl border border-[rgba(8,165,202,0.2)]"
+              style={{
+                background: "linear-gradient(135deg, #090e13 0%, #061218 100%)",
+              }}
+            >
+              <div className="p-6 h-full flex flex-col justify-between relative overflow-hidden">
+                <div
+                  className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
+                  style={{
+                    background: "radial-gradient(circle, rgba(8,165,202,0.2) 0%, transparent 70%)",
+                    filter: "blur(20px)",
+                  }}
+                />
 
-                <div className="">
-                  <Suspense fallback={<div className="w-50 h-50 rounded-full bg-gray-800 animate-pulse" />}>
-                    <Globe />
+                <CardLabel className="text-lg font-semibold text-white/90">Tech Ecosystem</CardLabel>
+
+                <div className="relative flex-1 flex flex-col items-center justify-center min-h-[260px]">
+                  <Suspense fallback={<div className="w-full h-40 rounded-2xl bg-gray-800/50 animate-pulse" />}>
+                    <Frameworks />
                   </Suspense>
                 </div>
               </div>
             </Card>
           </Reveal>
 
-        <Reveal className="xl:col-span-2 h-full" delay={0.3}>
-          <Card className="h-full relative overflow-hidden border border-white/10 bg-gradient-to-br from-[#0f0f0f] to-[#141414] backdrop-blur-xl">
+          {/* Competitive Programming Showcase Card (Span 3 - Full Width) */}
+          <Reveal className="lg:col-span-3" delay={0.3}>
+            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-gradient-to-br from-[#0c1219] to-[#070b0f] backdrop-blur-xl">
 
-            {/* subtle background glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.05),_transparent_40%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(8,165,202,0.12),_transparent_50%)] pointer-events-none" />
 
-            <div className="relative p-8 h-full flex flex-col gap-8">
-              
-              <CardLabel className="text-xl font-semibold tracking-wide text-white/90">
-                🚀 Competitive Programming Journey
-              </CardLabel>
+              <div className="relative p-6 md:p-8 flex flex-col gap-6">
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                <a
-                  href="https://codeforces.com/profile/sabbirkhanoni"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group w-full flex justify-center"
-                >
-                  <div className="relative w-full max-w-md rounded-2xl overflow-hidden 
-                                  bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-pink-500/30 
-                                  p-[2px] transition-all duration-500 group-hover:scale-[1.03]">
+                <div className="flex items-center justify-between">
+                  <CardLabel className="text-lg font-semibold text-white/90 flex items-center gap-2">
+                    <FaCode className="text-teal-400 text-xl" /> Competitive Programming Showcase
+                  </CardLabel>
+                  <span className="text-xs text-teal-400 bg-teal-950/60 border border-teal-800/40 px-3 py-1 rounded-full">
+                    Problem Solver & Competitor
+                  </span>
+                </div>
 
-                    <div className="rounded-2xl overflow-hidden bg-[#0d0d0d]">
-                      <img
-                        className="w-full object-cover object-top"
-                        src="https://codeforces-readme-stats.vercel.app/api/card?username=sabbir9990&theme=dark"
-                        alt="Codeforces Stats"
-                      />
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+
+                  {/* Codeforces */}
+                  <a
+                    href="https://codeforces.com/profile/sabbirkhanoni"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group w-full flex justify-center"
+                  >
+                    <div className="relative w-full rounded-2xl overflow-hidden 
+                                    bg-gradient-to-r from-indigo-500/30 via-cyan-500/30 to-teal-500/30 
+                                    p-[1px] transition-all duration-300 group-hover:scale-[1.02]">
+
+                      <div className="rounded-2xl overflow-hidden bg-[#0a0e13]">
+                        <img
+                          className="w-full object-cover object-top"
+                          src="https://codeforces-readme-stats.vercel.app/api/card?username=sabbir9990&theme=dark"
+                          alt="Codeforces Stats"
+                        />
+                      </div>
+
                     </div>
+                  </a>
 
-                  </div>
-                </a>
-
-                <div className="flex flex-col gap-6 items-center">
-
-                  {/* GFG */}
+                  {/* GeeksforGeeks */}
                   <a
                     href="https://www.geeksforgeeks.org/user/sabbirkhanoni/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-full max-w-sm"
+                    className="group w-full flex justify-center"
                   >
-                    <div className="rounded-2xl p-[2px] bg-white/10 transition-all duration-300 group-hover:bg-green-500/40 group-hover:scale-[1.03]">
+                    <div className="rounded-2xl p-[1px] bg-white/10 w-full transition-all duration-300 group-hover:bg-green-500/40 group-hover:scale-[1.02]">
                       <img
-                        className="rounded-2xl shadow-xl w-full bg-[#0d0d0d]"
+                        className="rounded-2xl shadow-xl w-full bg-[#0a0e13]"
                         src="https://gfgstatscard.vercel.app/sabbirkhanoni?theme=dark"
                         alt="GeeksforGeeks Stats"
                       />
@@ -247,11 +346,11 @@ const About = () => {
                     href="https://leetcode.com/sabbirkhanoni/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-full max-w-sm"
+                    className="group w-full flex justify-center"
                   >
-                    <div className="rounded-2xl p-[2px] bg-white/10 transition-all duration-300 group-hover:bg-yellow-500/40 group-hover:scale-[1.03]">
+                    <div className="rounded-2xl p-[1px] bg-white/10 w-full transition-all duration-300 group-hover:bg-yellow-500/40 group-hover:scale-[1.02]">
                       <img
-                        className="rounded-2xl shadow-xl w-full bg-[#0d0d0d]"
+                        className="rounded-2xl shadow-xl w-full bg-[#0a0e13]"
                         src="https://leetcard.jacoblin.cool/sabbirkhanoni?theme=dark"
                         alt="LeetCode Stats"
                       />
@@ -259,45 +358,14 @@ const About = () => {
                   </a>
 
                 </div>
-
-              </div>
-            </div>
-          </Card>
-        </Reveal>
-
-          {/* Technologies Card */}
-          <Reveal className="xl:col-span-1 h-full" delay={0.4}>
-            <Card
-              className="h-full"
-              style={{
-                background: "linear-gradient(135deg, #0d0d0d 0%, #0a1a1f 100%)",
-                border: "1px solid rgba(8,165,202,0.15)",
-              }}
-            >
-              <div className="p-6 h-full flex flex-col gap-4 relative overflow-hidden">
-                {/* Decorative gradient accent */}
-                <div
-                  className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
-                  style={{
-                    background: "radial-gradient(circle, rgba(8,165,202,0.18) 0%, transparent 70%)",
-                    filter: "blur(20px)",
-                  }}
-                />
-
-                <CardLabel>Technologies I Work With</CardLabel>
-
-                <div className="relative flex-1 flex flex-col items-center justify-center min-h-[200px]">
-                  <Suspense fallback={<div className="w-full h-40 rounded-xl bg-gray-800 animate-pulse" />}>
-                    <Frameworks />
-                  </Suspense>
-                </div>
               </div>
             </Card>
           </Reveal>
 
         </motion.div>
 
-        <Marquee items={["HTML", "CSS", "JavaScript", "TypeScript","C++","Java","Spring Boot","ASP.NET MVC","ASP.NET Core Web API", "React","Node.js","Nestjs","NextJs","Express","TypeORM","Drizzle","MongoDB","PostgreSQL","MySQL"]} />
+        {/* Tech Stack Pills Marquee */}
+        <Marquee items={["HTML5", "CSS3", "JavaScript", "TypeScript", "C++", "Java", "Spring Boot", "ASP.NET Core", "React", "Node.js", "NestJS", "Next.js", "Express", "TypeORM", "Drizzle", "MongoDB", "PostgreSQL", "MySQL"]} />
       </div>
     </section>
   );

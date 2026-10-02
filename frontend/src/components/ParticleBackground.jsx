@@ -12,6 +12,8 @@ const ParticleBackground = () => {
       options={{
         fullScreen: { enable: false, zIndex: 50 },
         background: { color: "transparent" },
+        fpsLimit: 60,
+        detectRetina: false,
         interactivity: {
           events: {
             onHover: {
@@ -20,26 +22,30 @@ const ParticleBackground = () => {
             }
           },
           modes: {
-            grab: {
-              distance: 200,
-              links: {
-                opacity: 0.8
-              }
+            repulse: {
+              distance: 120,
+              duration: 0.4
             }
           }
         },
         particles: {
-          number: { value: 200 },
-           color: {
-              value: "#fff", 
-            },
+          number: { 
+            value: 65,
+            density: {
+              enable: true,
+              area: 800
+            }
+          },
+          color: {
+            value: "#fff", 
+          },
           links: {
             enable: true,
-            distance: 150,
+            distance: 130,
             opacity: 0.2,
             color: "#fff"
           },
-          move: { enable: true, speed: 1.5 },
+          move: { enable: true, speed: 1 },
           size: { value: 2 },
           opacity: { value: 0.5 }
         }

@@ -12,12 +12,12 @@ const GLOBE_CONFIG = {
   width: 400,
   height: 400,
   onRender: () => {},
-  devicePixelRatio: 2,
+  devicePixelRatio: 1.25,
   phi: 0,
   theta: 0.3,
   dark: 1,
   diffuse: 0.4,
-  mapSamples: 10000,
+  mapSamples: 6000,
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
@@ -69,6 +69,35 @@ function Globe({
   }
 
   useEffect(() => {
+    let globe = null
+    let observer = null
+
+    const initGlobe = () => {
+      if (!canvasRef.current) return
+      width = canvasRef.current.offsetWidth || 300
+      globe = createGlobe(canvasRef.current, {
+        ...config,
+        width: width * 2,
+        height: width * 2,
+        onRender: (state) => {
+          if (!pointerInteracting.current) phi += 0.005
+          state.phi = phi + rs.get()
+          state.width = width * 2
+          state.height = width * 2
+        },
+      })
+      setTimeout(() => {
+        if (canvasRef.current) canvasRef.current.style.opacity = "1"
+      }, 0)
+    }
+
+    const destroyGlobe = () => {
+      if (globe) {
+        globe.destroy()
+        globe = null
+      }
+    }
+
     const onResize = () => {
       if (canvasRef.current) {
         width = canvasRef.current.offsetWidth
@@ -78,21 +107,22 @@ function Globe({
     window.addEventListener("resize", onResize)
     onResize()
 
-    const globe = createGlobe(canvasRef.current, {
-      ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender: (state) => {
-        if (!pointerInteracting.current) phi += 0.005
-        state.phi = phi + rs.get()
-        state.width = width * 2
-        state.height = width * 2
-      },
-    })
+    if (canvasRef.current && typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          if (!globe) initGlobe()
+        } else {
+          destroyGlobe()
+        }
+      }, { threshold: 0.05 })
+      observer.observe(canvasRef.current)
+    } else {
+      initGlobe()
+    }
 
-    setTimeout(() => (canvasRef.current.style.opacity = "1"), 0)
     return () => {
-      globe.destroy()
+      destroyGlobe()
+      if (observer) observer.disconnect()
       window.removeEventListener("resize", onResize)
     }
   }, [rs, config])

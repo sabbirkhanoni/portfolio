@@ -53,7 +53,7 @@ const Contact = () => {
   }
 
   return (
-    <section id='contact' className="min-h-screen scroll-smooth bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center px-4 sm:px-8">
+    <section id='contact' className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center px-4 sm:px-8">
       <div className="max-w-8xl w-full">
         {/* Header */}
         <div className="text-center space-y-4">

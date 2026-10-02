@@ -3,7 +3,7 @@ import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 
 export default function Milky({
-  particles = 50000,
+  particles = 12000,
   spread = 200,         
   speed = 0.001
 }) {
