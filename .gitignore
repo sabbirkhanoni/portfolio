@@ -24,3 +24,5 @@ backend/.env
 frontend/.env.local
 backend/.env.local
 *.zip
+.next/
+frontend/.next/

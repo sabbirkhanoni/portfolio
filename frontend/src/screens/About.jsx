@@ -1,3 +1,5 @@
+'use client';
+
 import React, { lazy, Suspense } from "react";
 import { FaCode, FaGraduationCap, FaMapMarkerAlt, FaServer, FaBrain, FaLayerGroup } from "react-icons/fa";
 import Text from "../components/Text";

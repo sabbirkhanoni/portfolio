@@ -1,6 +1,12 @@
+'use client';
+
 import React from 'react'
+import dynamic from 'next/dynamic'
 import HeroElements from '../components/HeroElements'
-import HeroBackground from '../components/HeroBackground'
+
+const HeroBackground = dynamic(() => import('../components/HeroBackground'), {
+  ssr: false,
+})
 
 const HeroSection = () => {
   return (

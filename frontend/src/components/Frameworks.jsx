@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useMemo } from "react";
 import { OrbitingCircles } from "./OrbitCircle";
 
@@ -36,12 +38,12 @@ function Frameworks() {
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center overflow-hidden">
       <OrbitingCircles iconSize={36} radius={140} speed={3}>
         {SKILLS_1.map((skill, index) => (
-          <Icon key={index} src={`assets/logos/${skill}.svg`} />
+          <Icon key={index} src={`/assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
       <OrbitingCircles iconSize={28} radius={85} reverse speed={1}>
         {SKILLS_2.map((skill, index) => (
-          <Icon key={index} src={`assets/logos/${skill}.svg`} />
+          <Icon key={index} src={`/assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
     </div>

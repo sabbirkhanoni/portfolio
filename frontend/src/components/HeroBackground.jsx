@@ -1,3 +1,5 @@
+'use client';
+
 import React, { lazy, useEffect } from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { Canvas } from '@react-three/fiber';

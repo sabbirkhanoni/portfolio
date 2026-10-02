@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaFlask, FaCheckCircle, FaChartLine, FaRobot, FaCalendarAlt, FaShieldAlt } from 'react-icons/fa'

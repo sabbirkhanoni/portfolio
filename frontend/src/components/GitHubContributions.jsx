@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useMemo } from "react";
 import { FaGithub, FaCheckCircle, FaCodeBranch } from "react-icons/fa";
 import { LuExternalLink, LuGitPullRequest } from "react-icons/lu";

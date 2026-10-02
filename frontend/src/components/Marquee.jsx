@@ -1,3 +1,5 @@
+'use client';
+
 export function Marquee({ items }) {
   const doubled = [...items, ...items, ...items];
   return (
