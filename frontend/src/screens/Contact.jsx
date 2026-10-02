@@ -1,32 +1,26 @@
 import React, { useState } from 'react'
-import AiChatCard from '../components/AiChatCard'
 import axios from 'axios'
-import {toast} from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
 import AxiosToastError from '../utils/AxiosToastError'
-
-
+import { motion } from 'framer-motion'
+import { FaPaperPlane, FaEnvelope, FaMapMarkerAlt, FaShieldAlt, FaComments } from 'react-icons/fa'
 
 const Contact = () => {
-  const [aiMessage, setAiMessage] = useState('')
   const [directMessage, setDirectMessage] = useState('')
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
-
-  const handleAiSubmit = (e) => {
-    e.preventDefault()
-    // Handle AI chat submission
-    console.log('AI Message:', aiMessage)
-    setAiMessage('')
-  }
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleDirectMailSubmit = async (e) => {
     e.preventDefault()
     
     // Validate fields
-    if (!name || !email || !directMessage) {
+    if (!name.trim() || !email.trim() || !directMessage.trim()) {
       toast.error('Please fill in all fields')
       return
     }
+
+    setIsSubmitting(true)
 
     try {
       const backendUrl = import.meta.env.VITE_BACKEND_URL
@@ -37,104 +31,174 @@ const Contact = () => {
         message: directMessage
       })
 
-      if(response.data.success) {
+      if (response.data && response.data.success) {
         toast.success('Email sent successfully!')
+        setDirectMessage('')
+        setEmail('')
+        setName('')
       } else {
-        toast.error('Failed to send email: ' + response.data.message)
+        toast.error('Failed to send email: ' + (response.data?.message || 'Server error'))
       }
 
     } catch (error) {
       AxiosToastError(error);
+    } finally {
+      setIsSubmitting(false)
     }
-
-    setDirectMessage('')
-    setEmail('')
-    setName('')
   }
 
   return (
-    <section id='contact' className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center px-4 sm:px-8">
-      <div className="max-w-8xl w-full">
+    <section id='contact' className="relative min-h-screen py-20 px-4 md:px-8 text-white overflow-hidden flex flex-col items-center justify-center">
+      
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-[-150px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-[-150px] w-96 h-96 bg-[#ff8c32]/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-6xl w-full space-y-12 z-10">
+        
         {/* Header */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
+            <FaComments className="text-sm animate-pulse" /> Get In Touch
+          </div>
           <h1
-          style={{ fontFamily: 'Acorn, sans-serif'}}
-          className="text-5xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] to-[rgb(13,13,13)] bg-clip-text text-transparent">
-            Get In Touch
+            style={{ fontFamily: 'Acorn, sans-serif'}}
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-300 to-teal-200 bg-clip-text text-transparent"
+          >
+            Let's Build Something Exceptional
           </h1>
-          <p className="text-gray-600 text-lg mb-2">Choose your preferred way to connect with me</p>
+          <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
+            Have a project in mind, an engineering opportunity, or research collaboration? Drop a line and I'll respond promptly.
+          </p>
         </div>
 
-        {/* Main Contact Cards */}
-        <div>
-          {/* className="grid grid-cols-1 md:grid-cols-2 gap-10" */}
-          {/* AI Chat Card */}
-          {/* <AiChatCard /> */}
+        {/* Contact Container Bento */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.6 }}
+          className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#090e13]/95 to-[#121a22]/95 backdrop-blur-2xl shadow-2xl p-6 md:p-10 relative overflow-hidden"
+        >
+          {/* Subtle accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)] to-transparent" />
 
-          {/* Direct Contact Card */}
-          <div className="bg-gradient-to-br from-[rgb(8,165,202)] to-[rgb(13,13,13)] rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
-            <div className="p-8 space-y-6">
-              {/* Header */}
-              <div className="flex items-center gap-4">
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                  </svg>
-                </div>
-                <div>
-                  <h2 className="text-3xl font-bold text-white">Contact With Me</h2>
-                  <p className="text-white/80 text-sm">Direct message to my Mail & I will respond ASAP</p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            {/* Left Info Column */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-8 p-4 md:p-6 rounded-2xl bg-white/5 border border-white/5">
+              <div className="space-y-6">
+                <span className="text-xs font-mono font-bold tracking-widest uppercase text-cyan-400">
+                  Direct Inquiries
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  Available for Impactful Engineering Roles & AI Projects
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Whether you're looking for high-performance full-stack web applications, machine learning architectures, or algorithmic systems, let's talk.
+                </p>
+
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                    <div className="p-2.5 rounded-lg bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)]">
+                      <FaEnvelope className="text-base" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-mono uppercase text-gray-400">Email Directly</p>
+                      <a href="mailto:mdsabbirkhanoni@gmail.com" className="text-sm font-semibold text-white hover:text-cyan-300 transition">
+                        mdsabbirkhanoni@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                    <div className="p-2.5 rounded-lg bg-teal-500/10 text-teal-400">
+                      <FaMapMarkerAlt className="text-base" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-mono uppercase text-gray-400">Location</p>
+                      <p className="text-sm font-semibold text-white">Dhaka, Bangladesh (UTC+6)</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Contact Form */}
-              <form onSubmit={handleDirectMailSubmit} className="space-y-4" method='POST'>
-                <div className="space-y-2">
-                  <label className="text-white text-sm font-semibold">Your Name</label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="John Doe"
-                    className="w-full p-4 rounded-xl bg-white/90 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-                  />
+              {/* Status pill */}
+              <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="text-xs text-emerald-300 font-medium">
+                  Guaranteed response within 24 hours
+                </span>
+              </div>
+            </div>
+
+            {/* Right Form Column */}
+            <div className="lg:col-span-7 flex flex-col justify-center p-2 md:p-4">
+              <form onSubmit={handleDirectMailSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  
+                  {/* Name Input */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-mono font-medium text-gray-300 uppercase tracking-wider">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="e.g. Alex Morgan"
+                      required
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[rgb(8,165,202)] focus:ring-1 focus:ring-[rgb(8,165,202)] transition duration-200"
+                    />
+                  </div>
+
+                  {/* Email Input */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-mono font-medium text-gray-300 uppercase tracking-wider">
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="alex@company.com"
+                      required
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[rgb(8,165,202)] focus:ring-1 focus:ring-[rgb(8,165,202)] transition duration-200"
+                    />
+                  </div>
+
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-white text-sm font-semibold">Your Email</label>
-                  <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="john@example.com"
-                    className="w-full p-4 rounded-xl bg-white/90 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-white text-sm font-semibold">Your Message</label>
+                {/* Message Input */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-mono font-medium text-gray-300 uppercase tracking-wider">
+                    Your Message
+                  </label>
                   <textarea
                     value={directMessage}
                     onChange={(e) => setDirectMessage(e.target.value)}
-                    placeholder="Tell me about your project..."
-                    rows="4"
-                    className="w-full p-4 rounded-xl bg-white/90 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white resize-none"
+                    placeholder="Tell me about your project, timeline, or idea..."
+                    rows={5}
+                    required
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#070b0f] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[rgb(8,165,202)] focus:ring-1 focus:ring-[rgb(8,165,202)] transition duration-200 resize-none"
                   />
                 </div>
 
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full cursor-pointer bg-white hover:bg-black text-[rgb(8,165,202)] font-bold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full cursor-pointer group relative inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-400 to-teal-300 text-gray-950 font-bold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(8,165,202,0.4)] hover:shadow-[0_0_35px_rgba(8,165,202,0.7)] hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>Send Mail</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                  <FaPaperPlane className={`text-sm transition-transform duration-300 ${isSubmitting ? 'animate-bounce' : 'group-hover:translate-x-1 group-hover:-translate-y-1'}`} />
+                  <span>{isSubmitting ? 'Transmitting Message...' : 'Send Message'}</span>
                 </button>
               </form>
             </div>
+
           </div>
-        </div>
+        </motion.div>
+
       </div>
     </section>
   )

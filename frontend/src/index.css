@@ -74,9 +74,17 @@
 
   
 html, body {
-  color: white;
+  background-color: #05080e;
+  color: #f1f5f9;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  selection-background-color: rgba(8, 165, 202, 0.3);
+  selection-color: #ffffff;
+}
+
+::selection {
+  background: rgba(255, 140, 50, 0.3);
+  color: #ffffff;
 }
 
 canvas {

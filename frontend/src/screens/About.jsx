@@ -1,13 +1,11 @@
-import React, { lazy, Suspense, useState } from "react";
-import { FaGithub, FaCode, FaGraduationCap, FaMapMarkerAlt, FaLaptopCode, FaServer, FaBrain, FaLayerGroup } from "react-icons/fa";
+import React, { lazy, Suspense } from "react";
+import { FaCode, FaGraduationCap, FaMapMarkerAlt, FaServer, FaBrain, FaLayerGroup } from "react-icons/fa";
 import Text from "../components/Text";
 import { motion } from "framer-motion";
 import { Marquee } from "../components/Marquee";
 import { Card, CardLabel, Reveal } from "../components/Reveal";
+import GitHubContributions from "../components/GitHubContributions";
 
-const ParticleBackground = lazy(() =>
-  import("../components/ParticleBackground")
-);
 const Frameworks = lazy(() => import("../components/Frameworks"));
 
 const gridContainer = {
@@ -20,20 +18,15 @@ const gridContainer = {
 };
 
 const About = () => {
-  const [streakLoaded, setStreakLoaded] = useState(false);
-  const [statsLoaded, setStatsLoaded] = useState(false);
-  const [langsLoaded, setLangsLoaded] = useState(false);
-
   return (
-    <section id="about" className="relative min-h-screen py-12 px-4 md:px-8 text-white overflow-hidden">
-      <Suspense fallback={null}>
-        <ParticleBackground />
-      </Suspense>
-
-      <div className="relative max-w-7xl mx-auto space-y-10">
+    <section id="about" className="relative min-h-screen py-16 px-4 md:px-8 text-white overflow-hidden">
+      <div className="relative max-w-7xl mx-auto space-y-12">
 
         {/* Section Header */}
         <div className="text-center space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
+            Profile & Capabilities
+          </div>
           <h1 style={{ fontFamily: 'Acorn, sans-serif' }} className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-300 to-teal-200 bg-clip-text text-transparent">
             About Me
           </h1>
@@ -44,26 +37,26 @@ const About = () => {
 
         {/* Core Pillars Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-[rgb(8,165,202)]/40 transition duration-300">
-            <FaLayerGroup className="text-2xl text-[rgb(8,165,202)] mb-2" />
+          <div className="p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-[rgb(8,165,202)]/40 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <FaLayerGroup className="text-2xl text-[rgb(8,165,202)] mb-2.5" />
             <h3 className="text-sm font-bold text-white">Full-Stack Dev</h3>
             <p className="text-xs text-gray-400 mt-1">React, Next.js, Node, Spring</p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-teal-400/40 transition duration-300">
-            <FaCode className="text-2xl text-teal-400 mb-2" />
+          <div className="p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-teal-400/40 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <FaCode className="text-2xl text-teal-400 mb-2.5" />
             <h3 className="text-sm font-bold text-white">CP & Algorithms</h3>
             <p className="text-xs text-gray-400 mt-1">Codeforces, LeetCode, GFG</p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-cyan-400/40 transition duration-300">
-            <FaBrain className="text-2xl text-cyan-400 mb-2" />
+          <div className="p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <FaBrain className="text-2xl text-cyan-400 mb-2.5" />
             <h3 className="text-sm font-bold text-white">ML & AI Systems</h3>
             <p className="text-xs text-gray-400 mt-1">Risk Prediction & Intelligent Routing</p>
           </div>
 
-          <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-emerald-400/40 transition duration-300">
-            <FaServer className="text-2xl text-emerald-400 mb-2" />
+          <div className="p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/80 to-[#090e13]/80 backdrop-blur-xl hover:border-emerald-400/40 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <FaServer className="text-2xl text-emerald-400 mb-2.5" />
             <h3 className="text-sm font-bold text-white">Database & Cloud</h3>
             <p className="text-xs text-gray-400 mt-1">PostgreSQL, MongoDB, Docker</p>
           </div>
@@ -156,108 +149,27 @@ const About = () => {
         {/* Marquee Skill Ticker */}
         <Marquee items={["Full-Stack Development", "UI/UX Design", "Machine Learning", "Research", "Open Source", "Web3", "Cloud Architecture", "System Design", "Spring Boot", "React & Next.js"]} />
 
-        {/* Bento Grid Items */}
+        {/* GitHub Contributions Showcase (Exact image match) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="w-full flex justify-center"
+        >
+          <GitHubContributions />
+        </motion.div>
+
+        {/* Tech Ecosystem & Competitive Programming Bento */}
         <motion.div
           variants={gridContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch"
         >
-
-          {/* GitHub Stats Card (Span 2) */}
-          <Reveal className="lg:col-span-2" delay={0.1}>
-            <Card
-              className="rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden h-full"
-              style={{
-                background: "linear-gradient(135deg, #0e151c 0%, #080c10 100%)",
-              }}
-            >
-              <div className="p-6 md:p-8 flex flex-col gap-6 h-full justify-between">
-                <div className="flex items-center justify-between">
-                  <CardLabel className="text-lg font-semibold text-white/90 flex items-center gap-2">
-                    <FaGithub className="text-xl text-[rgb(8,165,202)]" /> GitHub Contributions & Activity
-                  </CardLabel>
-                  <a
-                    href="https://github.com/sabbirkhanoni"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-[rgb(8,165,202)] hover:underline"
-                  >
-                    @sabbirkhanoni ↗
-                  </a>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-
-                  <div className="flex flex-col gap-4 items-center">
-                    {!streakLoaded && (
-                      <div className="w-full max-w-sm h-[170px] rounded-2xl bg-gray-800/50 animate-pulse" />
-                    )}
-                    <a
-                      href="https://github.com/DenverCoder1/github-readme-streak-stats"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex justify-center"
-                    >
-                      <img
-                        loading="lazy"
-                        decoding="async"
-                        onLoad={() => setStreakLoaded(true)}
-                        src="https://github-readme-streak-stats.herokuapp.com/?user=sabbirkhanoni&theme=dark"
-                        alt="GitHub Streak Stats"
-                        className="rounded-2xl shadow-xl w-full max-w-[380px] hover:scale-[1.02] transition-transform duration-300 border border-white/10"
-                      />
-                    </a>
-
-                    {!statsLoaded && (
-                      <div className="w-full max-w-sm h-[170px] rounded-2xl bg-gray-800/50 animate-pulse" />
-                    )}
-                    <a
-                      href="https://github.com/sabbirkhanoni"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex justify-center"
-                    >
-                      <img
-                        loading="lazy"
-                        decoding="async"
-                        onLoad={() => setStatsLoaded(true)}
-                        src="https://github-readme-stats.vercel.app/api?username=sabbirkhanoni&show_icons=true&theme=dark"
-                        alt="GitHub Stats"
-                        className="rounded-2xl shadow-xl w-full max-w-[380px] hover:scale-[1.02] transition-transform duration-300 border border-white/10"
-                      />
-                    </a>
-                  </div>
-
-                  <div className="flex justify-center">
-                    {!langsLoaded && (
-                      <div className="w-full max-w-sm h-[350px] rounded-2xl bg-gray-800/50 animate-pulse" />
-                    )}
-                    <a
-                      href="https://github.com/anuraghazra/github-readme-stats"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex justify-center"
-                    >
-                      <img
-                        loading="lazy"
-                        decoding="async"
-                        onLoad={() => setLangsLoaded(true)}
-                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=sabbirkhanoni&langs_count=10&theme=dark"
-                        alt="Top Languages"
-                        className="rounded-2xl shadow-xl w-full max-w-[380px] hover:scale-[1.02] transition-transform duration-300 border border-white/10"
-                      />
-                    </a>
-                  </div>
-
-                </div>
-              </div>
-            </Card>
-          </Reveal>
-
           {/* Technologies Orbit Card (Span 1) */}
-          <Reveal className="lg:col-span-1" delay={0.2}>
+          <Reveal className="lg:col-span-1" delay={0.1}>
             <Card
               className="h-full rounded-3xl border border-[rgba(8,165,202,0.2)]"
               style={{
@@ -284,9 +196,9 @@ const About = () => {
             </Card>
           </Reveal>
 
-          {/* Competitive Programming Showcase Card (Span 3 - Full Width) */}
-          <Reveal className="lg:col-span-3" delay={0.3}>
-            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-gradient-to-br from-[#0c1219] to-[#070b0f] backdrop-blur-xl">
+          {/* Competitive Programming Showcase Card (Span 2) */}
+          <Reveal className="lg:col-span-2" delay={0.2}>
+            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-gradient-to-br from-[#0c1219] to-[#070b0f] backdrop-blur-xl h-full flex flex-col justify-between">
 
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(8,165,202,0.12),_transparent_50%)] pointer-events-none" />
 
@@ -297,11 +209,11 @@ const About = () => {
                     <FaCode className="text-teal-400 text-xl" /> Competitive Programming Showcase
                   </CardLabel>
                   <span className="text-xs text-teal-400 bg-teal-950/60 border border-teal-800/40 px-3 py-1 rounded-full">
-                    Problem Solver & Competitor
+                    Problem Solver
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
 
                   {/* Codeforces */}
                   <a
@@ -312,16 +224,15 @@ const About = () => {
                   >
                     <div className="relative w-full rounded-2xl overflow-hidden 
                                     bg-gradient-to-r from-indigo-500/30 via-cyan-500/30 to-teal-500/30 
-                                    p-[1px] transition-all duration-300 group-hover:scale-[1.02]">
-
+                                    p-[1px] transition-all duration-300 group-hover:scale-[1.03]">
                       <div className="rounded-2xl overflow-hidden bg-[#0a0e13]">
                         <img
+                          loading="lazy"
                           className="w-full object-cover object-top"
                           src="https://codeforces-readme-stats.vercel.app/api/card?username=sabbir9990&theme=dark"
                           alt="Codeforces Stats"
                         />
                       </div>
-
                     </div>
                   </a>
 
@@ -332,8 +243,9 @@ const About = () => {
                     rel="noopener noreferrer"
                     className="group w-full flex justify-center"
                   >
-                    <div className="rounded-2xl p-[1px] bg-white/10 w-full transition-all duration-300 group-hover:bg-green-500/40 group-hover:scale-[1.02]">
+                    <div className="rounded-2xl p-[1px] bg-white/10 w-full transition-all duration-300 group-hover:bg-green-500/40 group-hover:scale-[1.03]">
                       <img
+                        loading="lazy"
                         className="rounded-2xl shadow-xl w-full bg-[#0a0e13]"
                         src="https://gfgstatscard.vercel.app/sabbirkhanoni?theme=dark"
                         alt="GeeksforGeeks Stats"
@@ -348,8 +260,9 @@ const About = () => {
                     rel="noopener noreferrer"
                     className="group w-full flex justify-center"
                   >
-                    <div className="rounded-2xl p-[1px] bg-white/10 w-full transition-all duration-300 group-hover:bg-yellow-500/40 group-hover:scale-[1.02]">
+                    <div className="rounded-2xl p-[1px] bg-white/10 w-full transition-all duration-300 group-hover:bg-yellow-500/40 group-hover:scale-[1.03]">
                       <img
+                        loading="lazy"
                         className="rounded-2xl shadow-xl w-full bg-[#0a0e13]"
                         src="https://leetcard.jacoblin.cool/sabbirkhanoni?theme=dark"
                         alt="LeetCode Stats"
@@ -361,7 +274,6 @@ const About = () => {
               </div>
             </Card>
           </Reveal>
-
         </motion.div>
 
         {/* Tech Stack Pills Marquee */}

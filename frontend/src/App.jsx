@@ -10,6 +10,8 @@ import Footer from './components/Footer'
 import Research from './screens/Research'
 import Recommendations from './screens/Recommendations'
 
+import CustomCursor from './components/CustomCursor'
+
 const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
@@ -31,16 +33,28 @@ const App = () => {
   }, [])
 
   return (
-    <div className="container mx-auto max-w-8xl">
-      <Header />
-      <HeroSection />
-      <About />
-      <Experience />
-      <Project />
-      <Research />
-      {/* <Recommendations /> */}
-      <Contact />
-      <Footer />
+    <div className="relative min-h-screen bg-[#05080e] text-slate-100 overflow-x-hidden selection:bg-[#ff8c32]/30 selection:text-white">
+      {/* Interactive Custom Cursor */}
+      <CustomCursor />
+
+      {/* Ambient background glows for super premium depth */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-[15%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[rgb(8,165,202)]/5 blur-[140px]" />
+        <div className="absolute top-[40%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#ff8c32]/5 blur-[160px]" />
+        <div className="absolute top-[70%] left-[10%] w-[550px] h-[550px] rounded-full bg-teal-500/5 blur-[150px]" />
+      </div>
+
+      <div className="relative z-10 container mx-auto max-w-8xl">
+        <Header />
+        <HeroSection />
+        <About />
+        <Experience />
+        <Project />
+        <Research />
+        {/* <Recommendations /> */}
+        <Contact />
+        <Footer />
+      </div>
     </div>
   )
 }
