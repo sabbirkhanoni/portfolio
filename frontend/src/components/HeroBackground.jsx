@@ -1,14 +1,10 @@
 'use client';
 
-import React, { lazy, useEffect } from 'react'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import React, { Suspense } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-
-import { Suspense } from 'react';
-//lazy load SplashCursor
-const FluidBackground = lazy(() => import("../components/FluidBackground"));
-const Milky = lazy(() => import("../components/Milky"));
+import Milky from './Milky';
 
 const HeroBackground = () => {
   const { scrollYProgress } = useScroll()
@@ -16,46 +12,31 @@ const HeroBackground = () => {
   const planetsY = useTransform(scrollYProgress, [0, 0.5], ["0%", "50%"]);
 
   return (
-    <section className='inset-0 absolute'>
+    <div className='inset-0 absolute pointer-events-none'>
       <div className='relative h-screen overflow-hidden'>
 
-        {/* Background Sky */}
+        {/* Background Sky - Dark space canvas */}
         <motion.div
-          className='absolute inset-0 w-full h-screen -z-50 bg-gradient-to-r from-[#0d0d0d] via-[#131212] to-[#1a1a1a]'
-          style={{
-          }}
+          className='absolute inset-0 w-full h-screen z-0 bg-gradient-to-r from-[#0d0d0d] via-[#131212] to-[#1a1a1a]'
         />
 
-
-        {/* <Suspense fallback={null}>
-          <FluidBackground />
-        </Suspense> */}
-
-        <Canvas 
+        {/* 3D Milky Galaxy Canvas Layer */}
+        <div className='absolute inset-0 w-full h-full z-[1] pointer-events-auto'>
+          <Canvas 
             dpr={[1, 1.5]}
             gl={{ antialias: false, powerPreference: 'low-power' }}
-            className='absolute inset-0 w-full top-0 -z-40'>
-          <Milky />
-          <OrbitControls enableZoom={false} />
-        </Canvas>
-
-
-        {/* Man Layer */}
-        <motion.div
-          className='absolute inset-0 w-full h-full -z-30'
-          style={{
-            backgroundImage: "url('/oneman2.png')",
-            backgroundSize: 'auto 70%',        
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'right bottom', 
-            x: manY,
-            willChange: 'transform',
-          }}
-        />
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+            className='w-full h-full'>
+            <Suspense fallback={null}>
+              <Milky />
+              <OrbitControls enableZoom={false} />
+            </Suspense>
+          </Canvas>
+        </div>
 
         {/* Planets Layer */}
         <motion.div
-          className='absolute inset-0 top-10 left-70 w-full h-full -z-30'
+          className='absolute inset-0 top-10 left-70 w-full h-full z-[2] pointer-events-none'
           style={{
             backgroundImage: "url('/planets.png')",
             backgroundSize: 'contain',         
@@ -66,8 +47,21 @@ const HeroBackground = () => {
           }}
         />
 
+        {/* Man Layer */}
+        <motion.div
+          className='absolute inset-0 w-full h-full z-[3] pointer-events-none'
+          style={{
+            backgroundImage: "url('/oneman2.png')",
+            backgroundSize: 'auto 70%',        
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'right bottom', 
+            x: manY,
+            willChange: 'transform',
+          }}
+        />
+
       </div>
-    </section>
+    </div>
   )
 }
 

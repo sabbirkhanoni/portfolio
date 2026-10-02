@@ -103,7 +103,7 @@
 }
 
 html, body {
-  background-color: #05080e;
+  background-color: #05080e !important;
   color: #f1f5f9;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
