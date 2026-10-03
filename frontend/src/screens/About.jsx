@@ -22,7 +22,7 @@ const gridContainer = {
 const About = () => {
   return (
     <section id="about" className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
-      
+
       {/* Subtle Symmetrical Ambient Glow */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
 

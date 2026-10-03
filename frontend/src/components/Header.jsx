@@ -45,7 +45,11 @@ const Header = () => {
       <div className='mx-auto max-w-8xl px-5 md:px-10 lg:px-20 font-bold text-lg'>
         <div className='flex flex-row justify-evenly items-center text-white'>
 
-          <a href="/a" className='flex items-center gap-2'>
+          <a 
+            href="#home" 
+            onClick={(e) => handleNavScroll(e, '#home')} 
+            className='flex items-center gap-2 cursor-pointer'
+          >
             <img src="/onilogo.png" alt="Logo" className="h-8" />
           </a>
 
@@ -53,7 +57,6 @@ const Header = () => {
             <a href="#home" onClick={(e) => handleNavScroll(e, '#home')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Home</a>
             <a href="#projects" onClick={(e) => handleNavScroll(e, '#projects')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Projects</a>
             {/* <a href="#purchases" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Purchases</a> */}
-            <a href="#blogs" onClick={(e) => handleNavScroll(e, '#blogs')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Blogs</a>
             <a href="#about" onClick={(e) => handleNavScroll(e, '#about')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>About</a>
             <a href="#contact" onClick={(e) => handleNavScroll(e, '#contact')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Contact</a>
             <a href="#" className='text-sm bg-gradient-to-r from-[rgb(131,127,127)] cursor-pointer to-[rgb(255,0,0)] px-5 rounded-full py-1 font-semibold text-white shadow-lg shadow-white/50 hover:text-white hover:shadow-xl transition-all duration-300'>
