@@ -31,8 +31,8 @@ const Experience = () => {
         
         {/* Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
-            <FaBriefcase className="text-sm animate-pulse" /> Career & Contributions
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest">
+            <FaBriefcase className="text-sm" /> Career & Contributions
           </div>
           <h1 style={{ fontFamily: 'Acorn, sans-serif'}} className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-300 to-teal-200 bg-clip-text text-transparent">
             Experience & Journey
@@ -53,7 +53,7 @@ const Experience = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Main Card */}
-              <div className="group rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#0a0f14]/95 to-[#121a22]/95 backdrop-blur-2xl p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-500 relative overflow-hidden">
+              <div className="group rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-300 relative overflow-hidden">
                 
                 {/* Subtle Background Glow */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/20 transition duration-700" />

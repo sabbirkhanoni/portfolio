@@ -281,7 +281,7 @@ export default function GitHubContributions() {
       
       {/* Header Badge & Title with Portfolio Theme */}
       <div className="flex flex-col items-center text-center gap-2 max-w-xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[rgb(8,165,202)]/10 border border-[rgb(8,165,202)]/30 text-[rgb(8,165,202)] text-xs font-mono font-bold uppercase tracking-widest backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[rgb(8,165,202)]/10 border border-[rgb(8,165,202)]/30 text-[rgb(8,165,202)] text-xs font-mono font-bold uppercase tracking-widest">
           <FaCheckCircle className="text-xs" /> Live GitHub Activity
         </div>
         <h3 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight" style={{ fontFamily: 'Acorn, sans-serif' }}>
@@ -327,7 +327,7 @@ export default function GitHubContributions() {
       </div>
 
       {/* 3D Tilt Card with Portfolio Cyan-Themed Heatmap Grid */}
-      <TiltCard className="w-full max-w-5xl p-5 sm:p-7 md:p-8 rounded-3xl border border-white/10 bg-[#090e15]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+      <TiltCard className="w-full max-w-5xl p-5 sm:p-7 md:p-8 rounded-3xl border border-white/10 bg-[#090e15] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
         <div className="flex flex-col gap-3 w-full">
           
           {/* Scrollable Container with Subtle Scrollbar */}

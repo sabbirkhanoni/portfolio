@@ -1,8 +1,5 @@
 'use client';
 
-import React, { useEffect } from 'react'
-import Lenis from 'lenis'
-import 'lenis/dist/lenis.css'
 import dynamic from 'next/dynamic'
 import Header from './components/Header'
 import HeroSection from './screens/HeroSection'
@@ -15,29 +12,10 @@ const Research = dynamic(() => import('./screens/Research'))
 const Contact = dynamic(() => import('./screens/Contact'))
 
 import Footer from './components/Footer'
-import CustomCursor from './components/CustomCursor'
 
 const App = () => {
-  useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-      lerp: 0.13,
-      duration: 0.85,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1.1,
-      touchMultiplier: 1.0,
-    })
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
-
   return (
     <div className="relative min-h-screen bg-[#05080e] text-slate-100 overflow-x-hidden selection:bg-[#ff8c32]/30 selection:text-white">
-      {/* Interactive Custom Cursor */}
-      <CustomCursor />
 
       {/* Ambient background glows using GPU-friendly radial gradients with zero paint lag */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">

@@ -60,8 +60,8 @@ const Contact = () => {
         
         {/* Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
-            <FaComments className="text-sm animate-pulse" /> Get In Touch
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest">
+            <FaComments className="text-sm" /> Get In Touch
           </div>
           <h1
             style={{ fontFamily: 'Acorn, sans-serif'}}
@@ -80,7 +80,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#090e13]/95 to-[#121a22]/95 backdrop-blur-2xl shadow-2xl p-6 md:p-10 relative overflow-hidden"
+          className="rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl p-6 md:p-10 relative overflow-hidden"
         >
           {/* Subtle accent line */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)] to-transparent" />

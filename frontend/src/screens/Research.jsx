@@ -50,8 +50,8 @@ const Research = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
-            <FaFlask className="text-sm animate-pulse" /> Research & Scientific Innovations
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest">
+            <FaFlask className="text-sm" /> Research & Scientific Innovations
           </div>
           <h1
             style={{ fontFamily: 'Acorn, sans-serif'}}
@@ -76,7 +76,7 @@ const Research = () => {
               className="space-y-8"
             >
               {/* Paper Card */}
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#0a0f14]/95 to-[#121a22]/95 backdrop-blur-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-all duration-500">
+              <div className="rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-all duration-300">
                 
                 {/* Top Accent Gradient Border */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
@@ -93,7 +93,7 @@ const Research = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                       />
                       <div className="absolute top-3 left-3 flex flex-wrap gap-2">
-                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
                           {work.status}
                         </span>
                       </div>
@@ -102,7 +102,7 @@ const Research = () => {
                     {/* Research Metrics Badges */}
                     <div className="grid grid-cols-3 gap-2.5 text-center">
                       {work.metrics.map((m, idx) => (
-                        <div key={idx} className="p-3 rounded-2xl bg-[#090f16]/90 border border-cyan-400/25 backdrop-blur-sm shadow-[0_0_15px_rgba(8,165,202,0.1)] hover:border-cyan-400/60 transition-all duration-300">
+                        <div key={idx} className="p-3 rounded-2xl bg-[#090f16] border border-cyan-400/25 shadow-[0_0_15px_rgba(8,165,202,0.1)] hover:border-cyan-400/60 transition-all duration-300">
                           <p className="text-xl font-black bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-300 to-teal-200 bg-clip-text text-transparent">{m.value}</p>
                           <p className="text-[9px] text-gray-400 uppercase font-mono font-bold tracking-wider mt-0.5">{m.label}</p>
                         </div>
@@ -130,7 +130,7 @@ const Research = () => {
                     </p>
 
                     {/* Abstract Box */}
-                    <div className="p-4 rounded-2xl bg-[#070c12]/80 border-l-4 border-[rgb(8,165,202)] border border-white/5 backdrop-blur-sm">
+                    <div className="p-4 rounded-2xl bg-[#090f16] border-l-4 border-[rgb(8,165,202)] border border-white/5">
                       <p className="text-xs md:text-sm text-gray-300 italic leading-relaxed">
                         <strong className="text-cyan-300 font-semibold not-italic">Abstract: </strong> 
                         {work.abstract}
@@ -156,7 +156,7 @@ const Research = () => {
 
               {/* Attached SafeRouteAI Web Application Card */}
               {work.webProject && (
-                <div className="relative rounded-3xl border border-teal-500/20 bg-gradient-to-br from-[#0c1920]/90 via-[#071115]/90 to-[#0e1620]/90 backdrop-blur-xl p-6 md:p-10 shadow-2xl overflow-hidden hover:border-teal-400/50 transition duration-500">
+                <div className="relative rounded-3xl border border-teal-500/20 bg-[#0c141d] p-6 md:p-10 shadow-2xl overflow-hidden hover:border-teal-400/50 transition duration-300">
                   
                   {/* Glowing header banner */}
                   <div className="flex items-center justify-between border-b border-white/10 pb-5 mb-6">

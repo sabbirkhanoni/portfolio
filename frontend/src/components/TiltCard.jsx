@@ -18,6 +18,7 @@ export default function TiltCard({ children, className = "" }) {
   const rotateY = useTransform(smoothMouseX, [-0.5, 0.5], [-6, 6]);
 
   const handleMouseMove = (e) => {
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) return;
     const card = cardRef.current;
     if (!card) return;
 

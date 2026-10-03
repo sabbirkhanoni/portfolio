@@ -26,7 +26,7 @@ const About = () => {
 
         {/* Section Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest">
             Profile & Capabilities
           </div>
           <h1 style={{ fontFamily: 'Acorn, sans-serif' }} className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-300 to-teal-200 bg-clip-text text-transparent">
@@ -39,7 +39,7 @@ const About = () => {
 
         {/* Core Pillars Bar */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 to-[#090e13]/90 backdrop-blur-xl hover:border-[rgb(8,165,202)]/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-[rgb(8,165,202)]/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-[rgb(8,165,202)]/10 rounded-full blur-xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/25 transition-all duration-500" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-[rgb(8,165,202)]/10 border border-[rgb(8,165,202)]/25 text-[rgb(8,165,202)] text-xl">
@@ -53,7 +53,7 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">React, Next.js, Node, Spring</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 to-[#090e13]/90 backdrop-blur-xl hover:border-teal-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-teal-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-teal-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-teal-400/25 transition-all duration-500" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-teal-400/10 border border-teal-400/25 text-teal-400 text-xl">
@@ -67,7 +67,7 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">Codeforces, LeetCode, GFG</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 to-[#090e13]/90 backdrop-blur-xl hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-cyan-400/25 transition-all duration-500" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-cyan-400/10 border border-cyan-400/25 text-cyan-400 text-xl">
@@ -81,7 +81,7 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">Risk Prediction & Intelligent Routing</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 to-[#090e13]/90 backdrop-blur-xl hover:border-emerald-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-emerald-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-400/25 transition-all duration-500" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-emerald-400/10 border border-emerald-400/25 text-emerald-400 text-xl">
@@ -102,7 +102,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/90 via-[#0a0f14]/90 to-[#121a22]/90 backdrop-blur-xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
+          className="w-full rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-8 shadow-2xl relative overflow-hidden"
         >
           {/* Subtle Ambient Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
@@ -125,7 +125,7 @@ const About = () => {
                     className="w-full h-48 object-scale-down transform group-hover:scale-105 transition duration-500"
                   />
                   {/* Status Pill */}
-                  <div className="mt-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold backdrop-blur-md">
+                  <div className="mt-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                     Open to Engineering Roles
                   </div>
@@ -134,15 +134,15 @@ const About = () => {
 
               {/* Quick Stat Badges */}
               <div className="grid grid-cols-3 gap-3 w-full max-w-xs text-center">
-                <div className="p-3 rounded-2xl bg-[#090f16]/90 border border-[rgb(8,165,202)]/30 backdrop-blur-sm shadow-[0_0_15px_rgba(8,165,202,0.15)] hover:border-cyan-400/60 transition duration-300">
+                <div className="p-3 rounded-2xl bg-[#090f16] border border-[rgb(8,165,202)]/30 shadow-[0_0_15px_rgba(8,165,202,0.15)] hover:border-cyan-400/60 transition duration-300">
                   <p className="text-2xl font-black bg-gradient-to-r from-[rgb(8,165,202)] to-cyan-300 bg-clip-text text-transparent">15+</p>
                   <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider mt-0.5">Projects</p>
                 </div>
-                <div className="p-3 rounded-2xl bg-[#090f16]/90 border border-teal-500/30 backdrop-blur-sm shadow-[0_0_15px_rgba(45,212,191,0.15)] hover:border-teal-400/60 transition duration-300">
+                <div className="p-3 rounded-2xl bg-[#090f16] border border-teal-500/30 shadow-[0_0_15px_rgba(45,212,191,0.15)] hover:border-teal-400/60 transition duration-300">
                   <p className="text-2xl font-black bg-gradient-to-r from-teal-400 to-emerald-300 bg-clip-text text-transparent">4+</p>
                   <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider mt-0.5">CP Ranks</p>
                 </div>
-                <div className="p-3 rounded-2xl bg-[#090f16]/90 border border-cyan-400/30 backdrop-blur-sm shadow-[0_0_15px_rgba(0,240,255,0.15)] hover:border-cyan-300/60 transition duration-300">
+                <div className="p-3 rounded-2xl bg-[#090f16] border border-cyan-400/30 shadow-[0_0_15px_rgba(0,240,255,0.15)] hover:border-cyan-300/60 transition duration-300">
                   <p className="text-2xl font-black bg-gradient-to-r from-cyan-300 to-sky-200 bg-clip-text text-transparent">99.9%</p>
                   <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider mt-0.5">ML Fidelity</p>
                 </div>
@@ -232,7 +232,7 @@ const About = () => {
 
           {/* Competitive Programming Showcase Card (Span 2) */}
           <Reveal className="lg:col-span-2" delay={0.2}>
-            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-gradient-to-br from-[#0c1219] to-[#070b0f] backdrop-blur-xl h-full flex flex-col justify-between">
+            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-[#0c141d] h-full flex flex-col justify-between">
 
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(8,165,202,0.12),_transparent_50%)] pointer-events-none" />
 

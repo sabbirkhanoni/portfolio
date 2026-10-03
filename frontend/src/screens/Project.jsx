@@ -60,7 +60,7 @@ const Project = () => {
         
         {/* Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgb(8,165,202)]/30 bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)] text-xs font-semibold uppercase tracking-widest">
             <FaFolderOpen className="text-sm" /> Selected Creations
           </div>
           <h1
@@ -83,7 +83,7 @@ const Project = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group rounded-3xl border border-white/10 bg-gradient-to-br from-[#0e1620]/95 via-[#0a0f14]/95 to-[#121a22]/95 backdrop-blur-2xl shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-500 overflow-hidden relative"
+              className="group rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-300 overflow-hidden relative"
             >
               {/* Top Accent Gradient Border */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/70 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
@@ -97,7 +97,7 @@ const Project = () => {
                 <div className={`lg:col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-[#070b0f] group/img relative shadow-lg ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
                   {/* Category Pill Over Image */}
                   <div className="absolute top-3 left-3 z-20 flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/70 text-cyan-300 border border-cyan-400/30 backdrop-blur-md">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/85 text-cyan-300 border border-cyan-400/30">
                       0{index + 1} • Project
                     </span>
                   </div>

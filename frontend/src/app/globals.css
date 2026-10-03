@@ -3,7 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 
 @import "tailwindcss";
-@import "lenis/dist/lenis.css";
+ 
+html {
+  scroll-behavior: smooth;
+}
 
 @theme {
   --color-primary: #030412;

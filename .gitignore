@@ -26,3 +26,5 @@ backend/.env.local
 *.zip
 .next/
 frontend/.next/
+frontend/AGENTS.md
+frontend/CLAUDE.md
