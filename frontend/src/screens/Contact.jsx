@@ -75,11 +75,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Container Bento */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.6 }}
+        <div
           className="rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl p-6 md:p-10 relative overflow-hidden"
         >
           {/* Subtle accent line */}
@@ -199,7 +195,7 @@ const Contact = () => {
             </div>
 
           </div>
-        </motion.div>
+        </div>
 
       </div>
     </section>

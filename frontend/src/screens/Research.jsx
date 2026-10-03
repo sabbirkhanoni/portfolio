@@ -67,16 +67,12 @@ const Research = () => {
         {/* Research Works */}
         <div className="space-y-12">
           {researchWorks.map((work) => (
-            <motion.div 
+            <div 
               key={work.id}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8 transform-gpu [transform:translateZ(0)]"
+              className="space-y-8"
             >
               {/* Paper Card */}
-              <div className="rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-all duration-300">
+              <div className="rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-colors duration-300">
                 
                 {/* Top Accent Gradient Border */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
@@ -240,7 +236,7 @@ const Research = () => {
                 </div>
               )}
 
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -77,13 +77,9 @@ const Project = () => {
         {/* Projects List */}
         <div className="space-y-8">
           {projects.map((project, index) => (
-            <motion.div 
+            <div 
               key={project.id}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: index * 0.06 }}
-              className="group rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-300 overflow-hidden relative transform-gpu [transform:translateZ(0)]"
+              className="group rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-colors duration-300 overflow-hidden relative"
             >
               {/* Top Accent Gradient Border */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/70 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
@@ -172,7 +168,7 @@ const Project = () => {
                 </div>
 
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -45,15 +45,11 @@ const Experience = () => {
         {/* Centered Premium Experience Card */}
         <div className="w-full mx-auto pt-2">
           {experiences.map((exp) => (
-            <motion.div 
+            <div 
               key={exp.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
             >
               {/* Main Card */}
-              <div className="group rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-300 relative overflow-hidden">
+              <div className="group rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-colors duration-300 relative overflow-hidden">
                 
                 {/* Subtle Background Glow */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/20 transition duration-700" />
@@ -136,7 +132,7 @@ const Experience = () => {
                 </div>
 
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
