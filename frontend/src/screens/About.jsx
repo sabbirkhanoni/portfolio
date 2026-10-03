@@ -104,6 +104,9 @@ const About = () => {
           transition={{ duration: 0.2, ease: "easeOut" }}
           className="w-full rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-8 shadow-2xl relative overflow-hidden"
         >
+          {/* Top Accent Gradient Border */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-70" />
+
           {/* Subtle Ambient Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -205,11 +208,11 @@ const About = () => {
           {/* Technologies Orbit Card (Span 1) */}
           <Reveal className="lg:col-span-1" delay={0}>
             <Card
-              className="h-full rounded-3xl border border-[rgba(8,165,202,0.2)]"
-              style={{
-                background: "linear-gradient(135deg, #090e13 0%, #061218 100%)",
-              }}
+              className="h-full rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl relative overflow-hidden"
             >
+              {/* Top Accent Gradient Border */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-70" />
+
               <div className="p-6 h-full flex flex-col justify-between relative overflow-hidden">
                 <div
                   className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
@@ -232,7 +235,9 @@ const About = () => {
 
           {/* Competitive Programming Showcase Card (Span 2) */}
           <Reveal className="lg:col-span-2" delay={0}>
-            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-[#0c141d] h-full flex flex-col justify-between">
+            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-[#0c141d] h-full flex flex-col justify-between shadow-2xl">
+              {/* Top Accent Gradient Border */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-70" />
 
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(8,165,202,0.12),_transparent_50%)] pointer-events-none" />
 

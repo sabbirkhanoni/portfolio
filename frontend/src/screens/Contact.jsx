@@ -54,7 +54,7 @@ const Contact = () => {
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-[-150px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-[-150px] w-96 h-96 bg-[#ff8c32]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-[-150px] w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative w-full max-w-[1360px] space-y-12 z-10">
         
@@ -78,14 +78,15 @@ const Contact = () => {
         <div
           className="rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl p-6 md:p-10 relative overflow-hidden"
         >
-          {/* Subtle accent line */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)] to-transparent" />
+          {/* Top Accent Gradient Border */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-80" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Left Info Column */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-8 p-4 md:p-6 rounded-2xl bg-white/5 border border-white/5">
-              <div className="space-y-6">
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-8 p-6 md:p-8 rounded-2xl bg-[#070b0f] border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[rgb(8,165,202)]/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="space-y-6 relative z-10">
                 <span className="text-xs font-mono font-bold tracking-widest uppercase text-cyan-400">
                   Direct Inquiries
                 </span>
@@ -97,20 +98,20 @@ const Contact = () => {
                 </p>
 
                 <div className="space-y-4 pt-2">
-                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 border border-white/10">
-                    <div className="p-2.5 rounded-lg bg-[rgb(8,165,202)]/10 text-[rgb(8,165,202)]">
+                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#0c141d] border border-white/10 hover:border-cyan-400/40 hover:bg-[#0e1724] transition-colors duration-200">
+                    <div className="p-2.5 rounded-lg bg-[rgb(8,165,202)]/15 border border-[rgb(8,165,202)]/30 text-[rgb(8,165,202)]">
                       <FaEnvelope className="text-base" />
                     </div>
                     <div>
                       <p className="text-[10px] font-mono uppercase text-gray-400">Email Directly</p>
-                      <a href="mailto:mdsabbirkhanoni@gmail.com" className="text-sm font-semibold text-white hover:text-cyan-300 transition">
+                      <a href="mailto:mdsabbirkhanoni@gmail.com" className="text-sm font-semibold text-white hover:text-cyan-300 transition-colors">
                         mdsabbirkhanoni@gmail.com
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 border border-white/10">
-                    <div className="p-2.5 rounded-lg bg-teal-500/10 text-teal-400">
+                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#0c141d] border border-white/10 hover:border-teal-400/40 hover:bg-[#0e1724] transition-colors duration-200">
+                    <div className="p-2.5 rounded-lg bg-teal-500/15 border border-teal-500/30 text-teal-400">
                       <FaMapMarkerAlt className="text-base" />
                     </div>
                     <div>
@@ -122,7 +123,7 @@ const Contact = () => {
               </div>
 
               {/* Status pill */}
-              <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center gap-2.5">
+              <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center gap-2.5 relative z-10">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                 <span className="text-xs text-emerald-300 font-medium">
                   Guaranteed response within 24 hours

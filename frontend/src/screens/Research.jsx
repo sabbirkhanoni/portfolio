@@ -155,6 +155,9 @@ const Research = () => {
               {work.webProject && (
                 <div className="relative rounded-3xl border border-teal-500/20 bg-[#0c141d] p-6 md:p-10 shadow-2xl overflow-hidden hover:border-teal-400/50 transition duration-300">
                   
+                  {/* Top Accent Gradient Border */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-teal-400/80 to-transparent opacity-70" />
+
                   {/* Glowing header banner */}
                   <div className="flex items-center justify-between border-b border-white/10 pb-5 mb-6">
                     <div className="flex items-center gap-3">

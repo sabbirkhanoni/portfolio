@@ -15,21 +15,21 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className="relative min-h-screen bg-[#05080e] text-slate-100 overflow-x-hidden selection:bg-[#ff8c32]/30 selection:text-white">
+    <div className="relative min-h-screen bg-[#05080e] text-slate-100 overflow-x-hidden selection:bg-[rgb(8,165,202)]/30 selection:text-white">
 
       {/* Ambient background glows using GPU-friendly radial gradients with zero paint lag */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div 
           className="absolute top-[10%] left-[-10%] w-[650px] h-[650px] rounded-full pointer-events-none" 
-          style={{ background: 'radial-gradient(circle, rgba(8,165,202,0.07) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(8,165,202,0.08) 0%, transparent 70%)' }}
         />
         <div 
           className="absolute top-[40%] right-[-10%] w-[750px] h-[750px] rounded-full pointer-events-none" 
-          style={{ background: 'radial-gradient(circle, rgba(255,140,50,0.06) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(14,116,144,0.07) 0%, transparent 70%)' }}
         />
         <div 
           className="absolute top-[70%] left-[10%] w-[700px] h-[700px] rounded-full pointer-events-none" 
-          style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.07) 0%, transparent 70%)' }}
         />
       </div>
 
