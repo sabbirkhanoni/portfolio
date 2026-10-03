@@ -14,7 +14,7 @@ const Research = () => {
       abstract: "In this research, we introduce an end-to-end framework for smart urban navigation that unifies zone-based machine learning risk prediction with adaptive graph routing. Our system computes predictive safety scores across city quadrants, enabling navigation engines to intelligently balance arrival time with driver vulnerability mitigation.",
       status: "Under Review / Pre-print",
       date: "January 2026",
-      image: '/reasearch.jpg',
+      image: '/reasearch.webp',
       tags: ["Machine Learning", "Smart Navigation", "Risk Prediction", "Intelligent Routing", "Urban Safety", "Graph Algorithms"],
       doi: "Pending",
       metrics: [
@@ -33,7 +33,7 @@ const Research = () => {
         ],
         technologies: ["React", "Python", "FastAPI", "Scikit-Learn", "Leaflet.js", "OpenStreetMap API", "Tailwind CSS"],
         status: "Active Prototype",
-        image: '/SafeRouteAI.png',
+        image: '/SafeRouteAI.webp',
         impact: "Reduced prediction analysis time by 70% with 99.9% risk mapping fidelity"
       }
     }
@@ -69,28 +69,29 @@ const Research = () => {
           {researchWorks.map((work) => (
             <motion.div 
               key={work.id}
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-8"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8 transform-gpu [transform:translateZ(0)]"
             >
               {/* Paper Card */}
               <div className="rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-all duration-300">
                 
                 {/* Top Accent Gradient Border */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
                   
                   {/* Paper Thumbnail & Metrics Column */}
                   <div className="lg:col-span-4 space-y-5">
-                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] aspect-[4/3] shadow-lg">
+                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] aspect-[4/3] shadow-lg transform-gpu">
                       <img 
                         loading="lazy"
+                        decoding="async"
                         src={work.image} 
                         alt={work.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                        className="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-300 ease-out will-change-transform [backface-visibility:hidden]" 
                       />
                       <div className="absolute top-3 left-3 flex flex-wrap gap-2">
                         <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
@@ -182,12 +183,13 @@ const Research = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     
                     {/* SafeRouteAI Image */}
-                    <div className="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] relative group/img aspect-[16/10]">
+                    <div className="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] relative group/img aspect-[16/10] transform-gpu">
                       <img 
                         loading="lazy"
+                        decoding="async"
                         src={work.webProject.image} 
                         alt={work.webProject.title} 
-                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700" 
+                        className="w-full h-full object-cover transform-gpu group-hover/img:scale-105 transition-transform duration-300 ease-out will-change-transform [backface-visibility:hidden]" 
                       />
                     </div>
 

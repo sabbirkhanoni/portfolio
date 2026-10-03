@@ -12,7 +12,7 @@ const Project = () => {
       title: "PAI-Mart — AI Ecommerce System with Payment Gateway",
       tagline: "Intelligent Ecommerce & Secure Checkout",
       description: "Full-scale modern ecommerce platform featuring smart product recommendation algorithms, seamless Stripe payment gateway integration, secure JWT auth, and automated transactional emails.",
-      image: "/pimart.png",
+      image: "/pimart.webp",
       technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe", "JWT", "Nodemailer", "Tailwind CSS"],
       liveLink: "https://pi-mart.vercel.app",
       githubLink: "https://github.com/sabbirkhanoni/PiMart-An-AI-Integrated-Ecommerce-Application-With-Payment-Gateway"
@@ -22,7 +22,7 @@ const Project = () => {
       title: "AI-Bot — Embedded SaaS 24/7 Human Assistant AI",
       tagline: "Autonomous Agent & Realtime AI Support",
       description: "Embedded SaaS assistant powered by OpenAI models providing context-aware, human-like automated support, multi-tenant enterprise integration, and automated user inquiry resolution.",
-      image: "/pibot.png",
+      image: "/pibot.webp",
       technologies: ["Next.js", "TypeScript", "Scalekit", "OpenAI API", "Tailwind CSS"],
       liveLink: "https://embedded-human-like-assistant.vercel.app",
       githubLink: "https://github.com/sabbirkhanoni/Embedded-24-7-Human-Like-Assistant-Chatbot"
@@ -32,7 +32,7 @@ const Project = () => {
       title: "PI-Rides — Real-Time Ride-Sharing Platform with Map Tracking",
       tagline: "Geospatial Matching & Live Telemetry",
       description: "Full-featured ride-hailing architecture featuring live WebSocket map telemetry, intelligent passenger-driver matching, turn-by-turn route calculations, and instant dispatch notifications.",
-      image: "/pirides.png",
+      image: "/pirides.webp",
       technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Geoapify API", "Express", "JWT"],
       liveLink: "https://pi-rides.vercel.app",
       githubLink: "https://github.com/sabbirkhanoni/PIRides-Ride-Sharing-Platform-with-Realtime-Live-Map-Tracking"
@@ -42,7 +42,7 @@ const Project = () => {
       title: "Job Board — Enterprise Recruitment Management Platform",
       tagline: "Full-Stack Enterprise ATS Architecture",
       description: "Scalable recruitment ecosystem built with clean NestJS REST architecture, TypeORM relations, real-time Push notification feeds, and applicant tracking pipelines.",
-      image: "/jobboard.png",
+      image: "/jobboard.webp",
       technologies: ["Next.js", "Nest.js", "TypeScript", "PostgreSQL", "TypeORM", "Pusher.js", "JWT"],
       liveLink: "https://job-portal-environment.vercel.app",
       githubLink: "https://github.com/sabbirkhanoni/Job-Portal-Application-using-NextJS-RestAPI-NestJS-TypeORM-PostgreeSQL"
@@ -79,22 +79,22 @@ const Project = () => {
           {projects.map((project, index) => (
             <motion.div 
               key={project.id}
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-300 overflow-hidden relative"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              className="group rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-all duration-300 overflow-hidden relative transform-gpu [transform:translateZ(0)]"
             >
               {/* Top Accent Gradient Border */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/70 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/70 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Subtle hover accent light */}
-              <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[rgb(8,165,202)]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[rgb(8,165,202)]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 md:p-8 relative z-10">
                 
                 {/* Media Preview Section */}
-                <div className={`lg:col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-[#070b0f] group/img relative shadow-lg ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className={`lg:col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-[#070b0f] group/img relative shadow-lg transform-gpu ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
                   {/* Category Pill Over Image */}
                   <div className="absolute top-3 left-3 z-20 flex items-center gap-2">
                     <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/85 text-cyan-300 border border-cyan-400/30">
@@ -105,9 +105,10 @@ const Project = () => {
                   <div className="relative aspect-[16/10] overflow-hidden flex items-center justify-center p-4">
                     <img 
                       loading="lazy"
+                      decoding="async"
                       src={project.image} 
                       alt={project.title} 
-                      className="w-full h-full object-contain transform group-hover/img:scale-105 transition-transform duration-700 ease-out" 
+                      className="w-full h-full object-contain transform-gpu group-hover/img:scale-105 transition-transform duration-300 ease-out will-change-transform [backface-visibility:hidden]" 
                     />
                   </div>
                 </div>

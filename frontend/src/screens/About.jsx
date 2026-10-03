@@ -120,9 +120,9 @@ const About = () => {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src="/laptop2.png"
+                    src="/laptop2.webp"
                     alt="Developer Workspace"
-                    className="w-full h-48 object-scale-down transform group-hover:scale-105 transition duration-500"
+                    className="w-full h-48 object-scale-down transform-gpu group-hover:scale-105 transition-transform duration-300 ease-out will-change-transform [backface-visibility:hidden]"
                   />
                   {/* Status Pill */}
                   <div className="mt-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
