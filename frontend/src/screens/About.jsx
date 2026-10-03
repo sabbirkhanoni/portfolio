@@ -14,7 +14,7 @@ const gridContainer = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.02,
     },
   },
 };
@@ -39,8 +39,8 @@ const About = () => {
 
         {/* Core Pillars Bar */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-[rgb(8,165,202)]/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-[rgb(8,165,202)]/10 rounded-full blur-xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/25 transition-all duration-500" />
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-[rgb(8,165,202)]/50 transition-colors duration-200 shadow-lg overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[rgb(8,165,202)]/10 rounded-full blur-xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-[rgb(8,165,202)]/10 border border-[rgb(8,165,202)]/25 text-[rgb(8,165,202)] text-xl">
                 <FaLayerGroup />
@@ -53,8 +53,8 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">React, Next.js, Node, Spring</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-teal-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-teal-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-teal-400/25 transition-all duration-500" />
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-teal-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-teal-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-teal-400/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-teal-400/10 border border-teal-400/25 text-teal-400 text-xl">
                 <FaCode />
@@ -67,8 +67,8 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">Codeforces, LeetCode, GFG</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-cyan-400/25 transition-all duration-500" />
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-cyan-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-cyan-400/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-cyan-400/10 border border-cyan-400/25 text-cyan-400 text-xl">
                 <FaBrain />
@@ -81,8 +81,8 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">Risk Prediction & Intelligent Routing</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-emerald-400/50 hover:-translate-y-1 transition-all duration-300 shadow-lg overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-400/25 transition-all duration-500" />
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-emerald-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-400/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-emerald-400/10 border border-emerald-400/25 text-emerald-400 text-xl">
                 <FaServer />
@@ -98,10 +98,10 @@ const About = () => {
 
         {/* Hero Bio Bento Card */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "200px 0px" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
           className="w-full rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-8 shadow-2xl relative overflow-hidden"
         >
           {/* Subtle Ambient Glow */}
@@ -185,10 +185,10 @@ const About = () => {
 
         {/* GitHub Contributions Showcase (Exact image match) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "200px 0px" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
           className="w-full flex justify-center"
         >
           <GitHubContributions />
@@ -199,11 +199,11 @@ const About = () => {
           variants={gridContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, margin: "200px 0px" }}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch"
         >
           {/* Technologies Orbit Card (Span 1) */}
-          <Reveal className="lg:col-span-1" delay={0.1}>
+          <Reveal className="lg:col-span-1" delay={0}>
             <Card
               className="h-full rounded-3xl border border-[rgba(8,165,202,0.2)]"
               style={{
@@ -231,7 +231,7 @@ const About = () => {
           </Reveal>
 
           {/* Competitive Programming Showcase Card (Span 2) */}
-          <Reveal className="lg:col-span-2" delay={0.2}>
+          <Reveal className="lg:col-span-2" delay={0}>
             <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-[#0c141d] h-full flex flex-col justify-between">
 
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(8,165,202,0.12),_transparent_50%)] pointer-events-none" />

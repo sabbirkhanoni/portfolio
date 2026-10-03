@@ -6,13 +6,11 @@ import { motion } from "framer-motion";
 const paragraphVariants = {
   hidden: {
     opacity: 0,
-    y: 20,
   },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.2,
       ease: "easeOut",
     },
   },
@@ -24,7 +22,7 @@ const Text = () => {
       variants={paragraphVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, margin: "200px 0px" }}
       className="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base lg:text-lg"
     >
       <p className="text-justify text-gray-200">

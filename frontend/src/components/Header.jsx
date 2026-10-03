@@ -30,6 +30,14 @@ const Header = () => {
     }, 2000);
   };
 
+  const handleNavScroll = (e, targetId) => {
+    e.preventDefault();
+    const el = document.querySelector(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className='fixed top-5 left-1/2 -translate-x-1/2 w-[80%] z-50 
                 backdrop-blur-xl bg-gray-900/20 py-2 
@@ -42,12 +50,12 @@ const Header = () => {
           </a>
 
           <div className='hidden md:flex gap-10 items-center'>
-            <a href="#home" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Home</a>
-            <a href="#projects" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Projects</a>
+            <a href="#home" onClick={(e) => handleNavScroll(e, '#home')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Home</a>
+            <a href="#projects" onClick={(e) => handleNavScroll(e, '#projects')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Projects</a>
             {/* <a href="#purchases" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Purchases</a> */}
-            <a href="#blogs" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Blogs</a>
-            <a href="#about" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>About</a>
-            <a href="#contact" className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Contact</a>
+            <a href="#blogs" onClick={(e) => handleNavScroll(e, '#blogs')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Blogs</a>
+            <a href="#about" onClick={(e) => handleNavScroll(e, '#about')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>About</a>
+            <a href="#contact" onClick={(e) => handleNavScroll(e, '#contact')} className='text-sm font-semibold bg-transparent cursor-pointer transition-colors text-white hover:text-aqua'>Contact</a>
             <a href="#" className='text-sm bg-gradient-to-r from-[rgb(131,127,127)] cursor-pointer to-[rgb(255,0,0)] px-5 rounded-full py-1 font-semibold text-white shadow-lg shadow-white/50 hover:text-white hover:shadow-xl transition-all duration-300'>
               <div
                 onClick={() => {
@@ -80,7 +88,7 @@ const Header = () => {
           <motion.div className={`absolute top-0 right-0 h-screen bg-[rgb(115,15,18)] p-5 w-64 rounded shadow-lg md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: isMenuOpen ? 1 : 0, x: isMenuOpen ? 0 : 20 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.25 }}
           >
             <nav >
                 <NavigationMenu />

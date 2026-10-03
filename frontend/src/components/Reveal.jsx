@@ -8,7 +8,7 @@ export function Reveal({ children, className = "", delay = 0 }) {
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) { setVis(true); obs.disconnect(); } },
-      { threshold: 0.06 }
+      { rootMargin: "250px 0px", threshold: 0 }
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
@@ -19,8 +19,8 @@ export function Reveal({ children, className = "", delay = 0 }) {
       className={className}
       style={{
         opacity: vis ? 1 : 0,
-        transform: vis ? "translateY(0)" : "translateY(48px)",
-        transition: `opacity 0.9s cubic-bezier(.16,1,.3,1) ${delay}s, transform 0.9s cubic-bezier(.16,1,.3,1) ${delay}s`,
+        transform: vis ? "translateY(0)" : "translateY(8px)",
+        transition: "opacity 0.2s ease-out, transform 0.2s ease-out",
       }}
     >
       {children}

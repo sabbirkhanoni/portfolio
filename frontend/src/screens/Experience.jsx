@@ -138,9 +138,10 @@ const Experience = () => {
 
         {/* Download Resume Action Box */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "150px 0px" }}
+          transition={{ duration: 0.2 }}
           className="flex justify-center pt-8"
         >
           <a 
