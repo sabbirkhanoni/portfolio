@@ -21,8 +21,12 @@ const gridContainer = {
 
 const About = () => {
   return (
-    <section id="about" className="relative py-8 sm:py-12 md:py-14 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
-      <div className="relative w-full max-w-[1360px] mx-auto space-y-12">
+    <section id="about" className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
+      
+      {/* Subtle Symmetrical Ambient Glow */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative w-full space-y-12">
 
         {/* Section Header */}
         <div className="text-center space-y-3">
@@ -39,7 +43,7 @@ const About = () => {
 
         {/* Core Pillars Bar */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-[rgb(8,165,202)]/50 transition-colors duration-200 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#090e15] hover:border-[rgb(8,165,202)]/50 transition-colors duration-200 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-[rgb(8,165,202)]/10 rounded-full blur-xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-[rgb(8,165,202)]/10 border border-[rgb(8,165,202)]/25 text-[rgb(8,165,202)] text-xl">
@@ -53,7 +57,7 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">React, Next.js, Node, Spring</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-teal-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#090e15] hover:border-teal-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-teal-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-teal-400/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-teal-400/10 border border-teal-400/25 text-teal-400 text-xl">
@@ -67,7 +71,7 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">Codeforces, LeetCode, GFG</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-cyan-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#090e15] hover:border-cyan-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-cyan-400/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-cyan-400/10 border border-cyan-400/25 text-cyan-400 text-xl">
@@ -81,7 +85,7 @@ const About = () => {
             <p className="text-xs text-gray-400 mt-1">Risk Prediction & Intelligent Routing</p>
           </div>
 
-          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#0c141d] hover:border-emerald-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
+          <div className="group relative p-5 rounded-2xl border border-white/10 bg-[#090e15] hover:border-emerald-400/50 transition-colors duration-200 shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-400/10 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-400/25 transition-all duration-300" />
             <div className="flex items-center justify-between mb-3">
               <div className="p-2 rounded-xl bg-emerald-400/10 border border-emerald-400/25 text-emerald-400 text-xl">
@@ -102,7 +106,7 @@ const About = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "200px 0px" }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="w-full rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-8 shadow-2xl relative overflow-hidden"
+          className="w-full rounded-3xl border border-white/10 bg-[#090e15] p-6 md:p-8 shadow-2xl relative overflow-hidden"
         >
           {/* Top Accent Gradient Border */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-70" />
@@ -119,7 +123,7 @@ const About = () => {
               {/* Image Frame */}
               <div className="relative group w-full max-w-xs">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[rgb(8,165,202)] via-cyan-500 to-teal-400 opacity-30 group-hover:opacity-60 transition duration-500 blur-sm" />
-                <div className="relative rounded-2xl bg-[#090e13] border border-white/10 p-4 flex flex-col items-center">
+                <div className="relative rounded-2xl bg-[#060a0f] border border-white/10 p-4 flex flex-col items-center">
                   <img
                     loading="lazy"
                     decoding="async"
@@ -137,15 +141,15 @@ const About = () => {
 
               {/* Quick Stat Badges */}
               <div className="grid grid-cols-3 gap-3 w-full max-w-xs text-center">
-                <div className="p-3 rounded-2xl bg-[#090f16] border border-[rgb(8,165,202)]/30 shadow-[0_0_15px_rgba(8,165,202,0.15)] hover:border-cyan-400/60 transition duration-300">
+                <div className="p-3 rounded-2xl bg-[#060a0f] border border-[rgb(8,165,202)]/30 shadow-[0_0_15px_rgba(8,165,202,0.15)] hover:border-cyan-400/60 transition duration-300">
                   <p className="text-2xl font-black bg-gradient-to-r from-[rgb(8,165,202)] to-cyan-300 bg-clip-text text-transparent">15+</p>
                   <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider mt-0.5">Projects</p>
                 </div>
-                <div className="p-3 rounded-2xl bg-[#090f16] border border-teal-500/30 shadow-[0_0_15px_rgba(45,212,191,0.15)] hover:border-teal-400/60 transition duration-300">
+                <div className="p-3 rounded-2xl bg-[#060a0f] border border-teal-500/30 shadow-[0_0_15px_rgba(45,212,191,0.15)] hover:border-teal-400/60 transition duration-300">
                   <p className="text-2xl font-black bg-gradient-to-r from-teal-400 to-emerald-300 bg-clip-text text-transparent">4+</p>
                   <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider mt-0.5">CP Ranks</p>
                 </div>
-                <div className="p-3 rounded-2xl bg-[#090f16] border border-cyan-400/30 shadow-[0_0_15px_rgba(0,240,255,0.15)] hover:border-cyan-300/60 transition duration-300">
+                <div className="p-3 rounded-2xl bg-[#060a0f] border border-cyan-400/30 shadow-[0_0_15px_rgba(0,240,255,0.15)] hover:border-cyan-300/60 transition duration-300">
                   <p className="text-2xl font-black bg-gradient-to-r from-cyan-300 to-sky-200 bg-clip-text text-transparent">99.9%</p>
                   <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider mt-0.5">ML Fidelity</p>
                 </div>
@@ -208,7 +212,7 @@ const About = () => {
           {/* Technologies Orbit Card (Span 1) */}
           <Reveal className="lg:col-span-1" delay={0}>
             <Card
-              className="h-full rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl relative overflow-hidden"
+              className="h-full rounded-3xl border border-white/10 bg-[#090e15] shadow-2xl relative overflow-hidden"
             >
               {/* Top Accent Gradient Border */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-70" />
@@ -235,7 +239,7 @@ const About = () => {
 
           {/* Competitive Programming Showcase Card (Span 2) */}
           <Reveal className="lg:col-span-2" delay={0}>
-            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-[#0c141d] h-full flex flex-col justify-between shadow-2xl">
+            <Card className="rounded-3xl relative overflow-hidden border border-white/10 bg-[#090e15] h-full flex flex-col justify-between shadow-2xl">
               {/* Top Accent Gradient Border */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-70" />
 

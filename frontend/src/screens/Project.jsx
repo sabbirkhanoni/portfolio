@@ -50,13 +50,12 @@ const Project = () => {
   ]
 
   return (
-    <section id='projects' className="relative py-8 sm:py-12 md:py-14 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
+    <section id='projects' className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
       
-      {/* Ambient background glows */}
-      <div className="absolute top-1/3 left-[-150px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 right-[-150px] w-96 h-96 bg-[#ff8c32]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle Symmetrical Ambient Glow */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative w-full max-w-[1360px] mx-auto space-y-12">
+      <div className="relative w-full space-y-12">
         
         {/* Header */}
         <div className="text-center space-y-3">
@@ -79,7 +78,7 @@ const Project = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className="group rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-colors duration-300 overflow-hidden relative"
+              className="group rounded-3xl border border-white/10 bg-[#090e15] shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-colors duration-300 overflow-hidden relative"
             >
               {/* Top Accent Gradient Border */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/70 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
@@ -90,7 +89,7 @@ const Project = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 md:p-8 relative z-10">
                 
                 {/* Media Preview Section */}
-                <div className={`lg:col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-[#070b0f] group/img relative shadow-lg transform-gpu ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className={`lg:col-span-6 overflow-hidden rounded-2xl border border-white/10 bg-[#060a0f] group/img relative shadow-lg transform-gpu ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
                   {/* Category Pill Over Image */}
                   <div className="absolute top-3 left-3 z-20 flex items-center gap-2">
                     <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/85 text-cyan-300 border border-cyan-400/30">

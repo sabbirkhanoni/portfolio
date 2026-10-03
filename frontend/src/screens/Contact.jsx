@@ -50,13 +50,12 @@ const Contact = () => {
   }
 
   return (
-    <section id='contact' className="relative py-8 sm:py-12 md:py-14 px-2 sm:px-4 md:px-6 text-white overflow-hidden flex flex-col items-center justify-center">
+    <section id='contact' className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
       
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-[-150px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-[-150px] w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle Symmetrical Ambient Glow */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative w-full max-w-[1360px] space-y-12 z-10">
+      <div className="relative w-full space-y-12 z-10">
         
         {/* Header */}
         <div className="text-center space-y-3">
@@ -76,17 +75,16 @@ const Contact = () => {
 
         {/* Contact Container Bento */}
         <div
-          className="rounded-3xl border border-white/10 bg-[#0c141d] shadow-2xl p-6 md:p-10 relative overflow-hidden"
+          className="rounded-3xl border border-white/10 bg-[#090e15] shadow-2xl p-6 md:p-10 relative overflow-hidden"
         >
           {/* Top Accent Gradient Border */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-80" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch relative z-10">
             
-            {/* Left Info Column */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-8 p-6 md:p-8 rounded-2xl bg-[#070b0f] border border-white/10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[rgb(8,165,202)]/5 rounded-full blur-2xl pointer-events-none" />
-              <div className="space-y-6 relative z-10">
+            {/* Left Info Column - Seamlessly integrated with zero nested box padding gap */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-8 lg:border-r lg:border-white/10 lg:pr-8">
+              <div className="space-y-6">
                 <span className="text-xs font-mono font-bold tracking-widest uppercase text-cyan-400">
                   Direct Inquiries
                 </span>
@@ -98,8 +96,8 @@ const Contact = () => {
                 </p>
 
                 <div className="space-y-4 pt-2">
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#0c141d] border border-white/10 hover:border-cyan-400/40 hover:bg-[#0e1724] transition-colors duration-200">
-                    <div className="p-2.5 rounded-lg bg-[rgb(8,165,202)]/15 border border-[rgb(8,165,202)]/30 text-[rgb(8,165,202)]">
+                  <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-[#060a0f] border border-white/10 hover:border-cyan-400/40 hover:bg-[#070c14] transition-colors duration-200">
+                    <div className="p-2.5 rounded-xl bg-[rgb(8,165,202)]/15 border border-[rgb(8,165,202)]/30 text-[rgb(8,165,202)]">
                       <FaEnvelope className="text-base" />
                     </div>
                     <div>
@@ -110,8 +108,8 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#0c141d] border border-white/10 hover:border-teal-400/40 hover:bg-[#0e1724] transition-colors duration-200">
-                    <div className="p-2.5 rounded-lg bg-teal-500/15 border border-teal-500/30 text-teal-400">
+                  <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-[#060a0f] border border-white/10 hover:border-teal-400/40 hover:bg-[#070c14] transition-colors duration-200">
+                    <div className="p-2.5 rounded-xl bg-teal-500/15 border border-teal-500/30 text-teal-400">
                       <FaMapMarkerAlt className="text-base" />
                     </div>
                     <div>
@@ -123,7 +121,7 @@ const Contact = () => {
               </div>
 
               {/* Status pill */}
-              <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center gap-2.5 relative z-10">
+              <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center gap-2.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                 <span className="text-xs text-emerald-300 font-medium">
                   Guaranteed response within 24 hours
@@ -132,7 +130,7 @@ const Contact = () => {
             </div>
 
             {/* Right Form Column */}
-            <div className="lg:col-span-7 flex flex-col justify-center p-2 md:p-4">
+            <div className="lg:col-span-7 flex flex-col justify-center">
               <form onSubmit={handleDirectMailSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   

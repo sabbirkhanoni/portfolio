@@ -17,19 +17,19 @@ const App = () => {
   return (
     <div className="relative min-h-screen bg-[#05080e] text-slate-100 overflow-x-hidden selection:bg-[rgb(8,165,202)]/30 selection:text-white">
 
-      {/* Ambient background glows using GPU-friendly radial gradients with zero paint lag */}
+      {/* Ambient background glows - symmetrically centered so gutters never discolor */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div 
-          className="absolute top-[10%] left-[-10%] w-[650px] h-[650px] rounded-full pointer-events-none" 
-          style={{ background: 'radial-gradient(circle, rgba(8,165,202,0.08) 0%, transparent 70%)' }}
+          className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full pointer-events-none" 
+          style={{ background: 'radial-gradient(ellipse at center, rgba(8,165,202,0.04) 0%, transparent 70%)' }}
         />
         <div 
-          className="absolute top-[40%] right-[-10%] w-[750px] h-[750px] rounded-full pointer-events-none" 
-          style={{ background: 'radial-gradient(circle, rgba(14,116,144,0.07) 0%, transparent 70%)' }}
+          className="absolute top-[50%] left-1/2 -translate-x-1/2 w-[1000px] h-[700px] rounded-full pointer-events-none" 
+          style={{ background: 'radial-gradient(ellipse at center, rgba(14,116,144,0.03) 0%, transparent 70%)' }}
         />
         <div 
-          className="absolute top-[70%] left-[10%] w-[700px] h-[700px] rounded-full pointer-events-none" 
-          style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.07) 0%, transparent 70%)' }}
+          className="absolute top-[80%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full pointer-events-none" 
+          style={{ background: 'radial-gradient(ellipse at center, rgba(20,184,166,0.03) 0%, transparent 70%)' }}
         />
       </div>
 
@@ -41,8 +41,8 @@ const App = () => {
           <HeroSection />
         </div>
 
-        {/* Content sections with widescreen layout */}
-        <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 md:px-8">
+        {/* Content sections with unified single-source padding and alignment */}
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 space-y-12">
           <About />
           <Experience />
           <Project />

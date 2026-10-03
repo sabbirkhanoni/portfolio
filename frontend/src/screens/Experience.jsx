@@ -25,9 +25,12 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="relative py-8 sm:py-12 md:py-14 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
+    <section id="experience" className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
       
-      <div className="relative w-full max-w-[1360px] mx-auto space-y-12">
+      {/* Subtle Symmetrical Ambient Glow */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative w-full space-y-12">
         
         {/* Header */}
         <div className="text-center space-y-3">
@@ -49,7 +52,7 @@ const Experience = () => {
               key={exp.id}
             >
               {/* Main Card */}
-              <div className="group rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-colors duration-300 relative overflow-hidden">
+              <div className="group rounded-3xl border border-white/10 bg-[#090e15] p-6 md:p-10 shadow-2xl hover:border-[rgb(8,165,202)]/50 transition-colors duration-300 relative overflow-hidden">
                 
                 {/* Subtle Background Glow */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[rgb(8,165,202)]/20 transition duration-700" />

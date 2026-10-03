@@ -40,13 +40,12 @@ const Research = () => {
   ]
 
   return (
-    <section id='research' className="relative py-8 sm:py-12 md:py-14 px-2 sm:px-4 md:px-6 text-white overflow-hidden">
+    <section id='research' className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
       
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-[-100px] w-96 h-96 bg-[rgb(8,165,202)]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[-100px] w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle Symmetrical Ambient Glow */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative w-full max-w-[1360px] mx-auto space-y-12">
+      <div className="relative w-full space-y-12">
         
         {/* Section Header */}
         <div className="text-center space-y-3">
@@ -72,7 +71,7 @@ const Research = () => {
               className="space-y-8"
             >
               {/* Paper Card */}
-              <div className="rounded-3xl border border-white/10 bg-[#0c141d] p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-colors duration-300">
+              <div className="rounded-3xl border border-white/10 bg-[#090e15] p-6 md:p-10 shadow-2xl relative overflow-hidden group hover:border-[rgb(8,165,202)]/50 transition-colors duration-300">
                 
                 {/* Top Accent Gradient Border */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[rgb(8,165,202)]/80 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
@@ -81,7 +80,7 @@ const Research = () => {
                   
                   {/* Paper Thumbnail & Metrics Column */}
                   <div className="lg:col-span-4 space-y-5">
-                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] aspect-[4/3] shadow-lg transform-gpu">
+                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#060a0f] aspect-[4/3] shadow-lg transform-gpu">
                       <img 
                         loading="lazy"
                         decoding="async"
@@ -153,7 +152,7 @@ const Research = () => {
 
               {/* Attached SafeRouteAI Web Application Card */}
               {work.webProject && (
-                <div className="relative rounded-3xl border border-teal-500/20 bg-[#0c141d] p-6 md:p-10 shadow-2xl overflow-hidden hover:border-teal-400/50 transition duration-300">
+                <div className="relative rounded-3xl border border-teal-500/20 bg-[#090e15] p-6 md:p-10 shadow-2xl overflow-hidden hover:border-teal-400/50 transition duration-300">
                   
                   {/* Top Accent Gradient Border */}
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-teal-400/80 to-transparent opacity-70" />
@@ -182,7 +181,7 @@ const Research = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     
                     {/* SafeRouteAI Image */}
-                    <div className="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 bg-[#070b0f] relative group/img aspect-[16/10] transform-gpu">
+                    <div className="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 bg-[#060a0f] relative group/img aspect-[16/10] transform-gpu">
                       <img 
                         loading="lazy"
                         decoding="async"
