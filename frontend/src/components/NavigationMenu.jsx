@@ -133,7 +133,7 @@ const NavigationMenu = ({
                   if (handleDownloadPdfResume) handleDownloadPdfResume();
                 }}
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-red-600 via-rose-600 to-amber-500 hover:brightness-125 shadow-lg shadow-red-500/25 active:scale-[0.98] transition-all duration-150 cursor-pointer"
+                className="w-full flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-red-600 via-rose-600 to-amber-500 shadow-lg shadow-red-500/25 active:scale-[0.98] transition-all duration-150 cursor-pointer"
               >
                 {loading ? (
                   <>

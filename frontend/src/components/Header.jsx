@@ -108,7 +108,7 @@ const Header = () => {
               <button
                 onClick={handleDownloadPdfResume}
                 disabled={loading}
-                className="flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-red-600 via-rose-600 to-amber-500 hover:brightness-125 hover:scale-105 active:scale-95 transition-all duration-150 shadow-md shadow-red-600/35 hover:shadow-red-600/60 border border-white/20 cursor-pointer"
+                className="flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-red-600 via-rose-600 to-amber-500 hover:scale-105 active:scale-95 transition-transform duration-150 shadow-md shadow-red-600/35 hover:shadow-red-600/60 border border-white/20 cursor-pointer"
               >
                 {loading ? (
                   <MdOutlineDownloading className="animate-spin text-base" />
