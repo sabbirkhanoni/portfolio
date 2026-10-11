@@ -50,12 +50,12 @@ const Project = () => {
   ]
 
   return (
-    <section id='projects' className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
+    <section id='projects' className="relative py-4 sm:py-6 md:py-8 text-white overflow-hidden">
       
       {/* Subtle Symmetrical Ambient Glow */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative w-full space-y-12">
+      <div className="relative w-full space-y-6 sm:space-y-8">
         
         {/* Header */}
         <div className="text-center space-y-3">

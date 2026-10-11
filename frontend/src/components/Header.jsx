@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import NavigationMenu from './NavigationMenu';
+import ThemeToggle from './ThemeToggle';
 import { MdDownloadForOffline, MdOutlineDownloading } from "react-icons/md";
 import { toast } from 'react-hot-toast';
 
@@ -37,7 +38,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-3.5 sm:top-5 left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] md:w-[88%] lg:w-[84%] max-w-6xl z-40">
-        <div className="backdrop-blur-xl bg-[#080d14]/85 border border-white/10 shadow-2xl rounded-full px-4 sm:px-6 py-2 sm:py-2.5 transition-all">
+        <div className="backdrop-blur-xl bg-[#080d14]/85 border border-white/10 shadow-2xl rounded-full px-4 sm:px-6 py-2 sm:py-2.5">
           <div className="flex items-center justify-between">
 
             {/* Logo */}
@@ -101,6 +102,9 @@ const Header = () => {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center gap-3">
+              {/* Day/Night Theme Toggle */}
+              <ThemeToggle />
+
               {/* Resume Download */}
               <button
                 onClick={handleDownloadPdfResume}
@@ -124,16 +128,20 @@ const Header = () => {
               </button>
             </div>
 
-            {/* Mobile & Small Screen Hamburger Button */}
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              className="flex md:hidden items-center justify-center w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white hover:text-cyan-300 hover:border-cyan-400/30 active:scale-95 transition-all cursor-pointer"
-              aria-label="Open navigation menu"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+            {/* Mobile & Small Screen Right Section */}
+            <div className="flex md:hidden items-center gap-2">
+              <ThemeToggle />
+
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white hover:text-cyan-300 hover:border-cyan-400/30 active:scale-95 transition-all cursor-pointer"
+                aria-label="Open navigation menu"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
 
           </div>
         </div>

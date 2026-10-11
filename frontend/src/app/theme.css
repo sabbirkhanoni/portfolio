@@ -1,0 +1,746 @@
+/* ==========================================================================
+   3-THEME SYSTEM (OPTION 2 - PLUG & PLAY)
+   1. MORNING (Daylight Sky & High-Contrast Editorial Cards)
+   2. EVENING (Fiery Sunset Sky from user photo & Warm Sunset Obsidian)
+   3. NIGHT   (Default Cosmic Galaxy Obsidian & Cyber Cyan)
+   ========================================================================== */
+
+/* ==========================================================================
+   SILKY-SMOOTH THEME TRANSITIONS (INSTANT & FLUID GLIDE)
+   Targeted hardware-accelerated transitions that avoid repaint lag.
+   ========================================================================== */
+header .backdrop-blur-xl,
+header [class*="backdrop-blur"] {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+header nav a,
+header button {
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+body,
+.bg-\[\#05080e\],
+.bg-\[\#090e15\],
+.premium-card,
+footer {
+  transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#home,
+#home .bg-gradient-to-r.from-\[\#0d0d0d\] {
+  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ==========================================================================
+   1. MORNING THEME (data-theme="morning" or "light")
+   ========================================================================== */
+[data-theme="morning"],
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="morning"] body,
+[data-theme="light"] body,
+[data-theme="morning"] .bg-\[\#05080e\],
+[data-theme="light"] .bg-\[\#05080e\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="morning"] .fixed.inset-0.pointer-events-none.z-0,
+[data-theme="light"] .fixed.inset-0.pointer-events-none.z-0 {
+  opacity: 0.15 !important;
+}
+
+/* Morning Shimmers */
+[data-theme="morning"] .shimmer-text-name,
+[data-theme="light"] .shimmer-text-name {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 25%, #ea580c 50%, #b91c1c 75%, #7f1d1d 100%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+[data-theme="morning"] .shimmer-text,
+[data-theme="light"] .shimmer-text {
+  background: linear-gradient(90deg, #065f46 0%, #059669 30%, #0d9488 60%, #0284c7 85%, #065f46 100%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+[data-theme="morning"] .shimmer-text-heading,
+[data-theme="light"] .shimmer-text-heading,
+[data-theme="morning"] h1.bg-gradient-to-r,
+[data-theme="light"] h1.bg-gradient-to-r,
+[data-theme="morning"] h2.bg-gradient-to-r,
+[data-theme="light"] h2.bg-gradient-to-r,
+[data-theme="morning"] .bg-gradient-to-r.from-\[rgb\(8\,165\,202\)\],
+[data-theme="light"] .bg-gradient-to-r.from-\[rgb\(8\,165\,202\)\] {
+  background: linear-gradient(135deg, #0369a1 0%, #0284c7 40%, #0f172a 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Morning Hero Sky */
+[data-theme="morning"] #home,
+[data-theme="light"] #home {
+  background: linear-gradient(180deg, #0284c7 0%, #38bdf8 22%, #93c5fd 42%, #fed7aa 72%, #ffedd5 88%, #f8fafc 100%) !important;
+  transition: background 0.5s ease-in-out;
+}
+
+[data-theme="morning"] #home .bg-gradient-to-r.from-\[\#0d0d0d\],
+[data-theme="light"] #home .bg-gradient-to-r.from-\[\#0d0d0d\] {
+  background: linear-gradient(180deg, #0284c7 0%, #38bdf8 24%, #93c5fd 46%, #fed7aa 74%, #ffedd5 90%, #f8fafc 100%) !important;
+  opacity: 0.96 !important;
+}
+
+[data-theme="morning"] #home .pointer-events-auto canvas,
+[data-theme="light"] #home .pointer-events-auto canvas {
+  filter: contrast(1.15) brightness(1.1);
+  opacity: 0.55;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme="morning"] #home h1 p,
+[data-theme="light"] #home h1 p,
+[data-theme="morning"] #home h1,
+[data-theme="light"] #home h1 {
+  color: #0f172a !important;
+}
+
+[data-theme="morning"] #home p.text-gray-400,
+[data-theme="light"] #home p.text-gray-400,
+[data-theme="morning"] #home p.text-gray-300,
+[data-theme="light"] #home p.text-gray-300,
+[data-theme="morning"] #home p.italic,
+[data-theme="light"] #home p.italic,
+[data-theme="morning"] #home h2.italic,
+[data-theme="light"] #home h2.italic {
+  color: #1e293b !important;
+  font-weight: 500;
+}
+
+/* Morning Hero FlipWords ("Fast Adaptive", etc.) */
+[data-theme="morning"] #home .font-space,
+[data-theme="morning"] #home .font-space *,
+[data-theme="morning"] #home .font-space span,
+[data-theme="light"] #home .font-space,
+[data-theme="light"] #home .font-space *,
+[data-theme="light"] #home .font-space span {
+  color: #0369a1 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="morning"] #home .border-amber-500\/30,
+[data-theme="light"] #home .border-amber-500\/30,
+[data-theme="morning"] #home div[class*="border-amber"],
+[data-theme="light"] #home div[class*="border-amber"] {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(2, 132, 199, 0.45) !important;
+  color: #0284c7 !important;
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.18) !important;
+}
+
+/* Morning Marquee Banner Ticker */
+[data-theme="morning"] .marquee-strip,
+[data-theme="light"] .marquee-strip,
+[data-theme="morning"] .border-y.border-white\/10.bg-gradient-to-r,
+[data-theme="light"] .border-y.border-white\/10.bg-gradient-to-r {
+  background: linear-gradient(90deg, rgba(241, 245, 249, 0.95) 0%, rgba(255, 255, 255, 0.98) 50%, rgba(241, 245, 249, 0.95) 100%) !important;
+  border-top: 1px solid #cbd5e1 !important;
+  border-bottom: 1px solid #cbd5e1 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="morning"] .animate-marquee span,
+[data-theme="light"] .animate-marquee span,
+[data-theme="morning"] .animate-marquee .text-gray-300,
+[data-theme="light"] .animate-marquee .text-gray-300 {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="morning"] .animate-marquee .text-\[rgb\(8\,165\,202\)\],
+[data-theme="light"] .animate-marquee .text-\[rgb\(8\,165\,202\)\] {
+  color: #0284c7 !important;
+}
+
+/* Morning Header */
+[data-theme="morning"] header .backdrop-blur-xl,
+[data-theme="light"] header .backdrop-blur-xl {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(203, 213, 225, 0.8) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="morning"] header nav a,
+[data-theme="light"] header nav a {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="morning"] header nav a:hover,
+[data-theme="light"] header nav a:hover {
+  color: #0284c7 !important;
+}
+
+[data-theme="morning"] header button.text-cyan-300,
+[data-theme="light"] header button.text-cyan-300 {
+  background: #f0f9ff !important;
+  border-color: #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+[data-theme="morning"] header button.text-white.border-white\/10,
+[data-theme="light"] header button.text-white.border-white\/10 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Morning Cards */
+[data-theme="morning"] .bg-\[\#090e15\],
+[data-theme="light"] .bg-\[\#090e15\],
+[data-theme="morning"] .premium-card,
+[data-theme="light"] .premium-card {
+  background: #ffffff !important;
+  border-color: rgba(203, 213, 225, 0.85) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 12px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="morning"] .bg-\[\#090e15\]:hover,
+[data-theme="light"] .bg-\[\#090e15\]:hover,
+[data-theme="morning"] .premium-card:hover,
+[data-theme="light"] .premium-card:hover {
+  border-color: rgba(2, 132, 199, 0.5) !important;
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.1), 0 4px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="morning"] .h-\[2px\].bg-gradient-to-r,
+[data-theme="light"] .h-\[2px\].bg-gradient-to-r {
+  background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.75), transparent) !important;
+}
+
+[data-theme="morning"] .bg-\[\#0c141f\],
+[data-theme="light"] .bg-\[\#0c141f\],
+[data-theme="morning"] .bg-\[\#0a0f16\],
+[data-theme="light"] .bg-\[\#0a0f16\],
+[data-theme="morning"] .bg-\[\#090f16\],
+[data-theme="light"] .bg-\[\#090f16\],
+[data-theme="morning"] .bg-\[\#060a0f\],
+[data-theme="light"] .bg-\[\#060a0f\],
+[data-theme="morning"] .bg-\[\#070b0f\],
+[data-theme="light"] .bg-\[\#070b0f\],
+[data-theme="morning"] .bg-\[\#070c12\]\/80,
+[data-theme="light"] .bg-\[\#070c12\]\/80,
+[data-theme="morning"] .bg-\[\#06090e\],
+[data-theme="light"] .bg-\[\#06090e\] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Morning Tech Stack Badges (Frameworks / Ecosystem Pills) */
+[data-theme="morning"] .tech-pill,
+[data-theme="light"] .tech-pill,
+[data-theme="morning"] .bg-\[\#090f16\]\/90,
+[data-theme="light"] .bg-\[\#090f16\]\/90 {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="morning"] .tech-pill span,
+[data-theme="light"] .tech-pill span,
+[data-theme="morning"] .bg-\[\#090f16\]\/90 span,
+[data-theme="light"] .bg-\[\#090f16\]\/90 span {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="morning"] .tech-pill:hover,
+[data-theme="light"] .tech-pill:hover,
+[data-theme="morning"] .bg-\[\#090f16\]\/90:hover,
+[data-theme="light"] .bg-\[\#090f16\]\/90:hover {
+  background-color: #e2e8f0 !important;
+  border-color: #0284c7 !important;
+}
+
+[data-theme="morning"] .tech-pill:hover span,
+[data-theme="light"] .tech-pill:hover span,
+[data-theme="morning"] .bg-\[\#090f16\]\/90:hover span,
+[data-theme="light"] .bg-\[\#090f16\]\/90:hover span {
+  color: #0284c7 !important;
+}
+
+/* Morning Impact & Highlight Badges */
+[data-theme="morning"] .impact-pill,
+[data-theme="light"] .impact-pill,
+[data-theme="morning"] .bg-teal-950\/40,
+[data-theme="light"] .bg-teal-950\/40,
+[data-theme="morning"] .bg-teal-950\/60,
+[data-theme="light"] .bg-teal-950\/60 {
+  background-color: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.08) !important;
+}
+
+[data-theme="morning"] .impact-pill svg,
+[data-theme="light"] .impact-pill svg,
+[data-theme="morning"] .bg-teal-950\/40 svg,
+[data-theme="light"] .bg-teal-950\/40 svg {
+  color: #059669 !important;
+}
+
+[data-theme="morning"] .impact-pill strong,
+[data-theme="light"] .impact-pill strong,
+[data-theme="morning"] .bg-teal-950\/40 strong,
+[data-theme="light"] .bg-teal-950\/40 strong,
+[data-theme="morning"] .text-teal-400,
+[data-theme="light"] .text-teal-400 {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="morning"] .impact-pill p,
+[data-theme="light"] .impact-pill p,
+[data-theme="morning"] .impact-pill .text-teal-200,
+[data-theme="light"] .impact-pill .text-teal-200,
+[data-theme="morning"] .bg-teal-950\/40 p,
+[data-theme="light"] .bg-teal-950\/40 p,
+[data-theme="morning"] .bg-teal-950\/40 .text-teal-200,
+[data-theme="light"] .bg-teal-950\/40 .text-teal-200 {
+  color: #064e3b !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="morning"] .bg-cyan-950\/40,
+[data-theme="light"] .bg-cyan-950\/40 {
+  background-color: #f0f9ff !important;
+  border-color: #bae6fd !important;
+  color: #0369a1 !important;
+}
+
+/* Morning GitHub Contribution Cubes (Empty) */
+[data-theme="morning"] .bg-\[\#0c131a\],
+[data-theme="light"] .bg-\[\#0c131a\] {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="morning"] h1,
+[data-theme="light"] h1,
+[data-theme="morning"] h2,
+[data-theme="light"] h2,
+[data-theme="morning"] h3,
+[data-theme="light"] h3,
+[data-theme="morning"] h4,
+[data-theme="light"] h4,
+[data-theme="morning"] .text-white,
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-theme="morning"] p,
+[data-theme="light"] p,
+[data-theme="morning"] .text-gray-300,
+[data-theme="light"] .text-gray-300 {
+  color: #334155 !important;
+}
+
+[data-theme="morning"] .text-gray-200,
+[data-theme="light"] .text-gray-200 {
+  color: #1e293b !important;
+}
+
+[data-theme="morning"] span.text-gray-400,
+[data-theme="light"] span.text-gray-400,
+[data-theme="morning"] p.text-gray-400,
+[data-theme="light"] p.text-gray-400 {
+  color: #475569 !important;
+}
+
+[data-theme="morning"] .border-white\/10,
+[data-theme="light"] .border-white\/10 {
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="morning"] .bg-white\/5,
+[data-theme="light"] .bg-white\/5,
+[data-theme="morning"] a.bg-white\/5,
+[data-theme="light"] a.bg-white\/5 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="morning"] input,
+[data-theme="light"] input,
+[data-theme="morning"] textarea,
+[data-theme="light"] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #cbd5e1 !important;
+}
+
+[data-theme="morning"] footer.bg-\[\#06090e\],
+[data-theme="light"] footer.bg-\[\#06090e\] {
+  background-color: #f1f5f9 !important;
+  border-top-color: #cbd5e1 !important;
+}
+
+[data-theme="morning"] footer .bg-\[\#090e15\],
+[data-theme="light"] footer .bg-\[\#090e15\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Morning Footer Social Icons */
+[data-theme="morning"] footer a[aria-label="GitHub Profile"],
+[data-theme="light"] footer a[aria-label="GitHub Profile"] {
+  background-color: #0f172a !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25) !important;
+}
+
+[data-theme="morning"] footer a[aria-label="GitHub Profile"] svg,
+[data-theme="light"] footer a[aria-label="GitHub Profile"] svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+[data-theme="morning"] footer a[aria-label="LinkedIn Profile"],
+[data-theme="light"] footer a[aria-label="LinkedIn Profile"] {
+  background-color: #0284c7 !important;
+  border: 1px solid #38bdf8 !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25) !important;
+}
+
+[data-theme="morning"] footer a[aria-label="LinkedIn Profile"] svg,
+[data-theme="light"] footer a[aria-label="LinkedIn Profile"] svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+[data-theme="morning"] aside,
+[data-theme="light"] aside {
+  background-color: #ffffff !important;
+  border-left-color: #e2e8f0 !important;
+}
+
+[data-theme="morning"] aside p.text-white,
+[data-theme="light"] aside p.text-white,
+[data-theme="morning"] aside span.font-semibold,
+[data-theme="light"] aside span.font-semibold {
+  color: #0f172a !important;
+}
+
+
+/* ==========================================================================
+   2. EVENING THEME (data-theme="evening")
+   Directly matching user's sunset photograph:
+   Fiery gold, burning amber, intense coral-orange into dark silhouette horizon.
+   ========================================================================== */
+[data-theme="evening"] {
+  color-scheme: dark;
+}
+
+/* Warm Twilight Obsidian Background */
+[data-theme="evening"] body,
+[data-theme="evening"] .bg-\[\#05080e\] {
+  background-color: #0d080a !important;
+  color: #ffedd5 !important;
+}
+
+/* Sunset ambient warm glows */
+[data-theme="evening"] .fixed.inset-0.pointer-events-none.z-0 {
+  opacity: 0.35 !important;
+}
+
+/* --- Evening Hero Sky (Direct Match to User's Sunset Photo) --- */
+[data-theme="evening"] #home {
+  background: linear-gradient(180deg, #f59e0b 0%, #ea580c 22%, #c2410c 44%, #9a1e1e 66%, #581c1c 84%, #180808 100%) !important;
+  transition: background 0.5s ease-in-out;
+}
+
+[data-theme="evening"] #home .bg-gradient-to-r.from-\[\#0d0d0d\] {
+  background: linear-gradient(180deg, #f59e0b 0%, #ea580c 22%, #c2410c 44%, #9a1e1e 66%, #581c1c 84%, #180808 100%) !important;
+  opacity: 0.98 !important;
+}
+
+/* 3D Canvas in Evening: Warm sunset atmospheric haze */
+[data-theme="evening"] #home .pointer-events-auto canvas {
+  filter: sepia(0.35) saturate(1.3) brightness(0.9);
+  opacity: 0.45;
+  transition: opacity 0.5s ease;
+}
+
+/* Evening Hero Typography - Luminous Light with Rich "Halka Deep" Saturated Tones */
+[data-theme="evening"] #home h1 p {
+  color: #fffbeb !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(234, 88, 12, 0.4) !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="evening"] .shimmer-text-name {
+  background: linear-gradient(90deg, #fff7ed 0%, #fde047 25%, #fb923c 50%, #f43f5e 75%, #fff7ed 100%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 16px rgba(234, 88, 12, 0.35)) !important;
+}
+
+[data-theme="evening"] .shimmer-text {
+  background: linear-gradient(90deg, #f0fdf4 0%, #a7f3d0 30%, #34d399 55%, #2dd4bf 80%, #f0fdf4 100%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 16px rgba(16, 185, 129, 0.3)) !important;
+}
+
+[data-theme="evening"] #home .font-space {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85)) !important;
+}
+
+[data-theme="evening"] #home h2.italic,
+[data-theme="evening"] #home p.text-gray-400,
+[data-theme="evening"] #home p.text-gray-300,
+[data-theme="evening"] #home p.italic {
+  color: #ffedd5 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+/* Evening "Available for work" pill button */
+[data-theme="evening"] #home div[class*="border-amber"],
+[data-theme="evening"] #home .border-amber-500\/30 {
+  background-color: rgba(28, 14, 18, 0.75) !important;
+  border-color: rgba(249, 115, 22, 0.55) !important;
+  color: #fdba74 !important;
+  box-shadow: 0 4px 20px rgba(234, 88, 12, 0.25) !important;
+}
+
+/* --- Evening Header Floating Pill --- */
+[data-theme="evening"] header .backdrop-blur-xl {
+  background-color: rgba(20, 12, 16, 0.88) !important;
+  border-color: rgba(249, 115, 22, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 25px rgba(234, 88, 12, 0.12) !important;
+}
+
+[data-theme="evening"] header nav a {
+  color: #ffedd5 !important;
+}
+
+[data-theme="evening"] header nav a:hover {
+  color: #fb923c !important;
+}
+
+[data-theme="evening"] header button.text-cyan-300 {
+  background: rgba(249, 115, 22, 0.12) !important;
+  border-color: rgba(249, 115, 22, 0.35) !important;
+  color: #fb923c !important;
+}
+
+[data-theme="evening"] header button.text-cyan-300:hover {
+  background: rgba(249, 115, 22, 0.2) !important;
+  border-color: rgba(249, 115, 22, 0.5) !important;
+}
+
+[data-theme="evening"] header button.text-white.border-white\/10 {
+  background-color: rgba(249, 115, 22, 0.08) !important;
+  border-color: rgba(249, 115, 22, 0.25) !important;
+  color: #fed7aa !important;
+}
+
+/* --- Evening Section Headings --- */
+[data-theme="evening"] h1.bg-gradient-to-r,
+[data-theme="evening"] h2.bg-gradient-to-r,
+[data-theme="evening"] .bg-gradient-to-r.from-\[rgb\(8\,165\,202\)\] {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 45%, #ef4444 80%, #f43f5e 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* --- Evening Bento Cards & Surfaces --- */
+[data-theme="evening"] .bg-\[\#090e15\],
+[data-theme="evening"] .premium-card {
+  background: #140d12 !important;
+  border-color: rgba(249, 115, 22, 0.18) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(234, 88, 12, 0.04) !important;
+}
+
+[data-theme="evening"] .bg-\[\#090e15\]:hover,
+[data-theme="evening"] .premium-card:hover {
+  border-color: rgba(249, 115, 22, 0.45) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(234, 88, 12, 0.14) !important;
+}
+
+/* Evening Top Accent Gradient Line on Cards */
+[data-theme="evening"] .h-\[2px\].bg-gradient-to-r {
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.85), rgba(239, 68, 68, 0.8), transparent) !important;
+}
+
+/* Secondary nested containers */
+[data-theme="evening"] .bg-\[\#0c141f\],
+[data-theme="evening"] .bg-\[\#0a0f16\],
+[data-theme="evening"] .bg-\[\#090f16\],
+[data-theme="evening"] .bg-\[\#060a0f\],
+[data-theme="evening"] .bg-\[\#070b0f\],
+[data-theme="evening"] .bg-\[\#070c12\]\/80,
+[data-theme="evening"] .bg-\[\#06090e\] {
+  background-color: #191016 !important;
+  border-color: rgba(249, 115, 22, 0.15) !important;
+}
+
+[data-theme="evening"] .hover\:bg-\[\#0c141f\]:hover,
+[data-theme="evening"] .hover\:bg-\[\#070c14\]:hover {
+  background-color: #22141d !important;
+}
+
+/* Evening Typography */
+[data-theme="evening"] h1,
+[data-theme="evening"] h2,
+[data-theme="evening"] h3,
+[data-theme="evening"] h4,
+[data-theme="evening"] .text-white {
+  color: #fff7ed !important;
+}
+
+[data-theme="evening"] p,
+[data-theme="evening"] .text-gray-300,
+[data-theme="evening"] .text-slate-300 {
+  color: #fed7aa !important;
+}
+
+[data-theme="evening"] span.text-gray-400,
+[data-theme="evening"] p.text-gray-400,
+[data-theme="evening"] .text-gray-500 {
+  color: #fdba74 !important;
+}
+
+[data-theme="evening"] .font-mono.uppercase.text-gray-400 {
+  color: #fb923c !important;
+}
+
+/* Tech pills in Evening */
+[data-theme="evening"] .bg-white\/5,
+[data-theme="evening"] .bg-white\/10 {
+  background-color: rgba(249, 115, 22, 0.08) !important;
+  color: #ffedd5 !important;
+  border: 1px solid rgba(249, 115, 22, 0.22) !important;
+}
+
+[data-theme="evening"] a.bg-white\/5 {
+  background-color: rgba(249, 115, 22, 0.1) !important;
+  border-color: rgba(249, 115, 22, 0.25) !important;
+  color: #ffedd5 !important;
+}
+
+[data-theme="evening"] a.bg-white\/5:hover {
+  background-color: rgba(249, 115, 22, 0.2) !important;
+  color: #ffffff !important;
+  border-color: rgba(249, 115, 22, 0.5) !important;
+}
+
+[data-theme="evening"] span.bg-\[\#080d14\] {
+  background-color: rgba(249, 115, 22, 0.1) !important;
+  color: #fed7aa !important;
+  border-color: rgba(249, 115, 22, 0.25) !important;
+}
+
+/* Accent chips */
+[data-theme="evening"] .text-cyan-300,
+[data-theme="evening"] .text-cyan-400 {
+  color: #fb923c !important;
+}
+
+[data-theme="evening"] .bg-cyan-500\/10,
+[data-theme="evening"] .bg-\[rgb\(8\,165\,202\)\]\/10,
+[data-theme="evening"] .bg-\[rgb\(8\,165\,202\)\]\/15,
+[data-theme="evening"] .bg-\[rgb\(8\,165\,202\)\]\/20 {
+  background-color: rgba(249, 115, 22, 0.12) !important;
+  color: #fb923c !important;
+  border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+/* Form inputs in Evening */
+[data-theme="evening"] input,
+[data-theme="evening"] textarea {
+  background-color: #191016 !important;
+  color: #fff7ed !important;
+  border: 1px solid rgba(249, 115, 22, 0.25) !important;
+}
+
+[data-theme="evening"] input:focus,
+[data-theme="evening"] textarea:focus {
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25) !important;
+}
+
+[data-theme="evening"] input::placeholder,
+[data-theme="evening"] textarea::placeholder {
+  color: #a87968 !important;
+}
+
+/* Evening Footer */
+[data-theme="evening"] footer.bg-\[\#06090e\] {
+  background-color: #0d080a !important;
+  border-top-color: rgba(249, 115, 22, 0.18) !important;
+}
+
+[data-theme="evening"] footer .bg-\[\#090e15\] {
+  background-color: #140d12 !important;
+  border-color: rgba(249, 115, 22, 0.2) !important;
+}
+
+[data-theme="evening"] footer p.text-gray-400 {
+  color: #fdba74 !important;
+}
+
+/* Evening Mobile Drawer */
+[data-theme="evening"] aside {
+  background-color: #120b10 !important;
+  border-left-color: rgba(249, 115, 22, 0.25) !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="evening"] aside p.text-white,
+[data-theme="evening"] aside span.font-semibold {
+  color: #fff7ed !important;
+}
+
+[data-theme="evening"] aside p.text-gray-400,
+[data-theme="evening"] aside span.text-gray-400 {
+  color: #fdba74 !important;
+}
+
+[data-theme="evening"] aside a:hover {
+  background-color: rgba(249, 115, 22, 0.12) !important;
+}
+
+[data-theme="evening"] aside button.border-white\/10 {
+  background-color: rgba(249, 115, 22, 0.08) !important;
+  border-color: rgba(249, 115, 22, 0.25) !important;
+  color: #ffedd5 !important;
+}
+
+[data-theme="evening"] aside .bg-\[\#06090e\]\/80 {
+  background-color: #160e14 !important;
+  border-top-color: rgba(249, 115, 22, 0.18) !important;
+}

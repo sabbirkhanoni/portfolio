@@ -12,10 +12,12 @@ const Research = dynamic(() => import('./screens/Research'))
 const Contact = dynamic(() => import('./screens/Contact'))
 
 import Footer from './components/Footer'
+import { ThemeProvider } from './context/ThemeContext'
 
 const App = () => {
   return (
-    <div className="relative min-h-screen bg-[#05080e] text-slate-100 overflow-x-hidden selection:bg-[rgb(8,165,202)]/30 selection:text-white">
+    <ThemeProvider>
+      <div className="relative min-h-screen bg-[#05080e] text-slate-100 overflow-x-hidden selection:bg-[rgb(8,165,202)]/30 selection:text-white">
 
       {/* Ambient background glows - symmetrically centered so gutters never discolor */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -42,7 +44,7 @@ const App = () => {
         </div>
 
         {/* Content sections with unified single-source padding and alignment */}
-        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 space-y-12">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 space-y-4 sm:space-y-6 md:space-y-8">
           <About />
           <Experience />
           <Project />
@@ -57,6 +59,7 @@ const App = () => {
         </div>
       </div>
     </div>
+  </ThemeProvider>
   )
 }
 

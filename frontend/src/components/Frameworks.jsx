@@ -28,7 +28,7 @@ export default function Frameworks() {
         {TECH_ITEMS.map((tech) => (
           <div
             key={tech.name}
-            className="group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#090f16]/90 border border-white/10 hover:border-cyan-400/60 hover:bg-cyan-950/20 transition-colors duration-200 cursor-default"
+            className="tech-pill group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#090f16]/90 border border-white/10 hover:border-cyan-400/60 hover:bg-cyan-950/20 transition-colors duration-200 cursor-default"
           >
             <img
               loading="lazy"

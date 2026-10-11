@@ -208,3 +208,7 @@ canvas {
   scrollbar-width: none;      
   -ms-overflow-style: none;   
 }
+
+/* Plug and Play Day/Night Theme */
+@import "./theme.css";
+

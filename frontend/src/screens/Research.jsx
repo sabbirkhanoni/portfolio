@@ -40,12 +40,12 @@ const Research = () => {
   ]
 
   return (
-    <section id='research' className="relative py-8 sm:py-12 md:py-14 text-white overflow-hidden">
+    <section id='research' className="relative py-4 sm:py-6 md:py-8 text-white overflow-hidden">
       
       {/* Subtle Symmetrical Ambient Glow */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[rgb(8,165,202)]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative w-full space-y-12">
+      <div className="relative w-full space-y-6 sm:space-y-8">
         
         {/* Section Header */}
         <div className="text-center space-y-3">
@@ -198,7 +198,7 @@ const Research = () => {
                       </p>
 
                       {/* Impact Pill */}
-                      <div className="p-3.5 rounded-xl bg-teal-950/40 border border-teal-500/30 flex items-center gap-3">
+                      <div className="impact-pill p-3.5 rounded-xl bg-teal-950/40 border border-teal-500/30 flex items-center gap-3">
                         <MdAutoGraph className="text-teal-400 text-2xl shrink-0" />
                         <p className="text-xs md:text-sm text-teal-200 font-medium">
                           <strong className="text-teal-400">Key Impact: </strong>{work.webProject.impact}
